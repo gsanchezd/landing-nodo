@@ -85,9 +85,13 @@ body {
 }
 
 .logo {
-    color: var(--secondary-color);
-    font-weight: 800;
-    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
 }
 
 .nav-menu {
@@ -99,13 +103,13 @@ body {
 
 .nav-menu a {
     text-decoration: none;
-    color: var(--gray-dark);
+    color: var(--black);
     font-weight: 500;
     transition: color 0.3s;
 }
 
 .nav-menu a:hover {
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .nav-menu a.btn-primary {
@@ -128,7 +132,7 @@ body {
 .mobile-menu-toggle span {
     width: 25px;
     height: 3px;
-    background: var(--gray-dark);
+    background: var(--black);
     transition: 0.3s;
 }
 
@@ -855,7 +859,7 @@ body {
         top: 100%;
         left: 0;
         right: 0;
-        background: var(--white);
+        background: var(--primary-color);
         flex-direction: column;
         padding: 1rem;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
