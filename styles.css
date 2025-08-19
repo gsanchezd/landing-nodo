@@ -869,15 +869,15 @@ body {
         padding: 1rem;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
-    
+
     .nav-menu.active {
         display: flex;
     }
-    
+
     .mobile-menu-toggle {
         display: flex;
     }
-    
+
     .hero-title {
         font-size: 1.8rem;
         line-height: 1.3;
@@ -886,7 +886,7 @@ body {
     .hero-subtitle {
         font-size: 1.1rem;
     }
-    
+
     .hero-cta {
         flex-direction: column;
         align-items: center;
@@ -910,12 +910,12 @@ body {
     .metrics-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .about-content {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .comparison-grid {
         grid-template-columns: 1fr;
     }
@@ -933,7 +933,7 @@ body {
         text-align: center;
         gap: 2rem;
     }
-    
+
     .form-grid {
         grid-template-columns: 1fr;
     }
