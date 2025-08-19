@@ -864,37 +864,42 @@ body {
         padding: 1rem;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
-    
+
     .nav-menu.active {
         display: flex;
     }
-    
+
     .mobile-menu-toggle {
         display: flex;
     }
-    
+
     .hero-title {
         font-size: 2rem;
     }
-    
+
     .hero-cta {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .about-content {
         grid-template-columns: 1fr;
     }
-    
+
     .comparison-grid {
         grid-template-columns: 1fr;
     }
-    
+
+    .metrics-grid {
+        grid-template-columns: 1fr;
+        /* solo 1 columna en mobile */
+    }
+
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    
+
     .form-grid {
         grid-template-columns: 1fr;
     }
