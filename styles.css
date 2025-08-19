@@ -60,6 +60,7 @@ body {
     line-height: 1.6;
     color: var(--gray-dark);
     background-color: var(--white);
+    overflow-x: hidden;
 }
 
 .container {
@@ -347,7 +348,7 @@ body {
 
 .comparison-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
@@ -474,7 +475,7 @@ body {
 
 .benefits-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
@@ -712,7 +713,7 @@ body {
 
 .benefits-summary-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
@@ -773,7 +774,7 @@ body {
 
 .form-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
     margin-bottom: 1.5rem;
 }
@@ -853,6 +854,10 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
     .nav-menu {
         display: none;
         position: absolute;
@@ -874,33 +879,75 @@ body {
     }
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
     }
 
     .hero-cta {
         flex-direction: column;
         align-items: center;
+        gap: 0.75rem;
+    }
+    
+    .hero-cta .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .section-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: 1fr;
     }
 
     .about-content {
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .comparison-grid {
         grid-template-columns: 1fr;
     }
-
-    .metrics-grid {
+    
+    .benefits-grid {
         grid-template-columns: 1fr;
-        /* solo 1 columna en mobile */
     }
-
+    
+    .benefits-summary-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 2rem;
     }
 
     .form-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .cta-title {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .cta-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .contact-form {
+        padding: 1.5rem;
     }
 }
