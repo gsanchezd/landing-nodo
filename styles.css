@@ -888,7 +888,7 @@ body {
 }
 
 .footer-contact .phone-number {
-    color: #FFD700;
+    color: #FFD700 !important;
 }
 
 .footer-bottom {
