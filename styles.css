@@ -803,6 +803,9 @@ body {
     font-weight: 600;
     font-size: 1.1rem;
     transition: all 0.3s ease;
+    box-sizing: border-box;
+    max-width: 100%;
+    word-wrap: break-word;
 }
 
 .contact-email:hover {
@@ -882,6 +885,10 @@ body {
 .footer-contact p {
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.8;
+}
+
+.footer-contact .phone-number {
+    color: #FFD700;
 }
 
 .footer-bottom {
