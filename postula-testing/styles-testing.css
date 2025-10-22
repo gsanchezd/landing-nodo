@@ -1,0 +1,113 @@
+/* Estilos específicos para postula-testing */
+
+/* Section Headers */
+.testing-section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Program Section Titles */
+.testing-program-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.testing-program-subtitle {
+    font-size: 1.2rem;
+    color: #ffffff;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Benefits Section Titles */
+.testing-benefits-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.testing-benefits-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Courses Section */
+.testing-courses-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #081d3f, #324ba0);
+}
+
+.testing-courses-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.testing-courses-subtitle {
+    font-size: 1.2rem;
+    color: #ffffff;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Requirements Section Titles */
+.testing-requirements-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.testing-requirements-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* FAQ Section Titles */
+.testing-faq-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.testing-faq-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Process Section Titles */
+.testing-process-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.testing-process-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* About Section Override */
+.testing-about-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #081d3f, #324ba0);
+}
+
+.testing-benefits-section-bg {
+    padding: 5rem 0;
+    background: #f8f9fa;
+}
