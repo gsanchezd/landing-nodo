@@ -213,7 +213,7 @@ body {
 
 .hero-content {
     text-align: center;
-    margin-bottom: 3rem;
+    margin: 2rem;
     position: relative;
     z-index: 2;
 }
@@ -288,12 +288,63 @@ body {
     margin: 0 auto;
 }
 
+/* Program Section Titles */
+.program-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.program-subtitle {
+    font-size: 1.2rem;
+    color: var(--white);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Benefits Section Titles */
+.benefits-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-navy);
+    margin-bottom: 1rem;
+}
+
+.benefits-subtitle {
+    font-size: 1.2rem;
+    color: var(--gray);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Courses Section Titles */
+.courses-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.courses-subtitle {
+    font-size: 1.2rem;
+    color: #ffffff;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
 /* Problem Section */
 .problem-section {
     padding: 5rem 0;
-    background: var(--white);
-    position: relative;
+    background: linear-gradient(135deg, var(--primary-navy), var(--secondary-blue));    position: relative;
     z-index: 2;
+}
+.problem-section .section-title {
+    color: #ffffff;
+}
+
+.problem-section .section-subtitle {
+    color: #ffffff;
 }
 
 .metrics-grid {
@@ -402,7 +453,15 @@ body {
 /* About Section */
 .about-section {
     padding: 5rem 0;
-    background: var(--white);
+    background: linear-gradient(135deg, var(--primary-navy), var(--secondary-blue));
+}
+
+.about-section .section-title{
+    color: #ffffff;
+}
+
+.about-section .section-subtitle{
+    color: #ffffff;
 }
 
 .about-content {
@@ -470,7 +529,29 @@ body {
 /* Benefits Section */
 .benefits-section {
     padding: 5rem 0;
-    background: var(--gray-light);
+    background: #fff;
+}
+
+.testing-benefits-section-bg {
+    padding: 5rem 0;
+    background: #f8f9fa;
+}
+
+.testing-benefits-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.testing-benefits-subtitle {
+    text-align: center;
+
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .benefits-grid {
