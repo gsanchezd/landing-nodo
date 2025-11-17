@@ -1,0 +1,269 @@
+/* Evento Styles */
+
+/* Navbar específico para evento */
+.evento-navbar {
+    background-color: #11110e !important;
+}
+
+.evento-navbar .logo a {
+    display: flex;
+    align-items: center;
+}
+
+.evento-navbar .nav-menu a {
+    color: #fcb614 !important;
+}
+
+.evento-navbar .nav-menu a:hover {
+    color: #ffd54f !important;
+}
+
+.evento-navbar .btn-primary {
+    background: #fcb614 !important;
+    color: #000000 !important;
+    border-color: #fcb614 !important;
+}
+
+.evento-navbar .btn-primary:hover {
+    background: #ffd54f !important;
+    border-color: #ffd54f !important;
+}
+
+/* Hero section */
+.evento-hero {
+    background: #ffffff;
+    padding: 4rem 0;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: visible;
+}
+
+/* Remove background pattern from main styles.css */
+.evento-hero::before {
+    display: none !important;
+}
+
+.evento-hero::after {
+    display: none !important;
+}
+
+/* Remove colored backgrounds from all sections */
+.testing-benefits-section-bg,
+.postula-courses-section {
+    background: #ffffff !important;
+}
+
+.about-section {
+    background: #f0f0f0 !important;
+    margin: -5px;
+    z-index: 10;
+}
+
+.about-section .section-title,
+.about-section .section-subtitle {
+    color: #000000 !important;
+}
+
+.hero-two-columns {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.hero-content-left {
+    padding-right: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.evento-hero .hero-cta {
+    justify-content: flex-start;
+}
+
+.hero-image-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    height: 100%;
+}
+
+.event-flyer-image {
+    width: auto;
+    max-width: none;
+    height: 600px;
+    transition: transform 0.3s ease;
+    position: absolute;
+    right: 0;
+    bottom: -4rem;
+    margin: 0;
+}
+
+/* Hover removed */
+
+.evento-hero .hero-title {
+    color: #000000;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.evento-hero .hero-subtitle {
+    color: #333333;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.evento-badge {
+    display: inline-block;
+    background: #f0f0f0;
+    color: #000000;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    border: 2px solid #e0e0e0;
+}
+
+/* Event Details Grid */
+.event-details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 2.5rem 0;
+}
+
+.event-detail-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.event-detail-card:hover {
+    background: #ffffff;
+    border-color: #667eea;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.event-detail-card i {
+    font-size: 2.5rem;
+    color: #2a2a2a;
+}
+
+.detail-label {
+    color: #666666;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.detail-value {
+    color: #000000;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-two-columns {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .hero-content-left {
+        padding-right: 0;
+        order: 2;
+    }
+
+    .evento-hero .hero-cta {
+        justify-content: center;
+    }
+
+    .hero-image-right {
+        display: none;
+    }
+
+    .event-flyer-image {
+        max-width: 350px;
+        height: auto;
+        position: static;
+        transform: none;
+    }
+
+    .event-flyer-image:hover {
+        transform: scale(1.05);
+    }
+
+    .evento-hero {
+        padding: 3rem 0;
+        min-height: auto;
+    }
+
+    .evento-hero .hero-title {
+        font-size: 1.75rem;
+    }
+
+    .evento-hero .hero-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .event-details-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .evento-badge {
+        font-size: 0.7rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .event-detail-card i {
+        font-size: 1.75rem;
+    }
+
+    .detail-value {
+        font-size: 0.95rem;
+    }
+}
+
+/* Animation for cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.event-detail-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.event-detail-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.event-detail-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.event-detail-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
