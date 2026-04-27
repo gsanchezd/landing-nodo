@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento Emprendedores - NODO</title>
+    <meta name="description"
+        content="Evento NODO para emprendedores: aprende a usar la Inteligencia Artificial para impulsar tu negocio.">
+    <meta property="og:title" content="Evento Emprendedores - NODO">
+    <meta property="og:description"
+        content="Evento NODO para emprendedores: aprende a usar la Inteligencia Artificial para impulsar tu negocio.">
+    <meta property="og:type" content="website">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+    <link rel="stylesheet" href="../styles.css?v=1755651573">
+    <link rel="stylesheet" href="styles-evento-form.css?v=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../assets/logo.png" alt="NODO" height="40">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="evento-hero">
+        <div class="container">
+            <span class="eyebrow">Evento para Emprendedores</span>
+            <h1>Impulsa tu emprendimiento con Inteligencia Artificial</h1>
+            <p>Aprende de expertos cómo aplicar la IA y la automatización para hacer crecer tu negocio, optimizar tu
+                tiempo y multiplicar tus oportunidades.</p>
+            <div class="evento-meta">
+                <span><i class="fas fa-calendar"></i> Próximamente</span>
+                <span><i class="fas fa-map-marker-alt"></i> Santiago, Chile</span>
+                <span><i class="fas fa-users"></i> Cupos limitados</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form -->
+    <section class="evento-form-section">
+        <div class="container">
+            <div class="evento-form-card">
+                <h2>Reserva tu lugar</h2>
+                <p class="form-intro">Completa el formulario y te contactaremos con los detalles del evento.</p>
+
+                <form id="crm-form">
+                    <div class="form-group">
+                        <label for="firstname">Nombre *</label>
+                        <input id="firstname" name="firstname" type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Apellido *</label>
+                        <input id="lastname" name="lastname" type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo *</label>
+                        <input id="email" name="email" type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Empresa / Emprendimiento *</label>
+                        <input id="company" name="company" type="text" required>
+                    </div>
+                    <button type="submit">Reservar mi cupo</button>
+                    <p id="crm-form-msg"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="evento-footer">
+        <div class="container">
+            <p>&copy; NODO · Formación 100% gratuita para cerrar la brecha digital</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("crm-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            var f = e.target, d = {};
+            if (f.firstname.value) d.firstname = f.firstname.value;
+            if (f.lastname.value) d.lastname = f.lastname.value;
+            if (f.email.value) d.email = f.email.value;
+            if (f.company.value) d.company = f.company.value;
+            var msg = document.getElementById("crm-form-msg");
+            var btn = f.querySelector("button[type=submit]");
+            btn.disabled = true;
+            btn.textContent = "Enviando...";
+            fetch("https://crm.agentsmind.ai/api/form-submit/11fe0150-a223-407b-a0d6-00ad9cf713d7", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(d)
+            })
+                .then(function (r) { if (!r.ok) throw new Error(); return r.json() })
+                .then(function () {
+                    msg.style.display = "block";
+                    msg.style.color = "#16a34a";
+                    msg.textContent = "¡Listo! Te contactaremos pronto.";
+                    f.reset();
+                })
+                .catch(function () {
+                    msg.style.display = "block";
+                    msg.style.color = "#dc2626";
+                    msg.textContent = "Error al enviar. Intenta nuevamente.";
+                })
+                .finally(function () {
+                    btn.disabled = false;
+                    btn.textContent = "Reservar mi cupo";
+                });
+        });
+    </script>
+</body>
+
+</html>
