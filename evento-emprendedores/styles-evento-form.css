@@ -60,7 +60,7 @@
 /* Form section */
 .evento-form-section {
     padding: 4rem 0 5rem;
-    background: #f8f9fa;
+    background: linear-gradient(135deg, #081d3f 0%, #324ba0 100%);
 }
 
 .evento-form-card {
