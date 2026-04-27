@@ -4,78 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evento Empresas - NODO</title>
+    <title>Del "Hype" al ROI - NODO</title>
     <meta name="description"
-        content="Evento NODO para empresas: descubre cómo la Inteligencia Artificial puede transformar tu organización.">
-    <meta property="og:title" content="Evento Empresas - NODO">
+        content="La verdad incómoda detrás de la IA en las empresas. 14 de Mayo, 10:00 hrs, Sala de Concejo Municipal de Huechuraba.">
+    <meta property="og:title" content="Del &quot;Hype&quot; al ROI - NODO">
     <meta property="og:description"
-        content="Evento NODO para empresas: descubre cómo la Inteligencia Artificial puede transformar tu organización.">
+        content="La verdad incómoda detrás de la IA en las empresas. 14 de Mayo, 10:00 hrs, Sala de Concejo Municipal de Huechuraba.">
+    <meta property="og:image" content="../assets/banner-evento-empresas.webp">
     <meta property="og:type" content="website">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <link rel="icon" type="image/png" href="../assets/logo.png">
     <link rel="stylesheet" href="../styles.css?v=1755651573">
-    <link rel="stylesheet" href="styles-evento-form.css?v=2">
+    <link rel="stylesheet" href="styles-evento-form.css?v=5">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar evento-navbar">
-        <div class="container">
-            <div class="nav-wrapper">
-                <div class="logo">
-                    <a href="../index.html">
-                        <img src="../assets/logo-nodo-am.png" alt="NODO" height="40">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero -->
-    <section class="evento-hero">
-        <div class="container">
-            <span class="eyebrow">Evento para Empresas</span>
-            <h1>Inteligencia Artificial al servicio de tu empresa</h1>
-            <p>Conecta con líderes y expertos para descubrir cómo la IA puede transformar tu organización, mejorar la
-                productividad y abrir nuevas oportunidades de negocio.</p>
-            <div class="evento-meta">
-                <span><i class="fas fa-calendar"></i> Próximamente</span>
-                <span><i class="fas fa-map-marker-alt"></i> Santiago, Chile</span>
-                <span><i class="fas fa-users"></i> Cupos limitados</span>
-            </div>
-        </div>
+    <!-- Banner -->
+    <section class="evento-banner">
+        <img src="../assets/banner-evento-empresas.webp"
+            alt="Del Hype al ROI — La verdad incómoda detrás de la IA en las empresas">
     </section>
 
-    <!-- Form -->
+    <!-- Form 2 columns -->
     <section class="evento-form-section">
         <div class="container">
-            <div class="evento-form-card">
-                <h2>Reserva tu lugar</h2>
-                <p class="form-intro">Completa el formulario y te contactaremos con los detalles del evento.</p>
+            <div class="evento-two-columns">
+                <div class="evento-text-col">
+                    <h2>Confirma tu participación</h2>
+                    <p>Este es un encuentro de carácter privado, con cupos limitados, a desarrollarse en la
+                        <strong>Sala de Concejo Municipal de Huechuraba</strong>, y contará con la presencia del
+                        Alcalde, <strong>Maximiliano Luksic</strong>.
+                    </p>
+                    <p>Por favor, confirma tu asistencia para asegurar tu participación en esta instancia junto a
+                        líderes empresariales.</p>
+                </div>
 
-                <form id="crm-form">
-                    <div class="form-group">
-                        <label for="firstname">Nombre *</label>
-                        <input id="firstname" name="firstname" type="text" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="lastname">Apellido *</label>
-                        <input id="lastname" name="lastname" type="text" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Correo *</label>
-                        <input id="email" name="email" type="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="company">Empresa *</label>
-                        <input id="company" name="company" type="text" required>
-                    </div>
-                    <button type="submit">Reservar mi cupo</button>
-                    <p id="crm-form-msg"></p>
-                </form>
+                <div class="evento-form-card">
+                    <form id="crm-form">
+                        <div class="form-group">
+                            <label for="firstname">Nombre *</label>
+                            <input id="firstname" name="firstname" type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Apellido *</label>
+                            <input id="lastname" name="lastname" type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo *</label>
+                            <input id="email" name="email" type="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Empresa *</label>
+                            <input id="company" name="company" type="text" required>
+                        </div>
+                        <button type="submit">Confirmar asistencia</button>
+                        <p id="crm-form-msg"></p>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -96,6 +84,7 @@
             if (f.company.value) d.company = f.company.value;
             var msg = document.getElementById("crm-form-msg");
             var btn = f.querySelector("button[type=submit]");
+            var originalText = btn.textContent;
             btn.disabled = true;
             btn.textContent = "Enviando...";
             fetch("https://crm.agentsmind.ai/api/form-submit/0befa759-9728-4177-9437-22adb15060e3", {
@@ -117,7 +106,7 @@
                 })
                 .finally(function () {
                     btn.disabled = false;
-                    btn.textContent = "Reservar mi cupo";
+                    btn.textContent = originalText;
                 });
         });
     </script>

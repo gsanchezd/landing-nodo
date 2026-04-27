@@ -5,6 +5,21 @@
     background-color: #11110e !important;
 }
 
+/* Banner — tamaño real 1200x400 */
+.evento-banner {
+    background: #11110e;
+    line-height: 0;
+    text-align: center;
+}
+
+.evento-banner img {
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+}
+
 /* Hero suave: fondo blanco, texto negro */
 .evento-hero {
     background: #ffffff;
@@ -71,15 +86,106 @@
     font-size: 1.1rem;
 }
 
+/* Event Details Grid (estilo /evento) */
+.event-details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    max-width: 980px;
+    margin: 2.5rem auto 0;
+    text-align: left;
+}
+
+.event-detail-card {
+    background: #f8f9fa;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.event-detail-card:hover {
+    background: #ffffff;
+    border-color: #2a2a2a;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.event-detail-card i {
+    font-size: 2rem;
+    color: #2a2a2a;
+    flex-shrink: 0;
+}
+
+.event-detail-card .detail-label {
+    color: #666666;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
+
+.event-detail-card .detail-value {
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.event-detail-card .detail-extra {
+    display: block;
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: #666666;
+    margin-top: 0.15rem;
+}
+
+@media (max-width: 768px) {
+    .event-details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Form section — gris claro suave */
 .evento-form-section {
     padding: 4rem 0 5rem;
     background: #f0f0f0;
 }
 
-.evento-form-card {
-    max-width: 520px;
+.evento-two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    max-width: 1100px;
     margin: 0 auto;
+}
+
+.evento-text-col h2 {
+    color: #000000;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.evento-text-col p {
+    color: #333333;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.evento-text-col strong {
+    color: #000000;
+    font-weight: 700;
+}
+
+.evento-form-card {
     background: #ffffff;
     border-radius: 20px;
     padding: 2.5rem;
@@ -87,20 +193,15 @@
     border: 2px solid #e0e0e0;
 }
 
-.evento-form-card h2 {
-    color: #000000;
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    text-align: center;
-}
+@media (max-width: 768px) {
+    .evento-two-columns {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 
-.evento-form-card .form-intro {
-    text-align: center;
-    color: #666666;
-    font-size: 0.95rem;
-    margin-bottom: 2rem;
-    line-height: 1.6;
+    .evento-text-col h2 {
+        font-size: 1.6rem;
+    }
 }
 
 #crm-form {
