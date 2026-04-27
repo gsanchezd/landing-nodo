@@ -4,19 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evento Emprendedores - NODO</title>
+    <title>IA y Negocios para Emprendedores - NODO</title>
     <meta name="description"
-        content="Evento NODO para emprendedores: aprende a usar la Inteligencia Artificial para impulsar tu negocio.">
-    <meta property="og:title" content="Evento Emprendedores - NODO">
+        content="Inteligencia Artificial y Negocios: lo que los emprendedores deben entender hoy. Encuentro exclusivo con cupos limitados.">
+    <meta property="og:title" content="IA y Negocios para Emprendedores - NODO">
     <meta property="og:description"
-        content="Evento NODO para emprendedores: aprende a usar la Inteligencia Artificial para impulsar tu negocio.">
+        content="Inteligencia Artificial y Negocios: lo que los emprendedores deben entender hoy. Encuentro exclusivo con cupos limitados.">
     <meta property="og:type" content="website">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <link rel="icon" type="image/png" href="../assets/logo.png">
     <link rel="stylesheet" href="../styles.css?v=1755651573">
-    <link rel="stylesheet" href="styles-evento-form.css?v=2">
+    <link rel="stylesheet" href="../evento/styles-evento.css?v=1755651573">
+    <link rel="stylesheet" href="styles-evento-form.css?v=7">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
@@ -34,55 +35,120 @@
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="evento-hero">
+    <!-- Hero Section -->
+    <section class="hero evento-hero">
         <div class="container">
-            <span class="eyebrow">Evento para Emprendedores</span>
-            <h1>Impulsa tu emprendimiento con Inteligencia Artificial</h1>
-            <p>Aprende de expertos cómo aplicar la IA y la automatización para hacer crecer tu negocio, optimizar tu
-                tiempo y multiplicar tus oportunidades.</p>
-            <div class="evento-meta">
-                <span><i class="fas fa-calendar"></i> Próximamente</span>
-                <span><i class="fas fa-map-marker-alt"></i> Santiago, Chile</span>
-                <span><i class="fas fa-users"></i> Cupos limitados</span>
+            <div class="hero-two-columns">
+                <!-- Left Column: Content -->
+                <div class="hero-content-left">
+                    <div class="evento-badge"><b>EVENTO NODO</b></div>
+                    <h1 class="hero-title">Inteligencia Artificial y Negocios: Lo que los emprendedores deben entender
+                        hoy.</h1>
+                    <p class="hero-subtitle">Esta es una instancia exclusiva con cupos limitados.</p>
+                    <p class="hero-subtitle">Confirma tu asistencia para ser parte de esta conversación y acceder a
+                        nuevas oportunidades vinculadas a la Inteligencia Artificial.</p>
+
+                    <!-- Event Details Cards -->
+                    <div class="event-details-grid">
+                        <div class="event-detail-card">
+                            <i class="far fa-calendar-alt"></i>
+                            <div>
+                                <div class="detail-label">Fecha</div>
+                                <div class="detail-value">14 de Mayo</div>
+                            </div>
+                        </div>
+                        <div class="event-detail-card">
+                            <i class="far fa-clock"></i>
+                            <div>
+                                <div class="detail-label">Horario</div>
+                                <div class="detail-value">10:00 hrs</div>
+                            </div>
+                        </div>
+                        <div class="event-detail-card">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <div class="detail-label">Lugar</div>
+                                <div class="detail-value">Sala de Concejo Municipal<br>Huechuraba</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-cta">
+                        <a href="#inscripcion" class="btn btn-primary btn-large">Confirma tu Asistencia</a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Image -->
+                <div class="hero-image-right">
+                    <img src="../assets/nodo-emprendedores.png"
+                        alt="IA y Negocios para Emprendedores"
+                        class="event-flyer-image">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Form -->
-    <section class="evento-form-section">
+    <!-- Registration Form Section -->
+    <section class="cta-section" id="inscripcion">
         <div class="container">
-            <div class="evento-form-card">
-                <h2>Reserva tu lugar</h2>
-                <p class="form-intro">Completa el formulario y te contactaremos con los detalles del evento.</p>
+            <div class="cta-content">
+                <h2 class="cta-title">Confirma tu asistencia</h2>
+                <p class="cta-subtitle">Completa el formulario y reservaremos tu cupo. Las plazas son limitadas.</p>
 
-                <form id="crm-form">
-                    <div class="form-group">
-                        <label for="firstname">Nombre *</label>
-                        <input id="firstname" name="firstname" type="text" required>
+                <div class="contact-form">
+                    <form id="crm-form">
+                        <div class="form-group">
+                            <label for="firstname">Nombre *</label>
+                            <input id="firstname" name="firstname" type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Apellido *</label>
+                            <input id="lastname" name="lastname" type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo *</label>
+                            <input id="email" name="email" type="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Empresa / Emprendimiento *</label>
+                            <input id="company" name="company" type="text" required>
+                        </div>
+                        <button type="submit">Confirmar asistencia</button>
+                        <p id="crm-form-msg"></p>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-card" style="margin-top: 3rem;">
+                    <div class="contact-info">
+                        <h3>¿Necesitas más información?</h3>
+                        <p>Si tienes dudas sobre el evento, contáctanos:</p>
+                        <a href="mailto:contacto@somosnodo.cl" class="contact-email">contacto@somosnodo.cl</a>
                     </div>
-                    <div class="form-group">
-                        <label for="lastname">Apellido *</label>
-                        <input id="lastname" name="lastname" type="text" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Correo *</label>
-                        <input id="email" name="email" type="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="company">Empresa / Emprendimiento *</label>
-                        <input id="company" name="company" type="text" required>
-                    </div>
-                    <button type="submit">Reservar mi cupo</button>
-                    <p id="crm-form-msg"></p>
-                </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="evento-footer">
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <p>&copy; NODO · Formación 100% gratuita para cerrar la brecha digital</p>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <svg width="100" height="35" viewBox="0 0 100 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="5" y="25" font-family="Raleway" font-size="20" font-weight="700"
+                            fill="white">NODO</text>
+                    </svg>
+                    <p>Fuerza colaborativa que impulsa la productividad en Chile</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>contacto@somosnodo.cl</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Somos Nodo. Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
 
@@ -96,6 +162,7 @@
             if (f.company.value) d.company = f.company.value;
             var msg = document.getElementById("crm-form-msg");
             var btn = f.querySelector("button[type=submit]");
+            var originalText = btn.textContent;
             btn.disabled = true;
             btn.textContent = "Enviando...";
             fetch("https://crm.agentsmind.ai/api/form-submit/11fe0150-a223-407b-a0d6-00ad9cf713d7", {
@@ -117,10 +184,11 @@
                 })
                 .finally(function () {
                     btn.disabled = false;
-                    btn.textContent = "Reservar mi cupo";
+                    btn.textContent = originalText;
                 });
         });
     </script>
+    <script src="../script.js"></script>
 </body>
 
 </html>
