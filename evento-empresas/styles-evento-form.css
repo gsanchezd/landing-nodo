@@ -1,0 +1,178 @@
+/* Estilos compartidos para landings de evento (empresas / emprendedores) */
+
+.evento-hero {
+    background: linear-gradient(135deg, #081d3f 0%, #324ba0 100%);
+    color: #ffffff;
+    padding: 5rem 0 4rem;
+    text-align: center;
+}
+
+.evento-hero .eyebrow {
+    display: inline-block;
+    background: rgba(248, 237, 27, 1);
+    color: #081d3f;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    margin-bottom: 1.25rem;
+}
+
+.evento-hero h1 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    max-width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.evento-hero p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.evento-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.evento-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.evento-meta i {
+    color: rgba(248, 237, 27, 1);
+}
+
+/* Form section */
+.evento-form-section {
+    padding: 4rem 0 5rem;
+    background: #f8f9fa;
+}
+
+.evento-form-card {
+    max-width: 520px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 50px rgba(8, 29, 63, 0.12);
+    border-top: 6px solid rgba(248, 237, 27, 1);
+}
+
+.evento-form-card h2 {
+    color: #081d3f;
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.evento-form-card .form-intro {
+    text-align: center;
+    color: #6c757d;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+#crm-form {
+    font-family: 'Raleway', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+#crm-form .form-group {
+    margin-bottom: 1.1rem;
+}
+
+#crm-form label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #081d3f;
+    margin-bottom: 0.4rem;
+}
+
+#crm-form input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid #e0e4ec;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: #081d3f;
+    background: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+}
+
+#crm-form input:focus {
+    outline: none;
+    border-color: #324ba0;
+    box-shadow: 0 0 0 3px rgba(50, 75, 160, 0.12);
+}
+
+#crm-form button {
+    width: 100%;
+    padding: 0.95rem;
+    margin-top: 0.5rem;
+    background: #081d3f;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.2s ease;
+}
+
+#crm-form button:hover {
+    background: #324ba0;
+    transform: translateY(-1px);
+}
+
+#crm-form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#crm-form-msg {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: none;
+}
+
+/* Footer minimal */
+.evento-footer {
+    background: #081d3f;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+    .evento-hero {
+        padding: 3.5rem 0 3rem;
+    }
+
+    .evento-form-card {
+        padding: 1.75rem;
+        border-radius: 16px;
+    }
+}
