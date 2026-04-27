@@ -7,42 +7,146 @@
     <title>Del "Hype" al ROI - NODO</title>
     <meta name="description"
         content="La verdad incómoda detrás de la IA en las empresas. 14 de Mayo, 10:00 hrs, Sala de Concejo Municipal de Huechuraba.">
-    <meta property="og:title" content="Del &quot;Hype&quot; al ROI - NODO">
+    <meta property="og:title" content='Del "Hype" al ROI - NODO'>
     <meta property="og:description"
         content="La verdad incómoda detrás de la IA en las empresas. 14 de Mayo, 10:00 hrs, Sala de Concejo Municipal de Huechuraba.">
-    <meta property="og:image" content="../assets/banner-evento-empresas.webp">
     <meta property="og:type" content="website">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <link rel="icon" type="image/png" href="../assets/logo.png">
     <link rel="stylesheet" href="../styles.css?v=1755651573">
-    <link rel="stylesheet" href="styles-evento-form.css?v=5">
+    <link rel="stylesheet" href="../evento/styles-evento.css?v=1755651573">
+    <link rel="stylesheet" href="styles-evento-form.css?v=6">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
-    <!-- Banner -->
-    <section class="evento-banner">
-        <img src="../assets/banner-evento-empresas.webp"
-            alt="Del Hype al ROI — La verdad incómoda detrás de la IA en las empresas">
-    </section>
-
-    <!-- Form 2 columns -->
-    <section class="evento-form-section">
+    <!-- Navigation -->
+    <nav class="navbar evento-navbar">
         <div class="container">
-            <div class="evento-two-columns">
-                <div class="evento-text-col">
-                    <h2>Confirma tu participación</h2>
-                    <p>Este es un encuentro de carácter privado, con cupos limitados, a desarrollarse en la
-                        <strong>Sala de Concejo Municipal de Huechuraba</strong>, y contará con la presencia del
-                        Alcalde, <strong>Maximiliano Luksic</strong>.
-                    </p>
-                    <p>Por favor, confirma tu asistencia para asegurar tu participación en esta instancia junto a
-                        líderes empresariales.</p>
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../assets/logo-nodo-am.png" alt="NODO" height="40">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero evento-hero">
+        <div class="container">
+            <div class="hero-two-columns">
+                <!-- Left Column: Content -->
+                <div class="hero-content-left">
+                    <div class="evento-badge"><b>EVENTO NODO</b></div>
+                    <h1 class="hero-title">Del "Hype" al ROI</h1>
+                    <p class="hero-subtitle">La verdad incómoda detrás de la Inteligencia Artificial en las empresas.</p>
+
+                    <!-- Event Details Cards -->
+                    <div class="event-details-grid">
+                        <div class="event-detail-card">
+                            <i class="far fa-calendar-alt"></i>
+                            <div>
+                                <div class="detail-label">Fecha</div>
+                                <div class="detail-value">14 de Mayo</div>
+                            </div>
+                        </div>
+                        <div class="event-detail-card">
+                            <i class="far fa-clock"></i>
+                            <div>
+                                <div class="detail-label">Horario</div>
+                                <div class="detail-value">10:00 hrs</div>
+                            </div>
+                        </div>
+                        <div class="event-detail-card">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <div class="detail-label">Lugar</div>
+                                <div class="detail-value">Sala de Concejo Municipal<br>Huechuraba</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-cta">
+                        <a href="#inscripcion" class="btn btn-primary btn-large">Confirma tu Asistencia</a>
+                    </div>
                 </div>
 
-                <div class="evento-form-card">
+                <!-- Right Column: Image -->
+                <div class="hero-image-right">
+                    <img src="../assets/nodo-man-am.png" alt="Del Hype al ROI"
+                        class="event-flyer-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="sobre-evento">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sobre el Encuentro</h2>
+                <p class="section-subtitle">Un espacio privado para líderes empresariales en la Sala de Concejo
+                    Municipal de Huechuraba. Contaremos con la presencia del Alcalde Maximiliano Luksic.</p>
+            </div>
+
+            <div style="display: grid; gap: 2rem; margin-top: 3rem;">
+                <div class="nodo-card"
+                    style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); display: grid; grid-template-columns: 1fr 1fr; min-height: 350px; border: 2px solid #e0e0e0;">
+                    <!-- Image Side -->
+                    <div
+                        style="background: #f8f9fa; display: flex; align-items: center; justify-content: center; position: relative; padding: 0;">
+                        <img src="../assets/trabajo.png" alt="Encuentro empresarial"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <!-- Content Side -->
+                    <div style="padding: 3rem; display: flex; flex-direction: column; justify-content: center;">
+                        <h3 style="font-size: 2rem; margin: 0 0 1rem 0; color: rgb(0, 0, 0); font-weight: 700;">
+                            ¿De qué hablaremos?</h3>
+                        <p style="line-height: 1.8; margin: 0 0 1rem 0; font-size: 1.1rem; color: #333;">
+                            Un debate honesto sobre los temas que importan:
+                        </p>
+                        <ul
+                            style="line-height: 1.8; margin: 0 0 1.5rem 0; font-size: 1.2rem; color: #000000; list-style: none; padding-left: 0;">
+                            <li style="margin-bottom: 1rem;"><i class="fas fa-check-circle"
+                                    style="color: #f8ed1b; margin-right: 0.75rem; font-size: 1.3rem;"></i>La verdad
+                                incómoda detrás del "hype" de la IA</li>
+                            <li style="margin-bottom: 1rem;"><i class="fas fa-check-circle"
+                                    style="color: #f8ed1b; margin-right: 0.75rem; font-size: 1.3rem;"></i>Cómo medir el
+                                ROI real de la IA en tu empresa</li>
+                            <li style="margin-bottom: 1rem;"><i class="fas fa-check-circle"
+                                    style="color: #f8ed1b; margin-right: 0.75rem; font-size: 1.3rem;"></i>Casos
+                                concretos de adopción y productividad</li>
+                        </ul>
+                        <p style="line-height: 1.7; margin: 0; font-size: 1rem; color: #555;">
+                            Este es un encuentro de carácter privado, con cupos limitados. La reserva previa es
+                            obligatoria para confirmar tu participación.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                @media (max-width: 768px) {
+                    section#sobre-evento div[style*="grid-template-columns: 1fr 1fr"] {
+                        grid-template-columns: 1fr !important;
+                    }
+                }
+            </style>
+        </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section class="cta-section" id="inscripcion">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Confirma tu asistencia</h2>
+                <p class="cta-subtitle">Completa el formulario y reservaremos tu cupo. Las plazas son limitadas.</p>
+
+                <div class="contact-form">
                     <form id="crm-form">
                         <div class="form-group">
                             <label for="firstname">Nombre *</label>
@@ -64,13 +168,38 @@
                         <p id="crm-form-msg"></p>
                     </form>
                 </div>
+
+                <!-- Contact Information -->
+                <div class="contact-card" style="margin-top: 3rem;">
+                    <div class="contact-info">
+                        <h3>¿Necesitas más información?</h3>
+                        <p>Si tienes dudas sobre el evento, contáctanos:</p>
+                        <a href="mailto:contacto@somosnodo.cl" class="contact-email">contacto@somosnodo.cl</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="evento-footer">
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <p>&copy; NODO · Formación 100% gratuita para cerrar la brecha digital</p>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <svg width="100" height="35" viewBox="0 0 100 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="5" y="25" font-family="Raleway" font-size="20" font-weight="700"
+                            fill="white">NODO</text>
+                    </svg>
+                    <p>Fuerza colaborativa que impulsa la productividad en Chile</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>contacto@somosnodo.cl</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Somos Nodo. Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
 
