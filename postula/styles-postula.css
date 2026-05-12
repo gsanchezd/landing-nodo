@@ -240,6 +240,7 @@
 .postula-field input[type="text"],
 .postula-field input[type="email"],
 .postula-field input[type="tel"],
+.postula-field input[type="date"],
 .postula-field select {
     padding: 12px 14px;
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -250,6 +251,13 @@
     width: 100%;
     box-sizing: border-box;
     font-family: inherit;
+    line-height: 1.2;
+}
+.postula-field input[type="date"] {
+    /* Normalize date input height across browsers (Safari adds extra) */
+    -webkit-appearance: none;
+    appearance: none;
+    min-height: 44px;
 }
 .postula-field input:focus,
 .postula-field select:focus {
