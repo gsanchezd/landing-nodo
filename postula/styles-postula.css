@@ -205,3 +205,21 @@
         z-index: 0;
     }
 }
+
+/* Postulación form (CRM-backed, reemplaza HubSpot embed) */
+.postula-form { display: flex; flex-direction: column; gap: 16px; max-width: 600px; margin: 0 auto; }
+.postula-field { display: flex; flex-direction: column; gap: 6px; }
+.postula-field label { font-size: 14px; font-weight: 600; color: #11110e; }
+.postula-field input[type="text"],
+.postula-field input[type="email"],
+.postula-field input[type="tel"],
+.postula-field select { padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 15px; background: #fff; }
+.postula-field input:focus,
+.postula-field select:focus { outline: 2px solid #11110e; outline-offset: -1px; }
+.postula-checkbox-group { display: flex; flex-direction: column; gap: 8px; }
+.postula-checkbox { display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer; }
+.postula-checkbox input { width: 18px; height: 18px; cursor: pointer; }
+.postula-submit { margin-top: 8px; padding: 14px 24px; background: #11110e; color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; transition: opacity .2s; }
+.postula-submit:hover { opacity: .85; }
+.postula-submit:disabled { opacity: .5; cursor: wait; }
+.postula-msg { text-align: center; margin: 8px 0 0; font-size: 14px; }
