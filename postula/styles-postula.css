@@ -1,21 +1,122 @@
 /* Estilos específicos para postula */
 
-/* Courses Section with gradient background */
+/* Override del amarillo de evento-navbar — links blancos */
+.evento-navbar .nav-menu a {
+    color: #ffffff !important;
+}
+
+.evento-navbar .nav-menu a:hover {
+    color: #f8ed1b !important;
+}
+
+.evento-navbar .nav-menu a.btn-primary {
+    background: #f8ed1b !important;
+    color: #000000 !important;
+    border-color: #f8ed1b !important;
+}
+
+.evento-navbar .nav-menu a.btn-primary:hover {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border-color: #ffffff !important;
+}
+
+/* Mobile menu — fondo oscuro consistente con el navbar */
+@media (max-width: 768px) {
+    .evento-navbar .nav-menu {
+        background: #11110e !important;
+    }
+}
+
+/* Hamburguesa visible sobre navbar oscuro */
+.evento-navbar .mobile-menu-toggle span {
+    background: #ffffff !important;
+}
+
+/* Hero dos columnas: texto a la izquierda, imagen network a la derecha */
+.evento-hero {
+    position: relative;
+    overflow: hidden;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.evento-hero .container {
+    height: 100%;
+}
+
+.evento-hero .hero-content-left {
+    text-align: left;
+    padding: 4rem 0;
+}
+
+.evento-hero .hero-content-left .hero-title,
+.evento-hero .hero-content-left .hero-subtitle {
+    text-align: left;
+}
+
+.evento-hero .hero-cta {
+    justify-content: flex-start;
+}
+
+/* Botón secundario en navy NODO (en vez del rojo global) */
+.evento-hero .btn-secondary {
+    color: #0b2640;
+    border-color: #0b2640;
+}
+
+.evento-hero .btn-secondary:hover {
+    background: #0b2640;
+    color: #ffffff;
+}
+
+.evento-hero .hero-image-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 50vw;
+    max-width: 50vw;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: url("../assets/nodo-hero-2.png") no-repeat left center;
+    background-size: cover;
+}
+
+.evento-hero .hero-network-image {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .evento-hero .hero-image-right {
+        display: none;
+    }
+
+    .evento-hero .hero-content-left,
+    .evento-hero .hero-cta {
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+
+/* Courses Section — fondo gris suave igual que "Sobre el Programa" */
 .postula-courses-section {
     padding: 5rem 0;
-    background: linear-gradient(135deg, #081d3f, #324ba0);
+    background: #f0f0f0 !important;
 }
 
 .postula-courses-title {
     font-size: 2.5rem;
     font-weight: 800;
-    color: #ffffff;
+    color: #000000;
     margin-bottom: 1rem;
 }
 
 .postula-courses-subtitle {
     font-size: 1.2rem;
-    color: #ffffff;
+    color: #555555;
     max-width: 700px;
     margin: 0 auto;
 }
@@ -23,4 +124,84 @@
 .postula-section-header {
     text-align: center;
     margin-bottom: 3rem;
+}
+
+/* Timeline estilo Duplas Tech */
+.postula-timeline {
+    position: relative;
+    max-width: 1100px;
+    margin: 3rem auto 0;
+    padding: 0 1rem;
+}
+
+.postula-timeline-line {
+    display: none;
+}
+
+.postula-timeline-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.postula-timeline-item {
+    position: relative;
+    text-align: center;
+    padding: 0 0.5rem;
+}
+
+.postula-timeline-circle {
+    position: relative;
+    z-index: 1;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    background: #0b2640;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(11, 38, 64, 0.25);
+}
+
+.postula-timeline-date {
+    display: none;
+}
+
+.postula-timeline-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0b2640;
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+}
+
+.postula-timeline-desc {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+    .postula-timeline-list {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+    }
+
+    .postula-timeline-line {
+        display: block;
+        position: absolute;
+        top: calc(2rem + 32px);
+        left: calc(10% + 1rem);
+        right: calc(10% + 1rem);
+        height: 2px;
+        background: #e0e0e0;
+        z-index: 0;
+    }
 }
