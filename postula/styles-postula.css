@@ -206,6 +206,11 @@
     }
 }
 
+/* Override del bg del CTA solo en /postula/ para usar el negro NODO */
+.cta-section {
+    background: #11110e !important;
+}
+
 /* Postulación form (CRM-backed, reemplaza HubSpot embed) */
 .postula-form {
     display: grid;
