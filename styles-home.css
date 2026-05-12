@@ -1,0 +1,285 @@
+/* Estilos del home con look /evento + /postula */
+
+/* Navbar oscuro con texto blanco (override del amarillo de evento-navbar) */
+.evento-navbar .nav-menu a {
+    color: #ffffff !important;
+}
+
+.evento-navbar .nav-menu a:hover {
+    color: #f8ed1b !important;
+}
+
+.evento-navbar .nav-menu a.btn-primary {
+    background: #f8ed1b !important;
+    color: #000000 !important;
+    border-color: #f8ed1b !important;
+}
+
+.evento-navbar .nav-menu a.btn-primary:hover {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border-color: #ffffff !important;
+}
+
+/* Mobile menu — fondo oscuro */
+@media (max-width: 768px) {
+    .evento-navbar .nav-menu {
+        background: #11110e !important;
+    }
+}
+
+/* Hamburguesa visible sobre navbar oscuro */
+.evento-navbar .mobile-menu-toggle span {
+    background: #ffffff !important;
+}
+
+/* Hero dos columnas: texto a la izquierda, imagen network a la derecha */
+.evento-hero {
+    position: relative;
+    overflow: hidden;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    background: url("assets/nodo-hero-bg.png") no-repeat center center;
+    background-size: cover;
+}
+
+.evento-hero .container {
+    height: 100%;
+}
+
+/* Sin imagen → grid de una columna */
+.evento-hero .hero-two-columns {
+    grid-template-columns: 1fr !important;
+}
+
+.evento-hero .hero-content-left {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.evento-hero .hero-content-left .hero-title,
+.evento-hero .hero-content-left .hero-subtitle {
+    text-align: center;
+}
+
+.evento-hero .hero-content-left .hero-title {
+    font-size: 48px;
+    line-height: 1.15;
+}
+
+/* Sección "La Amenaza Inminente" — fondo gris suave en vez del navy gradient */
+.problem-section {
+    background: #f0f0f0 !important;
+}
+
+.problem-section .section-title {
+    color: #000000 !important;
+}
+
+.problem-section .section-subtitle {
+    color: #555555 !important;
+}
+
+/* Cards de métricas — sin borde amarillo lateral, valor en amarillo NODO con shadow */
+.problem-section .metric-card {
+    border-left: none !important;
+    background: #ffffff !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.problem-section .metric-card:hover {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+.problem-section .metric-value {
+    color: #f8ed1b !important;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.6);
+}
+
+/* Alternancia de fondos: gris (problem/about) → blanco (opportunity/benefits) → gris (summary) */
+.opportunity-section,
+.benefits-section {
+    background: #ffffff !important;
+}
+
+.benefits-summary-section {
+    background: #f0f0f0 !important;
+}
+
+/* Cards "¿Por qué sumarte?" — sin borde amarillo lateral */
+.benefits-summary-section .benefit-summary-card {
+    border-left: none !important;
+    background: #ffffff !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.benefits-summary-section .benefit-summary-card:hover {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Cards "¿Qué ganas al sumarte?" modernas con iconos FA */
+.benefits-section .benefit-card {
+    background: #ffffff !important;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px !important;
+    padding: 2rem 1.75rem !important;
+    text-align: left !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.benefits-section .benefit-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06), 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.benefits-section .benefit-icon {
+    width: auto;
+    height: auto;
+    background: none;
+    color: #f8ed1b;
+    font-size: 2.25rem !important;
+    margin-bottom: 1rem !important;
+    line-height: 1;
+    display: inline-block;
+}
+
+.benefits-section .benefit-icon i {
+    text-shadow: 0 0 6px rgba(248, 237, 27, 0.45),
+        0 0 14px rgba(248, 237, 27, 0.25);
+}
+
+.benefits-section .benefit-card:hover .benefit-icon i {
+    text-shadow: 0 0 8px rgba(248, 237, 27, 0.6),
+        0 0 20px rgba(248, 237, 27, 0.35);
+}
+
+.benefits-section .benefit-card h3 {
+    font-size: 1.15rem;
+    color: #0b2640;
+    margin-bottom: 0.75rem !important;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.benefits-section .benefit-card p {
+    color: #555;
+    line-height: 1.55;
+    font-size: 0.95rem;
+}
+
+.opportunity-section .comparison-card {
+    border: 1px solid #e5e7eb !important;
+    border-radius: 16px !important;
+    padding: 2.5rem 2rem !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+}
+
+.opportunity-section .comparison-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06), 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.opportunity-section .comparison-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    font-size: 1.5rem;
+}
+
+.opportunity-section .comparison-icon-success {
+    background: rgba(248, 237, 27, 0.18);
+    color: #0b2640;
+}
+
+.opportunity-section .comparison-icon-warning {
+    background: #fdecea;
+    color: #c0392b;
+}
+
+.opportunity-section .comparison-card h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #0b2640;
+    margin-bottom: 1.25rem;
+}
+
+.opportunity-section .comparison-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.opportunity-section .comparison-card li {
+    padding: 0.65rem 0;
+    padding-left: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    color: #333;
+    line-height: 1.55;
+}
+
+.opportunity-section .comparison-card li::before {
+    content: none !important;
+}
+
+.opportunity-section .comparison-card li i {
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+    font-size: 1.05rem;
+}
+
+.opportunity-section .comparison-card.success li i {
+    color: #16a34a;
+}
+
+.opportunity-section .comparison-card.warning li i {
+    color: #c0392b;
+}
+
+.evento-hero .hero-cta {
+    justify-content: center;
+}
+
+/* Botón secundario en navy NODO */
+.evento-hero .btn-secondary {
+    color: #0b2640;
+    border-color: #0b2640;
+}
+
+.evento-hero .btn-secondary:hover {
+    background: #0b2640;
+    color: #ffffff;
+}
+
+.evento-hero .hero-image-right {
+    display: none;
+}
+
+.evento-hero .hero-network-image {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .evento-hero .hero-image-right {
+        display: none;
+    }
+
+    .evento-hero .hero-content-left,
+    .evento-hero .hero-cta {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .evento-hero .hero-content-left .hero-title,
+    .evento-hero .hero-content-left .hero-subtitle {
+        text-align: center;
+    }
+}

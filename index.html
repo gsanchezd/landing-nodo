@@ -16,6 +16,9 @@
     <meta http-equiv="Expires" content="0">
     <link rel="icon" type="image/png" href="assets/logo.png">
     <link rel="stylesheet" href="styles.css?v=1755651573">
+    <link rel="stylesheet" href="evento/styles-evento.css?v=1755651573">
+    <link rel="stylesheet" href="styles-home.css?v=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -69,11 +72,11 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar evento-navbar">
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <img src="assets/logo.png" alt="NODO" height="40">
+                    <img src="assets/logo-nodo-am.png" alt="NODO" height="40">
                 </div>
                 <ul class="nav-menu">
                     <li><a href="#que-es">¿Qué es NODO?</a></li>
@@ -91,27 +94,21 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero evento-hero">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Impulsamos la productividad de Chile, una persona y una empresa a la vez</h1>
-                <p class="hero-subtitle">Únete a NODO: la alianza que forma talento digital, fortalece proveedores y
-                    acelera la competitividad de tu industria con gestión 100% delegada y trazabilidad de resultados.
-                </p>
-                <div class="hero-cta">
-                    <a href="#contacto" class="btn btn-primary btn-large">Agendar Reunión</a>
-                    <a href="#que-es" class="btn btn-secondary btn-large">Conocer Más</a>
+            <div class="hero-two-columns">
+                <div class="hero-content-left">
+                    <h1 class="hero-title">Impulsamos la productividad de Chile, una persona y una empresa a la vez
+                    </h1>
+                    <p class="hero-subtitle">Únete a NODO: la alianza que forma talento digital, fortalece proveedores y
+                        acelera la competitividad de tu industria con gestión 100% delegada y trazabilidad de resultados.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#contacto" class="btn btn-primary btn-large">Agendar Reunión</a>
+                        <a href="#que-es" class="btn btn-secondary btn-large">Conocer Más</a>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-card">
-                    <div class="stat-number">3x</div>
-                    <div class="stat-label">ROI en digitalización</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">30%</div>
-                    <div class="stat-label">Reducción de costos</div>
-                </div>
+                <div class="hero-image-right"></div>
             </div>
         </div>
     </section>
@@ -165,19 +162,28 @@
             </div>
             <div class="comparison-grid">
                 <div class="comparison-card success">
+                    <div class="comparison-icon comparison-icon-success">
+                        <i class="fas fa-arrow-trend-up"></i>
+                    </div>
                     <h3>Si actuamos ahora</h3>
                     <ul>
-                        <li>Elevamos la productividad de toda la cadena de valor</li>
-                        <li>Disminuimos la dependencia externa de habilidades digitales</li>
-                        <li>Posicionamos nuestra empresa como actor estratégico del desarrollo país</li>
+                        <li><i class="fas fa-circle-check"></i>Elevamos la productividad de toda la cadena de valor</li>
+                        <li><i class="fas fa-circle-check"></i>Disminuimos la dependencia externa de habilidades
+                            digitales</li>
+                        <li><i class="fas fa-circle-check"></i>Posicionamos nuestra empresa como actor estratégico del
+                            desarrollo país</li>
                     </ul>
                 </div>
                 <div class="comparison-card warning">
+                    <div class="comparison-icon comparison-icon-warning">
+                        <i class="fas fa-triangle-exclamation"></i>
+                    </div>
                     <h3>Si seguimos esperando</h3>
                     <ul>
-                        <li>Más brechas, menos competitividad</li>
-                        <li>Dificultad creciente para reclutar talento</li>
-                        <li>Riesgo reputacional por no actuar frente a desafíos sociales</li>
+                        <li><i class="fas fa-circle-xmark"></i>Más brechas, menos competitividad</li>
+                        <li><i class="fas fa-circle-xmark"></i>Dificultad creciente para reclutar talento</li>
+                        <li><i class="fas fa-circle-xmark"></i>Riesgo reputacional por no actuar frente a desafíos
+                            sociales</li>
                     </ul>
                 </div>
             </div>
@@ -185,7 +191,7 @@
     </section>
 
     <!-- ¿Qué es NODO? Section -->
-    <section class="about-section" id="que-es" style="background: #fff !important;">
+    <section class="about-section" id="que-es">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title" style="color: #081d3f !important;">¿Qué es NODO?</h2>
@@ -230,7 +236,7 @@
     </section>
 
     <!-- Beneficios Section -->
-    <section class="benefits-section" id="beneficios" style="background: #f8f9fa !important;">
+    <section class="benefits-section" id="beneficios">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">¿Qué ganas al sumarte a NODO?</h2>
@@ -239,32 +245,32 @@
             </div>
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div class="benefit-icon">🔗</div>
+                    <div class="benefit-icon"><i class="fas fa-link"></i></div>
                     <h3>Fortalece tu cadena de valor</h3>
                     <p>Capacita digitalmente a proveedores, clientes y zonas de influencia</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">🎯</div>
+                    <div class="benefit-icon"><i class="fas fa-bullseye"></i></div>
                     <h3>Posicionamiento con propósito</h3>
                     <p>Participa de una campaña nacional con visibilidad en gremios, prensa y redes</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">📊</div>
+                    <div class="benefit-icon"><i class="fas fa-chart-pie"></i></div>
                     <h3>Impacto personalizado</h3>
                     <p>Decide el foco: mujeres, cesantes, territorios, +45, educación</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">✨</div>
+                    <div class="benefit-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
                     <h3>Multiplicación garantizada</h3>
                     <p>Cada beca donada se multiplica con aportes adicionales del Estado e instituciones formadoras</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">🚀</div>
+                    <div class="benefit-icon"><i class="fas fa-rocket"></i></div>
                     <h3>Gestión 100% delegada</h3>
                     <p>NODO gestiona todo: ejecución, seguimiento, informes y evaluación final</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">💼</div>
+                    <div class="benefit-icon"><i class="fas fa-briefcase"></i></div>
                     <h3>Acceso a talento</h3>
                     <p>Acceso preferencial a las bases de datos de participantes graduados</p>
                 </div>
