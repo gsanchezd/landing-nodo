@@ -225,11 +225,32 @@
     gap: 6px;
     min-width: 0;
 }
-/* Full-width rows: multiselects, submit and msg */
+/* Full-width rows: section headings, multiselects, submit and msg */
+.postula-section,
 .postula-field:has(.postula-checkbox-group),
 .postula-submit,
 .postula-msg {
     grid-column: 1 / -1;
+}
+.postula-section {
+    margin: 12px 0 0;
+    padding-bottom: 10px;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+.postula-section:first-child {
+    margin-top: 0;
+}
+.postula-help {
+    margin: -2px 0 4px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.4;
+    font-style: italic;
 }
 .postula-field > label {
     font-size: 14px;

@@ -922,17 +922,18 @@
                     administrativos del programa.</p>
                 <!-- BEGIN postulación form (CRM Nodo b5508fb1-...) -->
 <form id="postulacionForm" class="postula-form">
+  <h3 class="postula-section">Tus datos personales</h3>
   <div class="postula-field">
     <label>Nombre *</label>
-    <input name="firstname" type="text" required />
+    <input name="firstname" type="text" required placeholder="Ej. María" />
   </div>
   <div class="postula-field">
     <label>Apellido *</label>
-    <input name="lastname" type="text" required />
+    <input name="lastname" type="text" required placeholder="Ej. González" />
   </div>
   <div class="postula-field">
-    <label>DNI (Identificación) *</label>
-    <input name="dni__identificacion_" type="text" required />
+    <label>DNI o RUT *</label>
+    <input name="dni__identificacion_" type="text" required placeholder="Sin puntos, con guión" />
   </div>
   <div class="postula-field">
     <label>Fecha de Nacimiento *</label>
@@ -940,12 +941,14 @@
   </div>
   <div class="postula-field">
     <label>Correo *</label>
-    <input name="email" type="email" required />
+    <input name="email" type="email" required placeholder="tu@correo.cl" />
   </div>
   <div class="postula-field">
-    <label>Número de teléfono *</label>
-    <input name="phone" type="tel" required />
+    <label>Teléfono *</label>
+    <input name="phone" type="tel" required placeholder="+56 9 1234 5678" />
   </div>
+
+  <h3 class="postula-section">Sobre ti</h3>
   <div class="postula-field">
     <label>¿Con qué género te identificas? *</label>
     <select name="con_que_genero_te_identificas_" required>
@@ -961,7 +964,7 @@
   </div>
   <div class="postula-field">
     <label>Nacionalidad *</label>
-    <input name="nacionalidad" type="text" required />
+    <input name="nacionalidad" type="text" required placeholder="Ej. Chilena" />
   </div>
   <div class="postula-field">
     <label>País *</label>
@@ -1162,6 +1165,7 @@
               <option value="Zimbabue (zimbabue)">Zimbabue (zimbabue)</option>
     </select>
   </div>
+  <h3 class="postula-section">Tu camino educativo y laboral</h3>
   <div class="postula-field">
     <label>Nivel educacional *</label>
     <select name="maximo_nivel_educacional" required>
@@ -1192,8 +1196,10 @@
     <label>Nombre Empresa/Emprendimiento</label>
     <input name="nombre_empresa_emprendimiento" type="text" disabled />
   </div>
+  <h3 class="postula-section">Disponibilidad y apoyos</h3>
   <div class="postula-field">
     <label>¿En qué franja horaria te acomodan las clases en vivo? *</label>
+    <p class="postula-help">Puedes marcar más de una opción</p>
     <div class="postula-checkbox-group">
       <label class="postula-checkbox"><input type="checkbox" name="en_que_franja_horaria_te_acomodan_las_clases_en_vivo_" value="Diurno (9:00am-18:00pm)" /> <span>Diurno (9:00am-18:00pm)</span></label>
             <label class="postula-checkbox"><input type="checkbox" name="en_que_franja_horaria_te_acomodan_las_clases_en_vivo_" value="Vespertino (18:00pm-23:00pm)" /> <span>Vespertino (18:00pm-23:00pm)</span></label>
@@ -1204,6 +1210,7 @@
   </div>
   <div class="postula-field">
     <label>¿Eres una persona en situación de discapacidad? *</label>
+    <p class="postula-help">Esta información es voluntaria y nos ayuda a entregar los apoyos necesarios</p>
     <div class="postula-checkbox-group">
       <label class="postula-checkbox"><input type="checkbox" name="tipo_de_discapacidad" value="No" /> <span>No</span></label>
             <label class="postula-checkbox"><input type="checkbox" name="tipo_de_discapacidad" value="Discapacidad Auditiva" /> <span>Discapacidad Auditiva</span></label>
@@ -1216,6 +1223,7 @@
   </div>
   <div class="postula-field">
     <label>¿Perteneces a alguno de los siguientes grupos de interés para nuestro programa con enfoque inclusivo?</label>
+    <p class="postula-help">Opcional. Puedes marcar todas las que apliquen</p>
     <div class="postula-checkbox-group">
       <label class="postula-checkbox"><input type="checkbox" name="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo" value="Mujeres" /> <span>Mujeres</span></label>
             <label class="postula-checkbox"><input type="checkbox" name="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo" value="Personas cesantes" /> <span>Personas cesantes</span></label>
@@ -1226,8 +1234,9 @@
             <label class="postula-checkbox"><input type="checkbox" name="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo" value="No pertenezco a ningún grupo" /> <span>No pertenezco a ningún grupo</span></label>
     </div>
   </div>
+  <h3 class="postula-section">Tus intereses</h3>
   <div class="postula-field">
-    <label>Indícanos cuál es tu primera preferencia *</label>
+    <label>Primera preferencia de programa *</label>
     <select name="indicanos_cual_es_tu_primera_preferencia_nodo" required>
       <option value="">— Seleccionar —</option>
       <option value="IA para marketing y ventas">IA para marketing y ventas</option>
@@ -1240,7 +1249,7 @@
     </select>
   </div>
   <div class="postula-field">
-    <label>Indícanos cuál es tu segunda preferencia *</label>
+    <label>Segunda preferencia de programa *</label>
     <select name="indicanos_cual_es_tu_segunda_preferencia_nodo" required>
       <option value="">— Seleccionar —</option>
       <option value="IA para marketing y ventas">IA para marketing y ventas</option>
