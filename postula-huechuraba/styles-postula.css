@@ -1,4 +1,56 @@
-/* Estilos específicos para postula */
+/* Estilos específicos para postula-huechuraba */
+
+/* Badge "100 Becas Exclusivas" sobre el título del hero */
+.huechuraba-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #f8ed1b;
+    color: #11110e;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    padding: 0.5rem 1.1rem;
+    border-radius: 999px;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    box-shadow: 0 4px 14px rgba(248, 237, 27, 0.35);
+}
+
+.huechuraba-badge i {
+    color: #11110e;
+}
+
+/* Sección de alianza con Municipalidad — debajo del hero */
+.huechuraba-alianza {
+    background: #11110e;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.huechuraba-alianza .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.huechuraba-alianza p {
+    color: #ffffff;
+    font-size: 0.95rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+}
+
+.huechuraba-alianza img {
+    height: 60px;
+    width: auto;
+}
+
+
 
 /* Override del amarillo de evento-navbar — links blancos */
 .evento-navbar .nav-menu a {
@@ -61,12 +113,12 @@
 
 /* Botón secundario en navy NODO (en vez del rojo global) */
 .evento-hero .btn-secondary {
-    color: #0b2640;
-    border-color: #0b2640;
+    color: #081d3f;
+    border-color: #081d3f;
 }
 
 .evento-hero .btn-secondary:hover {
-    background: #0b2640;
+    background: #081d3f;
     color: #ffffff;
 }
 
@@ -160,7 +212,7 @@
     height: 64px;
     margin: 0 auto 1rem;
     border-radius: 50%;
-    background: #0b2640;
+    background: #081d3f;
     color: #ffffff;
     font-weight: 700;
     font-size: 1.5rem;
@@ -177,7 +229,7 @@
 .postula-timeline-title {
     font-size: 1rem;
     font-weight: 700;
-    color: #0b2640;
+    color: #081d3f;
     margin-bottom: 0.4rem;
     line-height: 1.3;
 }
@@ -356,7 +408,7 @@
     }
 }
 
-/* === Form de postulación: sección navy NODO + form blanco con texto negro === */
+/* === Override Huechuraba: sección azul NODO + form blanco con texto negro === */
 .cta-section#postulacion {
     background: #081d3f !important;
 }
