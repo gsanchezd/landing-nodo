@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Automation Engineer - NODO</title>
+    <meta name="description"
+        content="Programa de 5 semanas para convertirte en Test Automation Engineer. Aprende testing automatizado full-stack con Cypress, Selenium, Playwright, Appium y más. 100% gratuito.">
+    <meta property="og:title" content="Test Automation Engineer - NODO">
+    <meta property="og:description"
+        content="Programa de 5 semanas para convertirte en Test Automation Engineer. Aprende testing automatizado full-stack con Cypress, Selenium, Playwright, Appium y más. 100% gratuito.">
+    <meta property="og:type" content="website">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+    <link rel="stylesheet" href="../styles.css?v=20260515b">
+    <link rel="stylesheet" href="../evento/styles-evento.css?v=20260515b">
+    <link rel="stylesheet" href="../postula/styles-postula.css?v=20260515b">
+    <link rel="stylesheet" href="styles-testing.css?v=20260515b">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PV9S5DL6');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '832534809271682');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=832534809271682&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- TikTok Pixel Code Start -->
+    <script>
+        !function (w, d, t) {
+            w.TiktokAnalyticsObject = t; var ttq = w[t] = w[t] || []; ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie", "holdConsent", "revokeConsent", "grantConsent"], ttq.setAndDefer = function (t, e) { t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } }; for (var i = 0; i < ttq.methods.length; i++)ttq.setAndDefer(ttq, ttq.methods[i]); ttq.instance = function (t) {
+                for (
+                    var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++)ttq.setAndDefer(e, ttq.methods[n]); return e
+            }, ttq.load = function (e, n) { var r = "https://analytics.tiktok.com/i18n/pixel/events.js", o = n && n.partner; ttq._i = ttq._i || {}, ttq._i[e] = [], ttq._i[e]._u = r, ttq._t = ttq._t || {}, ttq._t[e] = +new Date, ttq._o = ttq._o || {}, ttq._o[e] = n || {}; n = document.createElement("script"); n.type = "text/javascript", n.async = !0, n.src = r + "?sdkid=" + e + "&lib=" + t; e = document.getElementsByTagName("script")[0]; e.parentNode.insertBefore(n, e) };
+
+            ttq.load('D3RVGVRC77U816ES54K0');
+            ttq.page();
+        }(window, document, 'ttq');
+    </script>
+    <!-- TikTok Pixel Code End -->
+
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/9149156.js"></script>
+    <!-- End of HubSpot Embed Code -->
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PV9S5DL6" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Navigation -->
+    <nav class="navbar evento-navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../assets/logo-nodo-am.png" alt="NODO" height="40">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#programa">Programa</a></li>
+                    <li><a href="#cursos">Curso</a></li>
+                    <li><a href="#proceso">Proceso</a></li>
+                    <li><a href="#requisitos">Requisitos</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#postulacion" class="btn btn-primary">Postula</a></li>
+                </ul>
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero evento-hero">
+        <div class="container">
+            <div class="hero-two-columns">
+                <div class="hero-content-left">
+                    <h1 class="hero-title">Postula a Nodo y lidera la transformación digital como Test Automation Engineer</h1>
+                    <p class="hero-subtitle">Formación 100% gratuita de 5 semanas para dominar testing automatizado full-stack: web, API, móvil, performance y security, integrado en CI/CD con herramientas profesionales.</p>
+                    <div class="hero-cta">
+                        <a href="#postulacion" class="btn btn-primary btn-large">Postula Aquí</a>
+                        <a href="#cursos" class="btn btn-secondary btn-large">Ver Programa</a>
+                    </div>
+                </div>
+                <div class="hero-image-right">
+                    <img src="../assets/nodo-hero.png" alt="Red NODO" class="hero-network-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Description Section -->
+    <section class="testing-about-section" id="programa" style="background: #081d3f !important;">
+        <div class="container">
+            <!-- Modern Layout with Images -->
+            <div style="display: grid; gap: 2rem;">
+
+                <!-- ¿Qué es NODO? Card with Image -->
+                <div class="nodo-card"
+                    style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); display: grid; grid-template-columns: 1fr 1fr; min-height: 350px;">
+                    <!-- Image Side -->
+                    <div
+                        style="background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; position: relative;">
+                        <div style="position: absolute; inset: 0;"></div>
+                        <div style="position: relative; z-index: 1; text-align: center; padding: 0; width: 100%;">
+                            <img src="../assets/nodo-section.png" alt="NODO"
+                                style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        </div>
+                    </div>
+                    <!-- Content Side -->
+                    <div style="padding: 3rem; display: flex; flex-direction: column; justify-content: center;">
+                        <p style="font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #999; margin: 0 0 0.85rem 0;">Sobre el Programa</p>
+                        <h2 style="font-size: 2rem; margin: 0 0 1rem 0; color: rgb(0, 0, 0); font-weight: 700; line-height: 1.2;">¿Qué es NODO?</h2>
+                        <p style="line-height: 1.6; margin: 0 0 1.25rem 0; font-size: 1rem; color: #666;">
+                            Iniciativa que cierra la brecha digital, impulsa la productividad y genera empleabilidad en Chile.
+                        </p>
+                        <p style="line-height: 1.8; margin: 0; font-size: 1.05rem; color: #333;">
+                            Programa formativo que empodera a profesionales, emprendedores y estudiantes con competencias en inteligencia artificial y automatización para transformar sus contextos laborales.
+                        </p>
+                        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid #e0e0e0;">
+                            <p style="color: #11110e; font-weight: 600; font-size: 0.95rem; margin: 0;">Transforma tu futuro</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <style>
+                @media (max-width: 768px) {
+                    section#programa div[style*="grid-template-columns: 1fr 1fr"] {
+                        grid-template-columns: 1fr !important;
+                    }
+                }
+            </style>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="testing-benefits-section-bg">
+        <div class="container">
+            <div class="testing-section-header">
+                <h2 class="testing-benefits-title">Beneficios de NODO</h2>
+                <p class="testing-benefits-subtitle">Todo lo que obtienes al ser parte del programa</p>
+            </div>
+
+            <!-- Beneficios Grid with Icons -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem;">
+
+                <div
+                    style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); text-align: center; transition: transform 0.3s ease;">
+                    <div
+                        style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: #11110e; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">
+                        <i class="fas fa-graduation-cap" style="color: white;"></i>
+                    </div>
+                    <h4 style="color: #081d3f; font-size: 1.2rem; margin-bottom: 0.5rem;">Beca 100% Gratuita</h4>
+                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin: 0;">Acceso sin costo a
+                        formación de alto nivel</p>
+                </div>
+
+                <div
+                    style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); text-align: center; transition: transform 0.3s ease;">
+                    <div
+                        style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">
+                        <i class="fas fa-book-open" style="color: white;"></i>
+                    </div>
+                    <h4 style="color: #081d3f; font-size: 1.2rem; margin-bottom: 0.5rem;">Formación Práctica</h4>
+                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin: 0;">Aprendizaje práctico e
+                        iterativo con proyectos reales en cada unidad</p>
+                </div>
+
+                <div
+                    style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); text-align: center; transition: transform 0.3s ease;">
+                    <div
+                        style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">
+                        <i class="fas fa-certificate" style="color: white;"></i>
+                    </div>
+                    <h4 style="color: #081d3f; font-size: 1.2rem; margin-bottom: 0.5rem;">Certificación Reconocida
+                    </h4>
+                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin: 0;">Valida tus nuevas
+                        competencias digitales</p>
+                </div>
+
+                <div
+                    style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); text-align: center; transition: transform 0.3s ease;">
+                    <div
+                        style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">
+                        <i class="fas fa-users" style="color: white;"></i>
+                    </div>
+                    <h4 style="color: #081d3f; font-size: 1.2rem; margin-bottom: 0.5rem;">Networking</h4>
+                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin: 0;">Acceso a comunidad de
+                        profesionales y expertos</p>
+                </div>
+
+                <div
+                    style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); text-align: center; transition: transform 0.3s ease;">
+                    <div
+                        style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">
+                        <i class="fas fa-lightbulb" style="color: white;"></i>
+                    </div>
+                    <h4 style="color: #081d3f; font-size: 1.2rem; margin-bottom: 0.5rem;">Hackathon Nacional</h4>
+                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin: 0;">Participa en desafíos
+                        de innovación</p>
+                </div>
+
+                <!-- Inclusive Card - Takes remaining space -->
+                <div
+                    style="background: #11110e; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;"><i class="fas fa-star" style="color: white;"></i>
+                    </div>
+                    <h4 style="color: white; font-size: 1.3rem; margin-bottom: 0.75rem; font-weight: 700;">Formación
+                        Inclusiva</h4>
+                    <p style="color: rgba(255, 255, 255, 0.95); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                        Para mujeres, cesantes, +45 años, estudiantes TP, emprendedores y pymes
+                    </p>
+                </div>
+            </div>
+
+            <style>
+                @media (max-width: 768px) {
+                    section div[style*="grid-template-columns: repeat(3, 1fr)"] {
+                        grid-template-columns: 1fr !important;
+                    }
+                }
+            </style>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="testing-courses-section" id="cursos">
+        <div class="container">
+            <div class="testing-section-header">
+                <h2 class="testing-courses-title">Detalle del Curso</h2>
+            </div>
+
+            <!-- Single Column Layout -->
+            <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; margin-top: 2rem; max-width: 900px; margin-left: auto; margin-right: auto;">
+
+                <!-- Base Course -->
+                <div>
+                    <div
+                        style="background-color: #fff; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+                        <h3 style="color: #1a73e8; margin: 0.5rem 0;">Transformación Digital con Testing Automatizado</h3>
+                        <p style="margin: 0.5rem 0;"><strong><i class="far fa-calendar-alt"
+                                    style="margin-right: 0.5rem;"></i>Fecha de inicio:</strong> 27 de mayo 2026</p>
+                        <p style="margin: 0.5rem 0;"><strong><i class="far fa-calendar-check"
+                                    style="margin-right: 0.5rem;"></i>Fecha de término:</strong> 3 de julio 2026</p>
+                        <p style="margin: 0.5rem 0;"><strong><i class="far fa-clock"
+                                    style="margin-right: 0.5rem;"></i>Duración:</strong> 5 semanas</p>
+                        <p style="margin: 0.5rem 0;"><strong><i class="fas fa-laptop"
+                                    style="margin-right: 0.5rem;"></i>Modalidad:</strong> E-learning 100% asincrónico,
+                            online
+                        </p>
+                        <p style="margin: 0.5rem 0 0 0;"><strong><i class="fas fa-bullseye"
+                                    style="margin-right: 0.5rem;"></i>Bienvenida / Kickoff:</strong> Instancia
+                            sincrónica de orientación al inicio del curso</p>
+                    </div>
+
+                    <div
+                        style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <p style="margin: 0 0 1rem 0; font-size: 0.95rem;">Programa profesional que lleva a la persona
+                            participante desde los fundamentos del testing hasta la entrega de un proyecto integral
+                            listo para producción. El aprendizaje es práctico e iterativo: cada unidad agrega
+                            funcionalidades reales a un repositorio vivo que cubre Web, API, móvil, performance y
+                            seguridad, integrado en CI/CD en la nube. Herramientas de uso extendido como Cypress,
+                            Selenium, Playwright, Postman, Appium, Docker, GitHub Actions/GitLab CI y Grafana se
+                            utilizan durante todo el itinerario.</p>
+
+                        <p style="margin: 1rem 0 0.5rem 0; font-weight: 600; color: #1a73e8;">Objetivo del curso:</p>
+                        <p style="margin: 0 0 1.5rem 0; font-size: 0.9rem; color: #333;">Dominar de punta a punta la
+                            ingeniería de calidad: estrategia, automatización full-stack, pruebas no funcionales,
+                            observabilidad y liderazgo en entornos DevOps, comunicando valor al negocio y a los
+                            stakeholders.</p>
+
+                        <!-- Desplegable solo para el contenido -->
+                        <details style="cursor: pointer;">
+                            <summary
+                                style="list-style: none; display: flex; align-items: center; font-weight: 600; color: #1a73e8; padding: 0.75rem; border-radius: 8px; background: #f8f9fa;">
+                                <span style="font-size: 1.5rem; margin-right: 0.5rem;"><i
+                                        class="fas fa-list-ul"></i></span>
+                                <span>Ver Contenido del Programa</span>
+                                <span style="margin-left: auto; font-size: 1.5rem;"><i
+                                        class="fas fa-chevron-down"></i></span>
+                            </summary>
+                            <div style="margin-top: 1rem; display: grid; grid-template-columns: 1fr; gap: 0.75rem;">
+                                <div style="padding: 0.75rem; border-radius: 8px; background: #f8f9fa;">
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <span style="font-size: 1.5rem;"><i class="fas fa-code-branch"
+                                                style="color: #667eea;"></i></span>
+                                        <div>
+                                            <strong style="color: #1a73e8;">Prework – Puente de Programación</strong>
+                                            <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">Lógica
+                                                básica, Git/GitHub, Git Flow, linters y katas con PR</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 0.75rem; border-radius: 8px; background: #f8f9fa;">
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <span style="font-size: 1.5rem;"><i class="fas fa-vial"
+                                                style="color: #667eea;"></i></span>
+                                        <div>
+                                            <strong style="color: #1a73e8;">Fundamentos y Estrategia de Testing</strong>
+                                            <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">
+                                                Principios QA, pirámide/cuadrantes, análisis de riesgo, métricas y OKRs
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 0.75rem; border-radius: 8px; background: #f8f9fa;">
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <span style="font-size: 1.5rem;"><i class="fas fa-cog"
+                                                style="color: #667eea;"></i></span>
+                                        <div>
+                                            <strong style="color: #1a73e8;">Setup Profesional de QA</strong>
+                                            <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">Entorno
+                                                local, Docker, gestión de dependencias, smoke tests iniciales</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 0.75rem; border-radius: 8px; background: #f8f9fa;">
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <span style="font-size: 1.5rem;"><i class="fab fa-js-square"
+                                                style="color: #667eea;"></i></span>
+                                        <div>
+                                            <strong style="color: #1a73e8;">Programación con TypeScript & POM</strong>
+                                            <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">
+                                                OOP/SOLID, Page Object Model, utilidades y reusabilidad</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 0.75rem; border-radius: 8px; background: #f8f9fa;">
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <span style="font-size: 1.5rem;"><i class="fas fa-circle-notch"
+                                                style="color: #667eea;"></i></span>
+                                        <div>
+                                            <strong style="color: #1a73e8;">Cypress Avanzado: E2E + Component</strong>
+                                            <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">
+                                                Intercept/mocks, fixtures, pruebas de componentes, reportería Allure</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 0.75rem; border-radius: 8px; background: #f8f9fa;">
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <span style="font-size: 1.5rem;"><i class="fas fa-browser"
+                                                style="color: #667eea;"></i></span>
+                                        <div>
+                                            <strong style="color: #1a73e8;">Selenium WebDriver & Legacy Apps</strong>
+                                            <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">
+                                                Selectores robustos, Selenium Grid, ejecución paralela</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 0.75rem; border-radius: 8px; background: #f8f9fa;">
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <span style="font-size: 1.5rem;"><i class="fas fa-exchange-alt"
+                                                style="color: #667eea;"></i></span>
+                                        <div>
+                                            <strong style="color: #1a73e8;">Testing de APIs</strong>
+                                            <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">
+                                                Postman/Newman, contratos OpenAPI, SuperTest/REST</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 0.75rem; border-radius: 8px; background: #f8f9fa;">
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <span style="font-size: 1.5rem;"><i class="fas fa-file-alt"
+                                                style="color: #667eea;"></i></span>
+                                        <div>
+                                            <strong style="color: #1a73e8;">BDD con Playwright & Cucumber.js</strong>
+                                            <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">Gherkin,
+                                                step definitions reutilizables, integración en CI</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 0.75rem; border-radius: 8px; background: #f8f9fa;">
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <span style="font-size: 1.5rem;"><i class="fas fa-mobile-alt"
+                                                style="color: #667eea;"></i></span>
+                                        <div>
+                                            <strong style="color: #1a73e8;">Automatización de Pruebas Móviles</strong>
+                                            <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">Appium 2,
+                                                emuladores/simuladores, orquestación en nube</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 0.75rem; border-radius: 8px; background: #f8f9fa;">
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <span style="font-size: 1.5rem;"><i class="fas fa-tachometer-alt"
+                                                style="color: #667eea;"></i></span>
+                                        <div>
+                                            <strong style="color: #1a73e8;">Pruebas No Funcionales</strong>
+                                            <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">
+                                                Performance (JMeter/k6), Security (OWASP ZAP), auditorías</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 0.75rem; border-radius: 8px; background: #f8f9fa;">
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <span style="font-size: 1.5rem;"><i class="fab fa-docker"
+                                                style="color: #667eea;"></i></span>
+                                        <div>
+                                            <strong style="color: #1a73e8;">CI/CD, Docker y Cloud Testing</strong>
+                                            <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">Pipelines
+                                                GitHub/GitLab, matrices de ejecución, grids en nube</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 0.75rem; border-radius: 8px; background: #f8f9fa;">
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <span style="font-size: 1.5rem;"><i class="fas fa-chart-line"
+                                                style="color: #667eea;"></i></span>
+                                        <div>
+                                            <strong style="color: #1a73e8;">Observabilidad, Métricas y
+                                                Reporting</strong>
+                                            <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">
+                                                Dashboards Allure/Grafana, flake rate, cobertura de escenarios</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 0.75rem; border-radius: 8px; background: #f8f9fa;">
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <span style="font-size: 1.5rem;"><i class="fas fa-magic"
+                                                style="color: #667eea;"></i></span>
+                                        <div>
+                                            <strong style="color: #1a73e8;">Tendencias: IA, Visual & Contract
+                                                Testing</strong>
+                                            <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">
+                                                Generación asistida de tests, visual testing, Pact/contract testing</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 0.75rem; border-radius: 8px; background: #f8f9fa;">
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <span style="font-size: 1.5rem;"><i class="fas fa-users"
+                                                style="color: #667eea;"></i></span>
+                                        <div>
+                                            <strong style="color: #1a73e8;">Soft Skills y Liderazgo QA</strong>
+                                            <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">
+                                                Comunicación con stakeholders, priorización, facilitación ágil</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 0.75rem; border-radius: 8px; background: #f8f9fa;">
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <span style="font-size: 1.5rem;"><i class="fas fa-project-diagram"
+                                                style="color: #667eea;"></i></span>
+                                        <div>
+                                            <strong style="color: #1a73e8;">Proyecto Integral – Capstone</strong>
+                                            <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">Diseño de
+                                                estrategia, suites Web/API/Móvil, NFRs en CI/CD, demo final</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Responsive behavior -->
+            <style>
+                @media (max-width: 768px) {
+
+                    .testing-courses-section #cursos>div>div[style*="grid-template-columns: 1fr 1fr"],
+                    section[id="cursos"]>div>div[style*="grid-template-columns: 1fr 1fr"] {
+                        grid-template-columns: 1fr !important;
+                    }
+                }
+            </style>
+        </div>
+    </section>
+
+    <!-- Application Process Section -->
+    <section class="opportunity-section" id="proceso" style="background: var(--gray-light); padding-bottom: 0;">
+        <div class="container">
+            <div class="testing-section-header">
+                <h2 class="testing-process-title">Cómo Postular</h2>
+                <p class="testing-process-subtitle">Hitos clave del proceso y requisitos para participar</p>
+            </div>
+
+            <!-- Timeline horizontal -->
+            <div class="testing-timeline">
+                <ol class="testing-timeline-list">
+                    <li class="testing-timeline-item">
+                        <div class="testing-timeline-circle">1</div>
+                        <div class="testing-timeline-date">15 mayo</div>
+                        <div class="testing-timeline-title">Inicio de Convocatoria</div>
+                        <div class="testing-timeline-desc">Completa tu postulación en línea.</div>
+                    </li>
+                    <li class="testing-timeline-item">
+                        <div class="testing-timeline-circle">2</div>
+                        <div class="testing-timeline-date">25 mayo</div>
+                        <div class="testing-timeline-title">Selección de Becados</div>
+                        <div class="testing-timeline-desc">Recibe confirmación por email.</div>
+                    </li>
+                    <li class="testing-timeline-item">
+                        <div class="testing-timeline-circle">3</div>
+                        <div class="testing-timeline-date">27 mayo</div>
+                        <div class="testing-timeline-title">Inicio del Curso</div>
+                        <div class="testing-timeline-desc">Bienvenida obligatoria al iniciar el programa.</div>
+                    </li>
+                    <li class="testing-timeline-item">
+                        <div class="testing-timeline-circle">4</div>
+                        <div class="testing-timeline-date">3 julio</div>
+                        <div class="testing-timeline-title">Finalización</div>
+                        <div class="testing-timeline-desc">Entrega del proyecto final y certificación.</div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Requisitos Mínimos (bg full-width, content en container) -->
+        <div id="requisitos" style="background: #ffffff; padding: 4rem 0; margin: 5rem 0 0; box-shadow: 0 6px 24px rgba(0,0,0,0.06); scroll-margin-top: 90px;">
+            <div class="container">
+                <h3 style="text-align: center; font-size: 1.5rem; color: #1a1a1a; font-weight: 700; margin: 0 0 0.4rem 0;">Requisitos Mínimos</h3>
+                <p style="text-align: center; color: #666; font-size: 0.95rem; margin: 0 0 2rem 0;">Asegúrate de cumplir antes de postular</p>
+
+                <div class="requisitos-2col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <!-- Columna izquierda: Obligatorios -->
+                    <div>
+                        <p style="text-align: center; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #999; margin: 0 0 1rem 0;">Obligatorios</p>
+                        <div style="background: white; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); padding: 0.5rem 1.5rem; border: 1px solid #f0f0f0;">
+                            <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid #f0f0f0;">
+                                <div style="flex-shrink: 0; width: 32px; height: 32px; background: #11110e; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </div>
+                                <p style="margin: 0; font-size: 0.95rem; font-weight: 600; color: #1a1a1a; line-height: 1.4;">Conocimientos intermedios en JavaScript, Java o Python</p>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid #f0f0f0;">
+                                <div style="flex-shrink: 0; width: 32px; height: 32px; background: #11110e; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </div>
+                                <p style="margin: 0; font-size: 0.95rem; font-weight: 600; color: #1a1a1a; line-height: 1.4;">HTML, CSS y Git básicos</p>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid #f0f0f0;">
+                                <div style="flex-shrink: 0; width: 32px; height: 32px; background: #11110e; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </div>
+                                <p style="margin: 0; font-size: 0.95rem; font-weight: 600; color: #1a1a1a; line-height: 1.4;">Familiaridad con el SDLC</p>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem 0;">
+                                <div style="flex-shrink: 0; width: 32px; height: 32px; background: #11110e; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </div>
+                                <p style="margin: 0; font-size: 0.95rem; font-weight: 600; color: #1a1a1a; line-height: 1.4;">Inglés técnico intermedio/avanzado</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna derecha: Deseables -->
+                    <div>
+                        <p style="text-align: center; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #999; margin: 0 0 1rem 0;">Deseables</p>
+                        <div style="background: white; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); padding: 0.5rem 1.5rem; border: 1px dashed #d4d4d4;">
+                            <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid #f0f0f0;">
+                                <div style="flex-shrink: 0; width: 32px; height: 32px; background: #f8ed1b; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M5 12h14" stroke="#081d3f" stroke-width="3" stroke-linecap="round"/></svg>
+                                </div>
+                                <p style="margin: 0; font-size: 0.95rem; font-weight: 600; color: #1a1a1a; line-height: 1.4;">Experiencia previa en testing manual y metodologías ágiles</p>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem 0;">
+                                <div style="flex-shrink: 0; width: 32px; height: 32px; background: #f8ed1b; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M5 12h14" stroke="#081d3f" stroke-width="3" stroke-linecap="round"/></svg>
+                                </div>
+                                <p style="margin: 0; font-size: 0.95rem; font-weight: 600; color: #1a1a1a; line-height: 1.4;">Conocimientos de SQL y herramientas de bug-tracking</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <style>
+                /* Timeline (mismo patrón que /postula/) */
+                .testing-timeline { position: relative; max-width: 1100px; margin: 3rem auto 0; padding: 0 1rem; }
+                .testing-timeline-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 2rem; }
+                .testing-timeline-item { text-align: center; padding: 0 0.5rem; position: relative; }
+                .testing-timeline-circle { position: relative; z-index: 1; width: 64px; height: 64px; margin: 0 auto 1rem; border-radius: 50%; background: #0b2640; color: #ffffff; font-weight: 700; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(11, 38, 64, 0.25); }
+                .testing-timeline-date { display: inline-block; background: var(--primary-color); color: var(--primary-navy); padding: 0.2rem 0.7rem; border-radius: 999px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; margin-bottom: 0.5rem; }
+                .testing-timeline-title { font-size: 1rem; font-weight: 700; color: #0b2640; margin-bottom: 0.4rem; line-height: 1.3; }
+                .testing-timeline-desc { font-size: 0.9rem; color: #555; line-height: 1.5; }
+                @media (min-width: 768px) {
+                    .testing-timeline-list { grid-template-columns: repeat(4, 1fr); gap: 1rem; position: relative; }
+                    .testing-timeline-list::before { content: ''; position: absolute; top: calc(2rem + 32px); left: calc(12.5% + 1rem); right: calc(12.5% + 1rem); height: 2px; background: #e0e0e0; z-index: 0; }
+                }
+
+                /* Responsive Requisitos 2-col */
+                @media (max-width: 768px) {
+                    .requisitos-2col { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+                }
+
+                /* Responsive para Sobre el Programa */
+                @media (max-width: 768px) {
+                    section#programa .nodo-card {
+                        grid-template-columns: 1fr !important;
+                        min-height: auto !important;
+                    }
+                    section#programa .nodo-card>div:first-child { min-height: 250px !important; }
+                    section#programa .nodo-card>div:last-child { padding: 2rem !important; }
+                    section#programa .nodo-card h3 { font-size: 1.5rem !important; }
+                    section#programa .nodo-card p { font-size: 1rem !important; }
+                    section#programa div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+                    section#programa div[style*="grid-template-columns: repeat(3, 1fr)"] { grid-template-columns: 1fr !important; }
+                }
+                @media (max-width: 768px) {
+                    .benefits-section div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+                }
+            </style>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="benefits-summary-section" id="faq" style="background: var(--gray-light);">
+        <div class="container">
+            <div class="testing-section-header">
+                <h2 class="testing-faq-title">Preguntas Frecuentes</h2>
+                <p class="testing-faq-subtitle">Resuelve tus dudas sobre el programa NODO</p>
+            </div>
+            <div class="nodo-faq-list">
+                <details class="nodo-faq">
+                    <summary class="nodo-faq-summary">
+                        <span class="nodo-faq-question">¿Qué costo tiene el programa?</span>
+                        <span class="nodo-faq-icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="nodo-faq-answer">Es 100% gratuito. El programa ofrece becas completas gracias al apoyo de empresas e instituciones comprometidas con el desarrollo digital de Chile.</div>
+                </details>
+                <details class="nodo-faq">
+                    <summary class="nodo-faq-summary">
+                        <span class="nodo-faq-question">¿Debo tener conocimientos previos?</span>
+                        <span class="nodo-faq-icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="nodo-faq-answer">Sí, necesitas conocimientos intermedios en JavaScript, Java o Python, además de HTML, CSS y Git básicos. También es importante tener familiaridad con el SDLC e inglés técnico.</div>
+                </details>
+                <details class="nodo-faq">
+                    <summary class="nodo-faq-summary">
+                        <span class="nodo-faq-question">¿Cuánto tiempo debo dedicar?</span>
+                        <span class="nodo-faq-icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="nodo-faq-answer">El programa es 100% asincrónico y dura 5 semanas. Se recomienda dedicar entre 8-10 horas semanales para completar el contenido, los proyectos prácticos y las evaluaciones.</div>
+                </details>
+                <details class="nodo-faq">
+                    <summary class="nodo-faq-summary">
+                        <span class="nodo-faq-question">¿Recibiré certificado?</span>
+                        <span class="nodo-faq-icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="nodo-faq-answer">Sí, recibirás certificación reconocida al cumplir con los requisitos de participación y aprobar las evaluaciones del programa.</div>
+                </details>
+                <details class="nodo-faq">
+                    <summary class="nodo-faq-summary">
+                        <span class="nodo-faq-question">¿Hay soporte durante el programa?</span>
+                        <span class="nodo-faq-icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="nodo-faq-answer">Sí, contarás con tutores, comunidad de aprendizaje y canales de soporte técnico durante todo el programa.</div>
+                </details>
+                <details class="nodo-faq">
+                    <summary class="nodo-faq-summary">
+                        <span class="nodo-faq-question">¿Qué proyecto final debo presentar?</span>
+                        <span class="nodo-faq-icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="nodo-faq-answer">Desarrollarás un proyecto integral de testing automatizado que cubre pruebas web, API, móvil, performance y seguridad, todo integrado en CI/CD y listo para producción.</div>
+                </details>
+            </div>
+        </div>
+
+        <style>
+            .nodo-faq-list { max-width: 880px; margin: 2.5rem auto 0; display: flex; flex-direction: column; gap: 0.75rem; }
+            .nodo-faq { background: #ffffff; border: 1px solid #ececec; border-radius: 12px; overflow: hidden; transition: border-color 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); }
+            .nodo-faq:hover { border-color: var(--primary-color); box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06); }
+            .nodo-faq[open] { border-color: var(--primary-color); box-shadow: 0 8px 24px rgba(248, 237, 27, 0.18); }
+            .nodo-faq-summary { display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; padding: 1.25rem 1.5rem; cursor: pointer; list-style: none; user-select: none; }
+            .nodo-faq-summary::-webkit-details-marker { display: none; }
+            .nodo-faq-summary::marker { display: none; content: ''; }
+            .nodo-faq-question { flex: 1; font-size: 1.05rem; font-weight: 700; color: var(--primary-navy); line-height: 1.4; }
+            .nodo-faq-icon { flex-shrink: 0; width: 34px; height: 34px; background: var(--primary-color); color: var(--primary-navy); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+            .nodo-faq:hover .nodo-faq-icon { box-shadow: 0 4px 12px rgba(248, 237, 27, 0.45); }
+            .nodo-faq[open] .nodo-faq-icon { transform: rotate(180deg); box-shadow: 0 4px 12px rgba(248, 237, 27, 0.55); }
+            .nodo-faq-answer { padding: 0 1.5rem 1.5rem 1.5rem; color: #555; line-height: 1.65; font-size: 0.97rem; }
+            @supports (interpolate-size: allow-keywords) { :root { interpolate-size: allow-keywords; } }
+            .nodo-faq::details-content { block-size: 0; overflow: clip; opacity: 0; transition: content-visibility 0.35s allow-discrete, block-size 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.22s ease; }
+            .nodo-faq[open]::details-content { block-size: auto; opacity: 1; }
+            @media (max-width: 600px) {
+                .nodo-faq-summary { padding: 1rem 1.1rem; gap: 0.9rem; }
+                .nodo-faq-question { font-size: 0.98rem; }
+                .nodo-faq-answer { padding: 0 1.1rem 1.2rem 1.1rem; font-size: 0.93rem; }
+            }
+        </style>
+    </section>
+
+    <!-- Partners Section -->
+    <section style="background: #ffffff; padding: 4rem 0;">
+        <div class="container">
+            <div
+                style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 3rem; align-items: start; max-width: 1200px; margin: 0 auto;">
+
+                <!-- Empresas Impulsoras -->
+                <div style="text-align: center;">
+                    <h3
+                        style="font-size: 1rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #999; margin-bottom: 2.5rem;">
+                        Empresas Impulsoras</h3>
+                    <div
+                        style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 4rem;">
+                        <img src="../assets/accenture-logo.png" alt="Accenture"
+                            style="height: 180px; transition: all 0.3s ease;">
+                        <img src="../assets/globant-logo.png" alt="Globant"
+                            style="height: 180px; transition: all 0.3s ease;">
+                    </div>
+                </div>
+
+                <!-- Separator -->
+                <div
+                    style="width: 1px; background: linear-gradient(180deg, transparent, #e0e0e0, transparent); height: 100%; min-height: 300px; align-self: stretch;">
+                </div>
+
+                <!-- Empresas Aliadas -->
+                <div style="text-align: center;">
+                    <h3
+                        style="font-size: 1rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #999; margin-bottom: 2.5rem;">
+                        Empresas Aliadas</h3>
+                    <div
+                        style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 4rem;">
+                        <img src="../assets/acti-logo.png" alt="ACTI" style="height: 180px; transition: all 0.3s ease;">
+                        <img src="../assets/otic-logo.png" alt="OTIC" style="height: 180px; transition: all 0.3s ease;">
+                        <img src="../assets/logo-adl.png" alt="ADL" style="height: 180px; transition: all 0.3s ease;">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Instituciones que Apoyan (fila inferior) -->
+            <div style="max-width: 1200px; margin: 4rem auto 0; text-align: center;">
+                <h3 style="font-size: 1rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #999; margin-bottom: 2.5rem;">Instituciones que Apoyan</h3>
+                <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 4rem;">
+                    <img src="../assets/mercadolibre-logo.png" alt="Mercado Libre" style="height: 90px; transition: all 0.3s ease;">
+                    <img src="../assets/logo-huechuraba.svg" alt="Municipalidad de Huechuraba" style="height: 75px; transition: all 0.3s ease;">
+                </div>
+            </div>
+
+            <!-- Responsive -->
+            <style>
+                @media (max-width: 768px) {
+                    section div[style*="grid-template-columns: 1fr auto 1fr"] {
+                        grid-template-columns: 1fr !important;
+                        gap: 3rem !important;
+                    }
+
+                    section div[style*="min-height: 300px"] {
+                        display: none !important;
+                    }
+
+                    section div[style*="flex-direction: row"][style*="gap: 4rem"] {
+                        flex-direction: column !important;
+                        gap: 2rem !important;
+                    }
+                }
+            </style>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="cta-section" id="postulacion">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Postula ahora y forma parte de la generación que transformará el futuro digital de
+                    Chile</h2>
+                <p class="cta-subtitle">Completa el formulario y nos contactaremos contigo a la brevedad.
+                    Al enviar tu postulación, aceptas nuestros términos y condiciones y el uso de tus datos para fines
+                    administrativos del programa.</p>
+                <!-- BEGIN postulación form (CRM form_id 598ae892-b476-4222-9180-ce36bf66d9f3) -->
+<form id="postulacionForm" class="postula-form" data-form-id="598ae892-b476-4222-9180-ce36bf66d9f3" enctype="multipart/form-data">
+<h3 class="postula-section">Datos personales</h3>
+<div class="postula-field">
+  <label>Nombres *</label>
+  <input name="firstname" type="text" required placeholder="Ejemplo: María José" />
+  <small>Ejemplo: María José</small>
+</div>
+<div class="postula-field">
+  <label>Apellidos *</label>
+  <input name="lastname" type="text" required placeholder="Ejemplo: González Pérez" />
+  <small>Ejemplo: González Pérez</small>
+</div>
+<div class="postula-field">
+  <label>Tipo de documento de identidad *</label>
+  <select name="tipo_documento_identidad" required>
+    <option value="">— Seleccionar —</option>
+    <option value="RUT">RUT</option>
+    <option value="DNI">DNI</option>
+    <option value="Pasaporte">Pasaporte</option>
+    <option value="Otro">Otro</option>
+  </select>
+  
+</div>
+<div class="postula-field">
+  <label>Número de documento *</label>
+  <input name="dni__identificacion_" type="text" required placeholder="Si es RUT, sin puntos y con guion. Ejemplo: 12345678-9" />
+  <small>Si es RUT, sin puntos y con guion. Ejemplo: 12345678-9</small>
+</div>
+<div class="postula-field">
+  <label>Fecha de nacimiento *</label>
+  <input name="fecha_de_nacimiento" type="date" required />
+  
+</div>
+<div class="postula-field">
+  <label>Correo electrónico personal *</label>
+  <input name="email" type="email" required placeholder="Ejemplo: nombre@correo.cl" />
+</div>
+<div class="postula-field">
+  <label>Teléfono con WhatsApp *</label>
+  <input name="phone" type="tel" required placeholder="Ejemplo: +56 9 1234 5678" />
+  <small>Ejemplo: +56 9 1234 5678</small>
+</div>
+<div class="postula-field postula-field-full">
+  <label>Documento de identidad</label>
+  <input name="documento_identidad_archivo" type="file" data-upload="true" accept=".pdf,.jpg,.jpeg,.png,.webp,.doc,.docx" />
+  <small>Sube una foto o copia de tu documento por ambos lados</small>
+</div>
+<h3 class="postula-section">Sobre ti</h3>
+<div class="postula-field">
+  <label>¿Con qué género te identificas? *</label>
+  <select name="con_que_genero_te_identificas_" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Mujer">Mujer</option>
+    <option value="Hombre">Hombre</option>
+    <option value="Otro">Otro</option>
+    <option value="Prefiero no responder">Prefiero no responder</option>
+  </select>
+  
+</div>
+<div class="postula-field">
+  <label>¿Cuál es tu nacionalidad? *</label>
+  <select name="nacionalidad" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Chilena">Chilena</option>
+    <option value="Argentina">Argentina</option>
+    <option value="Boliviana">Boliviana</option>
+    <option value="Colombiana">Colombiana</option>
+    <option value="Cubana">Cubana</option>
+    <option value="Ecuatoriana">Ecuatoriana</option>
+    <option value="Española">Española</option>
+    <option value="Mexicana">Mexicana</option>
+    <option value="Peruana">Peruana</option>
+    <option value="Venezolana">Venezolana</option>
+    <option value="Otra">Otra</option>
+  </select>
+  
+</div>
+<div class="postula-field">
+  <label>Si marcaste &quot;Otra&quot;, indica tu nacionalidad</label>
+  <input name="otra_nacionalidad" type="text" placeholder="" />
+  
+</div>
+<div class="postula-field">
+  <label>País de residencia *</label>
+  <select name="pais" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Chile">Chile</option>
+    <option value="Argentina">Argentina</option>
+    <option value="Bolivia">Bolivia</option>
+    <option value="Colombia">Colombia</option>
+    <option value="Cuba">Cuba</option>
+    <option value="Ecuador">Ecuador</option>
+    <option value="España">España</option>
+    <option value="México">México</option>
+    <option value="Perú">Perú</option>
+    <option value="Venezuela">Venezuela</option>
+    <option value="Otro">Otro</option>
+  </select>
+  
+</div>
+<div class="postula-field">
+  <label>Si marcaste &quot;Otro&quot;, indica tu país</label>
+  <input name="otro_pais_residencia" type="text" placeholder="" />
+  
+</div>
+<div class="postula-field">
+  <label>Región de residencia *</label>
+  <select name="region_residencia" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Arica y Parinacota">Arica y Parinacota</option>
+    <option value="Tarapacá">Tarapacá</option>
+    <option value="Antofagasta">Antofagasta</option>
+    <option value="Atacama">Atacama</option>
+    <option value="Coquimbo">Coquimbo</option>
+    <option value="Valparaíso">Valparaíso</option>
+    <option value="Metropolitana de Santiago">Metropolitana de Santiago</option>
+    <option value="Libertador General Bernardo O&#x27;Higgins">Libertador General Bernardo O&#x27;Higgins</option>
+    <option value="Maule">Maule</option>
+    <option value="Ñuble">Ñuble</option>
+    <option value="Biobío">Biobío</option>
+    <option value="La Araucanía">La Araucanía</option>
+    <option value="Los Ríos">Los Ríos</option>
+    <option value="Los Lagos">Los Lagos</option>
+    <option value="Aysén del General Carlos Ibáñez del Campo">Aysén del General Carlos Ibáñez del Campo</option>
+    <option value="Magallanes y de la Antártica Chilena">Magallanes y de la Antártica Chilena</option>
+    <option value="No resido en Chile">No resido en Chile</option>
+  </select>
+  <small>Si resides en Chile, selecciona tu región</small>
+</div>
+<div class="postula-field">
+  <label>Comuna</label>
+  <input name="comuna" type="text" placeholder="Si resides en Chile, indica tu comuna" />
+  <small>Si resides en Chile, indica tu comuna</small>
+</div>
+<h3 class="postula-section">Perfil educativo y laboral</h3>
+<div class="postula-field">
+  <label>Nivel educacional formal más alto alcanzado *</label>
+  <select name="maximo_nivel_educacional" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Educación media científico-humanista">Educación media científico-humanista</option>
+    <option value="Educación media técnico-profesional">Educación media técnico-profesional</option>
+    <option value="Instituto profesional o CFT">Instituto profesional o CFT</option>
+    <option value="Universidad">Universidad</option>
+    <option value="Postgrado">Postgrado</option>
+    <option value="Otro">Otro</option>
+  </select>
+  <small>Selecciona el nivel más alto que hayas alcanzado, aunque no lo hayas completado</small>
+</div>
+<div class="postula-field">
+  <label>Estado del nivel educacional seleccionado *</label>
+  <select name="estado_nivel_educacional" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Completado">Completado</option>
+    <option value="Cursando actualmente">Cursando actualmente</option>
+    <option value="Incompleto">Incompleto</option>
+  </select>
+  
+</div>
+<div class="postula-field">
+  <label>¿Has realizado algún bootcamp, curso intensivo o capacitación relacionada? *</label>
+  <select name="realizado_bootcamp" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Sí, completé uno o más cursos, bootcamps o capacitaciones">Sí, completé uno o más cursos, bootcamps o capacitaciones</option>
+    <option value="Sí, estoy cursando actualmente uno">Sí, estoy cursando actualmente uno</option>
+    <option value="Sí, inicié uno, pero no lo terminé">Sí, inicié uno, pero no lo terminé</option>
+    <option value="No, no he realizado ninguno">No, no he realizado ninguno</option>
+  </select>
+  
+</div>
+<div class="postula-field">
+  <label>¿Cuál es tu situación laboral actual? *</label>
+  <select name="como_es_tu_situacion_laboral_actual_" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Empleado/a o trabajador/a dependiente">Empleado/a o trabajador/a dependiente</option>
+    <option value="Trabajador/a independiente o freelance">Trabajador/a independiente o freelance</option>
+    <option value="Desempleado/a, buscando trabajo">Desempleado/a, buscando trabajo</option>
+    <option value="Desempleado/a, sin búsqueda activa de trabajo">Desempleado/a, sin búsqueda activa de trabajo</option>
+  </select>
+  
+</div>
+<h3 class="postula-section">Disponibilidad</h3>
+<div class="postula-field postula-field-full">
+  <label class="postula-group-label">¿Perteneces a alguno de los siguientes grupos priorizados por el programa?</label>
+  <div class="postula-checkbox-group" data-required="false" data-key="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo">
+    <label class="postula-checkbox"><input type="checkbox" name="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo" value="Mujer" /><span>Mujer</span></label>
+    <label class="postula-checkbox"><input type="checkbox" name="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo" value="Cesante o actualmente sin empleo" /><span>Cesante o actualmente sin empleo</span></label>
+    <label class="postula-checkbox"><input type="checkbox" name="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo" value="Mayor de 45 años" /><span>Mayor de 45 años</span></label>
+    <label class="postula-checkbox"><input type="checkbox" name="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo" value="Estudiante de educación técnico-profesional" /><span>Estudiante de educación técnico-profesional</span></label>
+    <label class="postula-checkbox"><input type="checkbox" name="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo" value="Trabajo en PYMEs" /><span>Trabajo en PYMEs</span></label>
+    <label class="postula-checkbox"><input type="checkbox" name="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo" value="En situación de discapacidad" /><span>En situación de discapacidad</span></label>
+    <label class="postula-checkbox"><input type="checkbox" name="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo" value="No pertenezco a ningún grupo" /><span>No pertenezco a ningún grupo</span></label>
+  </div>
+  <small>Opcional. Puedes marcar todas las que correspondan</small>
+</div>
+<div class="postula-field">
+  <label>¿Cómo te enteraste del programa? *</label>
+  <select name="como_te_enteraste" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Instagram">Instagram</option>
+    <option value="Facebook">Facebook</option>
+    <option value="TikTok">TikTok</option>
+    <option value="LinkedIn">LinkedIn</option>
+    <option value="Página web">Página web</option>
+    <option value="Municipalidad">Municipalidad</option>
+    <option value="Me lo recomendó otra persona">Me lo recomendó otra persona</option>
+    <option value="Otro">Otro</option>
+  </select>
+  
+</div>
+<div class="postula-field">
+  <label>¿Por qué te interesa participar en este programa? *</label>
+  <select name="motivacion_participar" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Quiero mejorar mis oportunidades laborales">Quiero mejorar mis oportunidades laborales</option>
+    <option value="Quiero aprender nuevas herramientas o habilidades">Quiero aprender nuevas herramientas o habilidades</option>
+    <option value="Quiero cambiar de área laboral">Quiero cambiar de área laboral</option>
+    <option value="Quiero complementar mis estudios">Quiero complementar mis estudios</option>
+    <option value="Quiero acceder a un empleo remoto o híbrido">Quiero acceder a un empleo remoto o híbrido</option>
+    <option value="Quiero emprender o fortalecer mi emprendimiento">Quiero emprender o fortalecer mi emprendimiento</option>
+    <option value="Me recomendaron postular">Me recomendaron postular</option>
+    <option value="Otro">Otro</option>
+  </select>
+  
+</div>
+<h3 class="postula-section">Condiciones para tu participación</h3>
+<div class="postula-field">
+  <label>¿Cuentas con acceso a internet para participar en clases en vivo? *</label>
+  <select name="acceso_internet" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Sí, tengo conexión estable">Sí, tengo conexión estable</option>
+    <option value="Sí, pero mi conexión es inestable">Sí, pero mi conexión es inestable</option>
+    <option value="No tengo acceso regular a internet">No tengo acceso regular a internet</option>
+  </select>
+  
+</div>
+<div class="postula-field">
+  <label>¿Con qué dispositivo participarías principalmente? *</label>
+  <select name="dispositivo_participacion" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Computador o notebook">Computador o notebook</option>
+    <option value="Tablet">Tablet</option>
+    <option value="Celular">Celular</option>
+    <option value="No cuento con dispositivo">No cuento con dispositivo</option>
+  </select>
+  
+</div>
+<div class="postula-field">
+  <label>¿Necesitas algún apoyo o ajuste para participar en el programa? *</label>
+  <select name="apoyo_ajuste_participacion" required>
+    <option value="">— Seleccionar —</option>
+    <option value="No necesito apoyos o ajustes">No necesito apoyos o ajustes</option>
+    <option value="Sí, necesito apoyo por discapacidad auditiva">Sí, necesito apoyo por discapacidad auditiva</option>
+    <option value="Sí, necesito apoyo por discapacidad visual">Sí, necesito apoyo por discapacidad visual</option>
+    <option value="Sí, necesito apoyo por discapacidad intelectual">Sí, necesito apoyo por discapacidad intelectual</option>
+    <option value="Sí, necesito apoyo por otra condición de salud">Sí, necesito apoyo por otra condición de salud</option>
+    <option value="Prefiero no responder">Prefiero no responder</option>
+  </select>
+  <small>Información voluntaria. Nos ayuda a preparar los apoyos necesarios</small>
+</div>
+<h3 class="postula-section">Confirmación</h3>
+<div class="postula-field postula-field-full">
+  <label class="postula-checkbox">
+    <input name="declaracion_veracidad" type="checkbox" value="true" required />
+    <span>Declaro que la información entregada es verdadera, completa y actualizada. <a href="#" class="postula-legal-link" data-modal="veracidad">Ver términos</a> <span class="postula-req">*</span></span>
+  </label>
+</div>
+<div class="postula-field postula-field-full">
+  <label class="postula-checkbox">
+    <input name="autorizacion_contacto_datos" type="checkbox" value="true" required />
+    <span>Autorizo el tratamiento de mis datos personales para gestionar mi postulación. <a href="#" class="postula-legal-link" data-modal="datos">Ver política de datos</a> <span class="postula-req">*</span></span>
+  </label>
+</div>
+
+<!-- Modal: Declaración de veracidad -->
+<div class="postula-modal" id="modal-veracidad" hidden role="dialog" aria-labelledby="modal-veracidad-title" aria-modal="true">
+  <div class="postula-modal-backdrop" data-close></div>
+  <div class="postula-modal-content">
+    <div class="postula-modal-header">
+      <h4 id="modal-veracidad-title">Declaración de veracidad</h4>
+      <button type="button" class="postula-modal-close" data-close aria-label="Cerrar">&times;</button>
+    </div>
+    <div class="postula-modal-body">
+      <p>Declaro que la información entregada en este formulario es verdadera, completa y actualizada. Entiendo que será utilizada para evaluar mi postulación al programa y que la entrega de información incorrecta o incompleta podría afectar mi participación en el proceso.</p>
+    </div>
+    <div class="postula-modal-footer">
+      <span class="postula-modal-footer-icon">✓</span>
+      <span>Para continuar, cierra esta ventana y marca el checkbox para aceptar los términos.</span>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Autorización de datos -->
+<div class="postula-modal" id="modal-datos" hidden role="dialog" aria-labelledby="modal-datos-title" aria-modal="true">
+  <div class="postula-modal-backdrop" data-close></div>
+  <div class="postula-modal-content">
+    <div class="postula-modal-header">
+      <h4 id="modal-datos-title">Autorización de contacto y uso de datos personales</h4>
+      <button type="button" class="postula-modal-close" data-close aria-label="Cerrar">&times;</button>
+    </div>
+    <div class="postula-modal-body">
+      <p>De acuerdo con la normativa chilena sobre protección de datos personales, autorizo el tratamiento de los datos entregados en este formulario para gestionar mi postulación, evaluar mi admisibilidad, contactarme por correo electrónico, teléfono o WhatsApp, informarme sobre el estado del proceso, coordinar actividades relacionadas con el programa y elaborar reportes internos o institucionales asociados a la ejecución del proyecto.</p>
+      <p>Declaro estar informado/a de que mis datos serán tratados solo para fines relacionados con este proceso de postulación y ejecución del programa, y que podré solicitar información, modificación, eliminación o bloqueo de mis datos personales cuando corresponda, conforme a la normativa vigente.</p>
+      <p>Autorizo además que mis datos puedan ser compartidos con las instituciones vinculadas al programa, únicamente para fines de evaluación, ejecución, seguimiento, reportería y cumplimiento de obligaciones asociadas al proyecto.</p>
+    </div>
+    <div class="postula-modal-footer">
+      <span class="postula-modal-footer-icon">✓</span>
+      <span>Para continuar, cierra esta ventana y marca el checkbox para autorizar.</span>
+    </div>
+  </div>
+</div>
+<div class="postula-field postula-field-full postula-submit-row">
+  <button type="submit" class="postula-submit">Enviar postulación</button>
+  <div id="postulacionStatus" class="postula-status" role="status" aria-live="polite"></div>
+</div>
+</form>
+<!-- END postulación form -->
+
+<script>
+(function(){
+  var form = document.getElementById("postulacionForm");
+  if (!form) return;
+  var formId = form.dataset.formId;
+  var uploadEndpoint = "https://crm.agentsmind.ai/api/form-upload/" + formId;
+  var submitEndpoint = "https://crm.agentsmind.ai/api/form-submit/" + formId;
+  var statusEl = document.getElementById("postulacionStatus");
+  var submitBtn = form.querySelector('button[type="submit"]');
+
+  // Conditional fields: nacionalidad=Otra -> otra_nacionalidad; pais=Otro -> otro_pais_residencia
+  var conditions = [
+    {trigger:'nacionalidad', value:'Otra', target:'otra_nacionalidad'},
+    {trigger:'pais',         value:'Otro', target:'otro_pais_residencia'}
+  ];
+  conditions.forEach(function(c){
+    var trig = form.querySelector('[name="'+c.trigger+'"]');
+    var tgt  = form.querySelector('[name="'+c.target+'"]');
+    if (!trig || !tgt) return;
+    var wrapper = tgt.closest('.postula-field');
+    function refresh(){
+      var match = trig.value === c.value;
+      if (wrapper) wrapper.style.display = match ? '' : 'none';
+      tgt.disabled = !match;
+    }
+    trig.addEventListener('change', refresh);
+    refresh();
+  });
+
+  async function uploadFiles(){
+    var fileInputs = form.querySelectorAll('input[type="file"][data-upload="true"]');
+    var fileUrls = {};
+    for (var i=0; i<fileInputs.length; i++){
+      var fi = fileInputs[i];
+      if (fi.disabled || !fi.files || !fi.files[0]) continue;
+      var fd = new FormData();
+      fd.append('file', fi.files[0]);
+      var r = await fetch(uploadEndpoint, {method:'POST', body:fd});
+      if (!r.ok){
+        var err = await r.json().catch(function(){return {};});
+        throw new Error(err.error || 'No se pudo subir el archivo: '+fi.name);
+      }
+      var j = await r.json();
+      fileUrls[fi.name] = j.url;
+    }
+    return fileUrls;
+  }
+
+  function collectData(fileUrls){
+    var data = Object.assign({}, fileUrls);
+    var fd = new FormData(form);
+    fd.forEach(function(v, k){
+      var input = form.querySelector('[name="'+k+'"]');
+      if (input && (input.type === 'file' || input.disabled)) return;
+      if (v === '' || v == null) return;
+      if (data[k] !== undefined){
+        if (Array.isArray(data[k])) data[k].push(v);
+        else data[k] = [data[k], v];
+      } else {
+        data[k] = v;
+      }
+    });
+    // Required checkboxes: convert 'true' to bool
+    ['declaracion_veracidad','autorizacion_contacto_datos'].forEach(function(k){
+      if (data[k] === 'true') data[k] = true;
+    });
+    return data;
+  }
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    statusEl.textContent = '';
+    statusEl.style.color = '';
+    submitBtn.disabled = true;
+    var origText = submitBtn.textContent;
+    submitBtn.textContent = 'Enviando…';
+    try {
+      var fileUrls = await uploadFiles();
+      var data = collectData(fileUrls);
+      var r = await fetch(submitEndpoint, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify(data)
+      });
+      if (!r.ok){
+        var err = await r.json().catch(function(){return {};});
+        throw new Error(err.error || 'Error al enviar la postulación');
+      }
+      window.location.href = 'https://somosnodo.cl/exito/';
+    } catch (err){
+      statusEl.style.color = '#dc2626';
+      statusEl.textContent = err.message || 'Error al enviar. Intenta nuevamente.';
+      submitBtn.disabled = false;
+      submitBtn.textContent = origText;
+    }
+  });
+
+  // Modal handlers for términos y política de datos
+  var legalSeen = { veracidad: false, datos: false };
+  function openLegalModal(key){
+    var modal = document.getElementById('modal-' + key);
+    if (modal) modal.removeAttribute('hidden');
+    legalSeen[key] = true;
+  }
+  // Intercept first click on legal checkboxes → open modal, don't toggle yet
+  var legalCheckboxes = [
+    { name: 'declaracion_veracidad',         key: 'veracidad' },
+    { name: 'autorizacion_contacto_datos',   key: 'datos' }
+  ];
+  legalCheckboxes.forEach(function(c){
+    var input = form.querySelector('input[name="'+c.name+'"]');
+    if (!input) return;
+    input.addEventListener('click', function(e){
+      if (!legalSeen[c.key]) {
+        e.preventDefault();
+        openLegalModal(c.key);
+      }
+    });
+  });
+  // Explicit "Ver términos" / "Ver política de datos" links
+  document.querySelectorAll('.postula-legal-link').forEach(function(link){
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      openLegalModal(link.dataset.modal);
+    });
+  });
+  document.querySelectorAll('.postula-modal [data-close]').forEach(function(el){
+    el.addEventListener('click', function(){
+      el.closest('.postula-modal').setAttribute('hidden', '');
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.postula-modal:not([hidden])').forEach(function(m){
+        m.setAttribute('hidden', '');
+      });
+    }
+  });
+})();
+</script>
+<style>
+/* === Form NODO 2026: nuevos estilos === */
+.postula-field-full { grid-column: 1 / -1; }
+.postula-group-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+}
+.postula-field small {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.4;
+}
+.postula-status {
+  margin-left: 1rem;
+  font-size: 14px;
+  color: var(--white);
+}
+.postula-submit-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 16px;
+}
+.postula-field input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  color: #11110e;
+  background: #f8f9fa;
+  border: 1.5px dashed #d0d5dd;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.postula-field input[type="file"]::file-selector-button {
+  background: var(--primary-color);
+  color: var(--primary-navy);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-right: 12px;
+}
+.cta-section#postulacion .postula-form .postula-field small {
+  color: #6b7280;
+}
+.cta-section#postulacion .postula-form .postula-group-label {
+  color: #11110e;
+}
+.postula-legal-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: #11110e;
+  margin: 0 0 0.6rem 0;
+}
+.postula-legal {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #4b5563;
+  margin: 0 0 0.75rem 0;
+  text-align: justify;
+}
+.postula-req {
+  color: #dc2626;
+  font-weight: 800;
+}
+.postula-legal-link {
+  color: var(--primary-navy);
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-left: 0.25rem;
+}
+.postula-legal-link:hover { color: #2563eb; }
+.postula-modal[hidden] { display: none; }
+.postula-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.postula-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 29, 63, 0.7);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  animation: pmBackdropIn 0.2s ease;
+}
+.postula-modal-content {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 560px;
+  width: 100%;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  animation: pmContentIn 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+.postula-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f8f9fa;
+}
+.postula-modal-header h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  line-height: 1.3;
+}
+.postula-modal-close {
+  background: transparent;
+  border: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #6b7280;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.postula-modal-close:hover {
+  background: #e5e7eb;
+  color: #11110e;
+}
+.postula-modal-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  flex: 1;
+  color: #374151;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.postula-modal-body p {
+  margin: 0 0 1rem 0;
+  text-align: justify;
+}
+.postula-modal-body p:last-child { margin-bottom: 0; }
+.postula-modal-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1rem 1.5rem;
+  background: var(--primary-color);
+  color: var(--primary-navy);
+  border-top: 1px solid #e5e7eb;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.postula-modal-footer-icon {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  background: var(--primary-navy);
+  color: var(--primary-color);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+@keyframes pmBackdropIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pmContentIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+</style>
+
+                <!-- Contact Information -->
+                <div class="contact-card" style="margin-top: 3rem;">
+                    <div class="contact-info">
+                        <h3>¿Necesitas ayuda?</h3>
+                        <p>Si tienes dudas sobre el proceso de postulación, contáctanos:</p>
+                        <a href="mailto:contacto@somosnodo.cl" class="contact-email">contacto@somosnodo.cl</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <svg width="100" height="35" viewBox="0 0 100 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="5" y="25" font-family="Raleway" font-size="20" font-weight="700"
+                            fill="white">NODO</text>
+                    </svg>
+                    <p>Fuerza colaborativa que impulsa la productividad en Chile</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="../index.html#que-es">¿Qué es NODO?</a></li>
+                        <li><a href="../index.html#beneficios">Beneficios</a></li>
+                        <li><a href="/postula/">Postula</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>contacto@somosnodo.cl</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Somos Nodo. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

@@ -1,5 +1,51 @@
 /* Estilos específicos para postula-testing */
 
+/* Hero overrides (mismo patrón que /postula/) */
+.evento-hero .hero-content-left {
+    text-align: left;
+    padding: 4rem 0;
+}
+.evento-hero .hero-content-left .hero-title,
+.evento-hero .hero-content-left .hero-subtitle {
+    text-align: left;
+}
+.evento-hero .hero-cta {
+    justify-content: flex-start;
+}
+.evento-hero .btn-secondary {
+    color: #0b2640;
+    border-color: #0b2640;
+}
+.evento-hero .btn-secondary:hover {
+    background: #0b2640;
+    color: #ffffff;
+}
+.evento-hero .hero-image-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 50vw;
+    max-width: 50vw;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: url("../assets/nodo-hero-2.png") no-repeat left center;
+    background-size: cover;
+}
+.evento-hero .hero-network-image {
+    display: none;
+}
+@media (max-width: 768px) {
+    .evento-hero .hero-image-right { display: none; }
+    .evento-hero .hero-content-left,
+    .evento-hero .hero-cta {
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+
 /* Section Headers */
 .testing-section-header {
     text-align: center;

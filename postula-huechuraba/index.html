@@ -1004,393 +1004,706 @@
                 <p class="cta-subtitle">Completa el formulario y nos contactaremos contigo a la brevedad.
                     Al enviar tu postulación, aceptas nuestros términos y condiciones y el uso de tus datos para fines
                     administrativos del programa.</p>
-                <!-- BEGIN postulación form (CRM Nodo b5508fb1-...) -->
-<form id="postulacionForm" class="postula-form">
+                <!-- BEGIN postulación form (CRM form_id b5508fb1-35f5-418b-9f93-0caee7cac3fd) -->
+<form id="postulacionForm" class="postula-form" data-form-id="b5508fb1-35f5-418b-9f93-0caee7cac3fd" enctype="multipart/form-data">
   <!-- Origen de la postulación (oculto) — separa leads de Huechuraba en el CRM -->
   <input type="hidden" name="origen_postulacion" value="huechuraba" />
-  <input type="hidden" name="programa_especial" value="Becas Huechuraba" />
-  <h3 class="postula-section">Tus datos personales</h3>
-  <div class="postula-field">
-    <label>Nombre *</label>
-    <input name="firstname" type="text" required placeholder="Ej. María" />
+<h3 class="postula-section">Datos personales</h3>
+<div class="postula-field">
+  <label>Nombres *</label>
+  <input name="firstname" type="text" required placeholder="Ejemplo: María José" />
+  <small>Ejemplo: María José</small>
+</div>
+<div class="postula-field">
+  <label>Apellidos *</label>
+  <input name="lastname" type="text" required placeholder="Ejemplo: González Pérez" />
+  <small>Ejemplo: González Pérez</small>
+</div>
+<div class="postula-field">
+  <label>Tipo de documento de identidad *</label>
+  <select name="tipo_documento_identidad" required>
+    <option value="">— Seleccionar —</option>
+    <option value="RUT">RUT</option>
+    <option value="DNI">DNI</option>
+    <option value="Pasaporte">Pasaporte</option>
+    <option value="Otro">Otro</option>
+  </select>
+  
+</div>
+<div class="postula-field">
+  <label>Número de documento *</label>
+  <input name="dni__identificacion_" type="text" required placeholder="Si es RUT, sin puntos y con guion. Ejemplo: 12345678-9" />
+  <small>Si es RUT, sin puntos y con guion. Ejemplo: 12345678-9</small>
+</div>
+<div class="postula-field">
+  <label>Fecha de nacimiento *</label>
+  <input name="fecha_de_nacimiento" type="date" required />
+  
+</div>
+<div class="postula-field">
+  <label>Correo electrónico personal *</label>
+  <input name="email" type="email" required placeholder="Ejemplo: nombre@correo.cl" />
+</div>
+<div class="postula-field">
+  <label>Teléfono con WhatsApp *</label>
+  <input name="phone" type="tel" required placeholder="Ejemplo: +56 9 1234 5678" />
+  <small>Ejemplo: +56 9 1234 5678</small>
+</div>
+<div class="postula-field postula-field-full">
+  <label>Documento de identidad</label>
+  <input name="documento_identidad_archivo" type="file" data-upload="true" accept=".pdf,.jpg,.jpeg,.png,.webp,.doc,.docx" />
+  <small>Sube una foto o copia de tu documento por ambos lados</small>
+</div>
+<h3 class="postula-section">Sobre ti</h3>
+<div class="postula-field">
+  <label>¿Con qué género te identificas? *</label>
+  <select name="con_que_genero_te_identificas_" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Mujer">Mujer</option>
+    <option value="Hombre">Hombre</option>
+    <option value="Otro">Otro</option>
+    <option value="Prefiero no responder">Prefiero no responder</option>
+  </select>
+  
+</div>
+<div class="postula-field">
+  <label>¿Cuál es tu nacionalidad? *</label>
+  <select name="nacionalidad" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Chilena">Chilena</option>
+    <option value="Argentina">Argentina</option>
+    <option value="Boliviana">Boliviana</option>
+    <option value="Colombiana">Colombiana</option>
+    <option value="Cubana">Cubana</option>
+    <option value="Ecuatoriana">Ecuatoriana</option>
+    <option value="Española">Española</option>
+    <option value="Mexicana">Mexicana</option>
+    <option value="Peruana">Peruana</option>
+    <option value="Venezolana">Venezolana</option>
+    <option value="Otra">Otra</option>
+  </select>
+  
+</div>
+<div class="postula-field">
+  <label>Si marcaste &quot;Otra&quot;, indica tu nacionalidad</label>
+  <input name="otra_nacionalidad" type="text" placeholder="" />
+  
+</div>
+<div class="postula-field">
+  <label>País de residencia *</label>
+  <select name="pais" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Chile">Chile</option>
+    <option value="Argentina">Argentina</option>
+    <option value="Bolivia">Bolivia</option>
+    <option value="Colombia">Colombia</option>
+    <option value="Cuba">Cuba</option>
+    <option value="Ecuador">Ecuador</option>
+    <option value="España">España</option>
+    <option value="México">México</option>
+    <option value="Perú">Perú</option>
+    <option value="Venezuela">Venezuela</option>
+    <option value="Otro">Otro</option>
+  </select>
+  
+</div>
+<div class="postula-field">
+  <label>Si marcaste &quot;Otro&quot;, indica tu país</label>
+  <input name="otro_pais_residencia" type="text" placeholder="" />
+  
+</div>
+<div class="postula-field">
+  <label>Región de residencia *</label>
+  <select name="region_residencia" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Arica y Parinacota">Arica y Parinacota</option>
+    <option value="Tarapacá">Tarapacá</option>
+    <option value="Antofagasta">Antofagasta</option>
+    <option value="Atacama">Atacama</option>
+    <option value="Coquimbo">Coquimbo</option>
+    <option value="Valparaíso">Valparaíso</option>
+    <option value="Metropolitana de Santiago">Metropolitana de Santiago</option>
+    <option value="Libertador General Bernardo O&#x27;Higgins">Libertador General Bernardo O&#x27;Higgins</option>
+    <option value="Maule">Maule</option>
+    <option value="Ñuble">Ñuble</option>
+    <option value="Biobío">Biobío</option>
+    <option value="La Araucanía">La Araucanía</option>
+    <option value="Los Ríos">Los Ríos</option>
+    <option value="Los Lagos">Los Lagos</option>
+    <option value="Aysén del General Carlos Ibáñez del Campo">Aysén del General Carlos Ibáñez del Campo</option>
+    <option value="Magallanes y de la Antártica Chilena">Magallanes y de la Antártica Chilena</option>
+    <option value="No resido en Chile">No resido en Chile</option>
+  </select>
+  <small>Si resides en Chile, selecciona tu región</small>
+</div>
+<div class="postula-field">
+  <label>Comuna</label>
+  <input name="comuna" type="text" placeholder="Si resides en Chile, indica tu comuna" />
+  <small>Si resides en Chile, indica tu comuna</small>
+</div>
+<h3 class="postula-section">Perfil educativo y laboral</h3>
+<div class="postula-field">
+  <label>Nivel educacional formal más alto alcanzado *</label>
+  <select name="maximo_nivel_educacional" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Educación media científico-humanista">Educación media científico-humanista</option>
+    <option value="Educación media técnico-profesional">Educación media técnico-profesional</option>
+    <option value="Instituto profesional o CFT">Instituto profesional o CFT</option>
+    <option value="Universidad">Universidad</option>
+    <option value="Postgrado">Postgrado</option>
+    <option value="Otro">Otro</option>
+  </select>
+  <small>Selecciona el nivel más alto que hayas alcanzado, aunque no lo hayas completado</small>
+</div>
+<div class="postula-field">
+  <label>Estado del nivel educacional seleccionado *</label>
+  <select name="estado_nivel_educacional" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Completado">Completado</option>
+    <option value="Cursando actualmente">Cursando actualmente</option>
+    <option value="Incompleto">Incompleto</option>
+  </select>
+  
+</div>
+<div class="postula-field">
+  <label>¿Has realizado algún bootcamp, curso intensivo o capacitación relacionada? *</label>
+  <select name="realizado_bootcamp" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Sí, completé uno o más cursos, bootcamps o capacitaciones">Sí, completé uno o más cursos, bootcamps o capacitaciones</option>
+    <option value="Sí, estoy cursando actualmente uno">Sí, estoy cursando actualmente uno</option>
+    <option value="Sí, inicié uno, pero no lo terminé">Sí, inicié uno, pero no lo terminé</option>
+    <option value="No, no he realizado ninguno">No, no he realizado ninguno</option>
+  </select>
+  
+</div>
+<div class="postula-field">
+  <label>¿Cuál es tu situación laboral actual? *</label>
+  <select name="como_es_tu_situacion_laboral_actual_" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Empleado/a o trabajador/a dependiente">Empleado/a o trabajador/a dependiente</option>
+    <option value="Trabajador/a independiente o freelance">Trabajador/a independiente o freelance</option>
+    <option value="Desempleado/a, buscando trabajo">Desempleado/a, buscando trabajo</option>
+    <option value="Desempleado/a, sin búsqueda activa de trabajo">Desempleado/a, sin búsqueda activa de trabajo</option>
+  </select>
+  
+</div>
+<h3 class="postula-section">Disponibilidad</h3>
+<div class="postula-field">
+  <label>¿Tienes disponibilidad para participar durante todo el programa? *</label>
+  <select name="disponibilidad_programa" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Sí, para el curso transversal y el curso de especialidad">Sí, para el curso transversal y el curso de especialidad</option>
+    <option value="Solo para el curso transversal">Solo para el curso transversal</option>
+    <option value="No tengo disponibilidad actualmente">No tengo disponibilidad actualmente</option>
+    <option value="No estoy seguro/a, necesito más información">No estoy seguro/a, necesito más información</option>
+  </select>
+  
+</div>
+<div class="postula-field postula-field-full">
+  <label class="postula-group-label">¿En qué horario podrías asistir a clases en vivo (curso de especialidad)? *</label>
+  <div class="postula-checkbox-group" data-required="true" data-key="en_que_franja_horaria_te_acomodan_las_clases_en_vivo_">
+    <label class="postula-checkbox"><input type="checkbox" name="en_que_franja_horaria_te_acomodan_las_clases_en_vivo_" value="Mañana: 09:00 a 13:00 hrs" /><span>Mañana: 09:00 a 13:00 hrs</span></label>
+    <label class="postula-checkbox"><input type="checkbox" name="en_que_franja_horaria_te_acomodan_las_clases_en_vivo_" value="Tarde: 14:00 a 18:00 hrs" /><span>Tarde: 14:00 a 18:00 hrs</span></label>
+    <label class="postula-checkbox"><input type="checkbox" name="en_que_franja_horaria_te_acomodan_las_clases_en_vivo_" value="Vespertino: 18:00 a 23:00 hrs" /><span>Vespertino: 18:00 a 23:00 hrs</span></label>
+    <label class="postula-checkbox"><input type="checkbox" name="en_que_franja_horaria_te_acomodan_las_clases_en_vivo_" value="Sábados" /><span>Sábados</span></label>
+    <label class="postula-checkbox"><input type="checkbox" name="en_que_franja_horaria_te_acomodan_las_clases_en_vivo_" value="Tengo disponibilidad flexible" /><span>Tengo disponibilidad flexible</span></label>
+    <label class="postula-checkbox"><input type="checkbox" name="en_que_franja_horaria_te_acomodan_las_clases_en_vivo_" value="No tengo disponibilidad actualmente" /><span>No tengo disponibilidad actualmente</span></label>
   </div>
-  <div class="postula-field">
-    <label>Apellido *</label>
-    <input name="lastname" type="text" required placeholder="Ej. González" />
+  <small>Puedes marcar más de una opción</small>
+</div>
+<div class="postula-field">
+  <label>Primera opción para el curso de especialidad *</label>
+  <select name="indicanos_cual_es_tu_primera_preferencia_nodo" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Automatización de Procesos">Automatización de Procesos</option>
+    <option value="IA para Marketing y Ventas">IA para Marketing y Ventas</option>
+    <option value="Data Analytics">Data Analytics</option>
+    <option value="Ciberseguridad">Ciberseguridad</option>
+    <option value="Fundamentos de Test Automation">Fundamentos de Test Automation</option>
+  </select>
+  
+</div>
+<div class="postula-field">
+  <label>Segunda opción para el curso de especialidad</label>
+  <select name="indicanos_cual_es_tu_segunda_preferencia_nodo">
+    <option value="">— Seleccionar —</option>
+    <option value="Automatización de Procesos">Automatización de Procesos</option>
+    <option value="IA para Marketing y Ventas">IA para Marketing y Ventas</option>
+    <option value="Data Analytics">Data Analytics</option>
+    <option value="Ciberseguridad">Ciberseguridad</option>
+    <option value="Fundamentos de Test Automation">Fundamentos de Test Automation</option>
+  </select>
+  
+</div>
+<div class="postula-field postula-field-full">
+  <label class="postula-group-label">¿Perteneces a alguno de los siguientes grupos priorizados por el programa?</label>
+  <div class="postula-checkbox-group" data-required="false" data-key="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo">
+    <label class="postula-checkbox"><input type="checkbox" name="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo" value="Mujer" /><span>Mujer</span></label>
+    <label class="postula-checkbox"><input type="checkbox" name="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo" value="Cesante o actualmente sin empleo" /><span>Cesante o actualmente sin empleo</span></label>
+    <label class="postula-checkbox"><input type="checkbox" name="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo" value="Mayor de 45 años" /><span>Mayor de 45 años</span></label>
+    <label class="postula-checkbox"><input type="checkbox" name="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo" value="Estudiante de educación técnico-profesional" /><span>Estudiante de educación técnico-profesional</span></label>
+    <label class="postula-checkbox"><input type="checkbox" name="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo" value="Trabajo en PYMEs" /><span>Trabajo en PYMEs</span></label>
+    <label class="postula-checkbox"><input type="checkbox" name="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo" value="En situación de discapacidad" /><span>En situación de discapacidad</span></label>
+    <label class="postula-checkbox"><input type="checkbox" name="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo" value="No pertenezco a ningún grupo" /><span>No pertenezco a ningún grupo</span></label>
   </div>
-  <div class="postula-field">
-    <label>DNI o RUT *</label>
-    <input name="dni__identificacion_" type="text" required placeholder="Sin puntos, con guión" />
-  </div>
-  <div class="postula-field">
-    <label>Fecha de Nacimiento *</label>
-    <input name="fecha_de_nacimiento" type="date" required max="2010-12-31" min="1940-01-01" />
-  </div>
-  <div class="postula-field">
-    <label>Correo *</label>
-    <input name="email" type="email" required placeholder="tu@correo.cl" />
-  </div>
-  <div class="postula-field">
-    <label>Teléfono *</label>
-    <input name="phone" type="tel" required placeholder="+56 9 1234 5678" />
-  </div>
+  <small>Opcional. Puedes marcar todas las que correspondan</small>
+</div>
+<div class="postula-field">
+  <label>¿Cómo te enteraste del programa? *</label>
+  <select name="como_te_enteraste" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Instagram">Instagram</option>
+    <option value="Facebook">Facebook</option>
+    <option value="TikTok">TikTok</option>
+    <option value="LinkedIn">LinkedIn</option>
+    <option value="Página web">Página web</option>
+    <option value="Municipalidad">Municipalidad</option>
+    <option value="Me lo recomendó otra persona">Me lo recomendó otra persona</option>
+    <option value="Otro">Otro</option>
+  </select>
+  
+</div>
+<div class="postula-field">
+  <label>¿Por qué te interesa participar en este programa? *</label>
+  <select name="motivacion_participar" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Quiero mejorar mis oportunidades laborales">Quiero mejorar mis oportunidades laborales</option>
+    <option value="Quiero aprender nuevas herramientas o habilidades">Quiero aprender nuevas herramientas o habilidades</option>
+    <option value="Quiero cambiar de área laboral">Quiero cambiar de área laboral</option>
+    <option value="Quiero complementar mis estudios">Quiero complementar mis estudios</option>
+    <option value="Quiero acceder a un empleo remoto o híbrido">Quiero acceder a un empleo remoto o híbrido</option>
+    <option value="Quiero emprender o fortalecer mi emprendimiento">Quiero emprender o fortalecer mi emprendimiento</option>
+    <option value="Me recomendaron postular">Me recomendaron postular</option>
+    <option value="Otro">Otro</option>
+  </select>
+  
+</div>
+<h3 class="postula-section">Condiciones para tu participación</h3>
+<div class="postula-field">
+  <label>¿Cuentas con acceso a internet para participar en clases en vivo? *</label>
+  <select name="acceso_internet" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Sí, tengo conexión estable">Sí, tengo conexión estable</option>
+    <option value="Sí, pero mi conexión es inestable">Sí, pero mi conexión es inestable</option>
+    <option value="No tengo acceso regular a internet">No tengo acceso regular a internet</option>
+  </select>
+  
+</div>
+<div class="postula-field">
+  <label>¿Con qué dispositivo participarías principalmente? *</label>
+  <select name="dispositivo_participacion" required>
+    <option value="">— Seleccionar —</option>
+    <option value="Computador o notebook">Computador o notebook</option>
+    <option value="Tablet">Tablet</option>
+    <option value="Celular">Celular</option>
+    <option value="No cuento con dispositivo">No cuento con dispositivo</option>
+  </select>
+  
+</div>
+<div class="postula-field">
+  <label>¿Necesitas algún apoyo o ajuste para participar en el programa? *</label>
+  <select name="apoyo_ajuste_participacion" required>
+    <option value="">— Seleccionar —</option>
+    <option value="No necesito apoyos o ajustes">No necesito apoyos o ajustes</option>
+    <option value="Sí, necesito apoyo por discapacidad auditiva">Sí, necesito apoyo por discapacidad auditiva</option>
+    <option value="Sí, necesito apoyo por discapacidad visual">Sí, necesito apoyo por discapacidad visual</option>
+    <option value="Sí, necesito apoyo por discapacidad intelectual">Sí, necesito apoyo por discapacidad intelectual</option>
+    <option value="Sí, necesito apoyo por otra condición de salud">Sí, necesito apoyo por otra condición de salud</option>
+    <option value="Prefiero no responder">Prefiero no responder</option>
+  </select>
+  <small>Información voluntaria. Nos ayuda a preparar los apoyos necesarios</small>
+</div>
+<h3 class="postula-section">Confirmación</h3>
+<div class="postula-field postula-field-full">
+  <label class="postula-checkbox">
+    <input name="declaracion_veracidad" type="checkbox" value="true" required />
+    <span>Declaro que la información entregada es verdadera, completa y actualizada. <a href="#" class="postula-legal-link" data-modal="veracidad">Ver términos</a> <span class="postula-req">*</span></span>
+  </label>
+</div>
+<div class="postula-field postula-field-full">
+  <label class="postula-checkbox">
+    <input name="autorizacion_contacto_datos" type="checkbox" value="true" required />
+    <span>Autorizo el tratamiento de mis datos personales para gestionar mi postulación. <a href="#" class="postula-legal-link" data-modal="datos">Ver política de datos</a> <span class="postula-req">*</span></span>
+  </label>
+</div>
 
-  <h3 class="postula-section">Sobre ti</h3>
-  <div class="postula-field">
-    <label>¿Con qué género te identificas? *</label>
-    <select name="con_que_genero_te_identificas_" required>
-      <option value="">— Seleccionar —</option>
-      <option value="Mujer">Mujer</option>
-      <option value="Hombre">Hombre</option>
-      <option value="No binario">No binario</option>
-      <option value="Prefiero no responder">Prefiero no responder</option>
-    </select>
-  </div>
-  <div class="postula-field">
-    <label>Nacionalidad *</label>
-    <input name="nacionalidad" type="text" required placeholder="Ej. Chilena" />
-  </div>
-  <div class="postula-field">
-    <label>País *</label>
-    <select name="pais" required>
-      <option value="">— Seleccionar —</option>
-      <option value="Afganistán (afganistan)">Afganistán (afganistan)</option>
-              <option value="Albania (albania)">Albania (albania)</option>
-              <option value="Alemania (alemania)">Alemania (alemania)</option>
-              <option value="Andorra (andorra)">Andorra (andorra)</option>
-              <option value="Angola (angola)">Angola (angola)</option>
-              <option value="Antigua y Barbuda (antigua_y_barbuda)">Antigua y Barbuda (antigua_y_barbuda)</option>
-              <option value="Arabia Saudita (arabia_saudita)">Arabia Saudita (arabia_saudita)</option>
-              <option value="Argelia (argelia)">Argelia (argelia)</option>
-              <option value="Argentina (argentina)">Argentina (argentina)</option>
-              <option value="Armenia (armenia)">Armenia (armenia)</option>
-              <option value="Australia (australia)">Australia (australia)</option>
-              <option value="Austria (austria)">Austria (austria)</option>
-              <option value="Azerbaiyán (azerbaiyan)">Azerbaiyán (azerbaiyan)</option>
-              <option value="Bahamas (bahamas)">Bahamas (bahamas)</option>
-              <option value="Bangladés (banglades)">Bangladés (banglades)</option>
-              <option value="Barbados (barbados)">Barbados (barbados)</option>
-              <option value="Baréin (barein)">Baréin (barein)</option>
-              <option value="Bélgica (belgica)">Bélgica (belgica)</option>
-              <option value="Belice (belice)">Belice (belice)</option>
-              <option value="Benín (benin)">Benín (benin)</option>
-              <option value="Bielorrusia (bielorrusia)">Bielorrusia (bielorrusia)</option>
-              <option value="Birmania (birmania)">Birmania (birmania)</option>
-              <option value="Bolivia (bolivia)">Bolivia (bolivia)</option>
-              <option value="Bosnia y Herzegovina (bosnia_y_herzegovina)">Bosnia y Herzegovina (bosnia_y_herzegovina)</option>
-              <option value="Botsuana (botsuana)">Botsuana (botsuana)</option>
-              <option value="Brasil (brasil)">Brasil (brasil)</option>
-              <option value="Brunéi (brunei)">Brunéi (brunei)</option>
-              <option value="Bulgaria (bulgaria)">Bulgaria (bulgaria)</option>
-              <option value="Burkina Faso (burkina_faso)">Burkina Faso (burkina_faso)</option>
-              <option value="Burundi (burundi)">Burundi (burundi)</option>
-              <option value="Bután (butan)">Bután (butan)</option>
-              <option value="Cabo Verde (cabo_verde)">Cabo Verde (cabo_verde)</option>
-              <option value="Camboya (camboya)">Camboya (camboya)</option>
-              <option value="Camerún (camerun)">Camerún (camerun)</option>
-              <option value="Canadá (canada)">Canadá (canada)</option>
-              <option value="Catar (catar)">Catar (catar)</option>
-              <option value="Chad (chad)">Chad (chad)</option>
-              <option value="Chile (chile)">Chile (chile)</option>
-              <option value="China (china)">China (china)</option>
-              <option value="Chipre (chipre)">Chipre (chipre)</option>
-              <option value="Colombia (colombia)">Colombia (colombia)</option>
-              <option value="Comoras (comoras)">Comoras (comoras)</option>
-              <option value="Corea del Norte (corea_del_norte)">Corea del Norte (corea_del_norte)</option>
-              <option value="Corea del Sur (corea_del_sur)">Corea del Sur (corea_del_sur)</option>
-              <option value="Costa de Marfil (costa_de_marfil)">Costa de Marfil (costa_de_marfil)</option>
-              <option value="Costa Rica (costa_rica)">Costa Rica (costa_rica)</option>
-              <option value="Croacia (croacia)">Croacia (croacia)</option>
-              <option value="Cuba (cuba)">Cuba (cuba)</option>
-              <option value="Dinamarca (dinamarca)">Dinamarca (dinamarca)</option>
-              <option value="Dominica (dominica)">Dominica (dominica)</option>
-              <option value="Ecuador (ecuador)">Ecuador (ecuador)</option>
-              <option value="Egipto (egipto)">Egipto (egipto)</option>
-              <option value="El Salvador (el_salvador)">El Salvador (el_salvador)</option>
-              <option value="Emiratos Árabes Unidos (emiratos_arabes_unidos)">Emiratos Árabes Unidos (emiratos_arabes_unidos)</option>
-              <option value="Eritrea (eritrea)">Eritrea (eritrea)</option>
-              <option value="Eslovaquia (eslovaquia)">Eslovaquia (eslovaquia)</option>
-              <option value="Eslovenia (eslovenia)">Eslovenia (eslovenia)</option>
-              <option value="España (espana)">España (espana)</option>
-              <option value="Estados Unidos (estados_unidos)">Estados Unidos (estados_unidos)</option>
-              <option value="Estonia (estonia)">Estonia (estonia)</option>
-              <option value="Etiopía (etiopia)">Etiopía (etiopia)</option>
-              <option value="Filipinas (filipinas)">Filipinas (filipinas)</option>
-              <option value="Finlandia (finlandia)">Finlandia (finlandia)</option>
-              <option value="Fiyi (fiyi)">Fiyi (fiyi)</option>
-              <option value="Francia (francia)">Francia (francia)</option>
-              <option value="Gabón (gabon)">Gabón (gabon)</option>
-              <option value="Gambia (gambia)">Gambia (gambia)</option>
-              <option value="Georgia (georgia)">Georgia (georgia)</option>
-              <option value="Ghana (ghana)">Ghana (ghana)</option>
-              <option value="Granada (granada)">Granada (granada)</option>
-              <option value="Grecia (grecia)">Grecia (grecia)</option>
-              <option value="Guatemala (guatemala)">Guatemala (guatemala)</option>
-              <option value="Guyana (guyana)">Guyana (guyana)</option>
-              <option value="Guinea (guinea)">Guinea (guinea)</option>
-              <option value="Guinea-Bisáu (guineabisau)">Guinea-Bisáu (guineabisau)</option>
-              <option value="Guinea Ecuatorial (guinea_ecuatorial)">Guinea Ecuatorial (guinea_ecuatorial)</option>
-              <option value="Haití (haiti)">Haití (haiti)</option>
-              <option value="Honduras (honduras)">Honduras (honduras)</option>
-              <option value="Hungría (hungria)">Hungría (hungria)</option>
-              <option value="India (india)">India (india)</option>
-              <option value="Indonesia (indonesia)">Indonesia (indonesia)</option>
-              <option value="Irak (irak)">Irak (irak)</option>
-              <option value="Irán (iran)">Irán (iran)</option>
-              <option value="Irlanda (irlanda)">Irlanda (irlanda)</option>
-              <option value="Islandia (islandia)">Islandia (islandia)</option>
-              <option value="Islas Marshall (islas_marshall)">Islas Marshall (islas_marshall)</option>
-              <option value="Islas Salomón (islas_salomon)">Islas Salomón (islas_salomon)</option>
-              <option value="Israel (israel)">Israel (israel)</option>
-              <option value="Italia (italia)">Italia (italia)</option>
-              <option value="Jamaica (jamaica)">Jamaica (jamaica)</option>
-              <option value="Japón (japon)">Japón (japon)</option>
-              <option value="Jordania (jordania)">Jordania (jordania)</option>
-              <option value="Kazajistán (kazajistan)">Kazajistán (kazajistan)</option>
-              <option value="Kenia (kenia)">Kenia (kenia)</option>
-              <option value="Kirguistán (kirguistan)">Kirguistán (kirguistan)</option>
-              <option value="Kiribati (kiribati)">Kiribati (kiribati)</option>
-              <option value="Kuwait (kuwait)">Kuwait (kuwait)</option>
-              <option value="Laos (laos)">Laos (laos)</option>
-              <option value="Lesoto (lesoto)">Lesoto (lesoto)</option>
-              <option value="Letonia (letonia)">Letonia (letonia)</option>
-              <option value="Líbano (libano)">Líbano (libano)</option>
-              <option value="Liberia (liberia)">Liberia (liberia)</option>
-              <option value="Libia (libia)">Libia (libia)</option>
-              <option value="Liechtenstein (liechtenstein)">Liechtenstein (liechtenstein)</option>
-              <option value="Lituania (lituania)">Lituania (lituania)</option>
-              <option value="Luxemburgo (luxemburgo)">Luxemburgo (luxemburgo)</option>
-              <option value="Madagascar (madagascar)">Madagascar (madagascar)</option>
-              <option value="Malasia (malasia)">Malasia (malasia)</option>
-              <option value="Malaui (malaui)">Malaui (malaui)</option>
-              <option value="Maldivas (maldivas)">Maldivas (maldivas)</option>
-              <option value="Malí (mali)">Malí (mali)</option>
-              <option value="Malta (malta)">Malta (malta)</option>
-              <option value="Marruecos (marruecos)">Marruecos (marruecos)</option>
-              <option value="Mauricio (mauricio)">Mauricio (mauricio)</option>
-              <option value="Mauritania (mauritania)">Mauritania (mauritania)</option>
-              <option value="México (mexico)">México (mexico)</option>
-              <option value="Micronesia (micronesia)">Micronesia (micronesia)</option>
-              <option value="Moldavia (moldavia)">Moldavia (moldavia)</option>
-              <option value="Mónaco (monaco)">Mónaco (monaco)</option>
-              <option value="Mongolia (mongolia)">Mongolia (mongolia)</option>
-              <option value="Montenegro (montenegro)">Montenegro (montenegro)</option>
-              <option value="Mozambique (mozambique)">Mozambique (mozambique)</option>
-              <option value="Namibia (namibia)">Namibia (namibia)</option>
-              <option value="Nauru (nauru)">Nauru (nauru)</option>
-              <option value="Nepal (nepal)">Nepal (nepal)</option>
-              <option value="Nicaragua (nicaragua)">Nicaragua (nicaragua)</option>
-              <option value="Níger (niger)">Níger (niger)</option>
-              <option value="Nigeria (nigeria)">Nigeria (nigeria)</option>
-              <option value="Noruega (noruega)">Noruega (noruega)</option>
-              <option value="Nueva Zelanda (nueva_zelanda)">Nueva Zelanda (nueva_zelanda)</option>
-              <option value="Omán (oman)">Omán (oman)</option>
-              <option value="Países Bajos (paises_bajos)">Países Bajos (paises_bajos)</option>
-              <option value="Pakistán (pakistan)">Pakistán (pakistan)</option>
-              <option value="Palaos (palaos)">Palaos (palaos)</option>
-              <option value="Panamá (panama)">Panamá (panama)</option>
-              <option value="Papúa Nueva Guinea (papua_nueva_guinea)">Papúa Nueva Guinea (papua_nueva_guinea)</option>
-              <option value="Paraguay (paraguay)">Paraguay (paraguay)</option>
-              <option value="Perú (peru)">Perú (peru)</option>
-              <option value="Polonia (polonia)">Polonia (polonia)</option>
-              <option value="Portugal (portugal)">Portugal (portugal)</option>
-              <option value="Reino Unido (reino_unido)">Reino Unido (reino_unido)</option>
-              <option value="República Centroafricana (republica_centroafricana)">República Centroafricana (republica_centroafricana)</option>
-              <option value="República Checa (republica_checa)">República Checa (republica_checa)</option>
-              <option value="República del Congo (republica_del_congo)">República del Congo (republica_del_congo)</option>
-              <option value="República Democrática del Congo (republica_democratica_del_congo)">República Democrática del Congo (republica_democratica_del_congo)</option>
-              <option value="República Dominicana (republica_dominicana)">República Dominicana (republica_dominicana)</option>
-              <option value="Ruanda (ruanda)">Ruanda (ruanda)</option>
-              <option value="Rumanía (rumania)">Rumanía (rumania)</option>
-              <option value="Rusia (rusia)">Rusia (rusia)</option>
-              <option value="Samoa (samoa)">Samoa (samoa)</option>
-              <option value="San Cristóbal y Nieves (san_cristobal_y_nieves)">San Cristóbal y Nieves (san_cristobal_y_nieves)</option>
-              <option value="San Marino (san_marino)">San Marino (san_marino)</option>
-              <option value="San Vicente y las Granadinas (san_vicente_y_las_granadinas)">San Vicente y las Granadinas (san_vicente_y_las_granadinas)</option>
-              <option value="Santa Lucía (santa_lucia)">Santa Lucía (santa_lucia)</option>
-              <option value="Santo Tomé y Príncipe (santo_tome_y_principe)">Santo Tomé y Príncipe (santo_tome_y_principe)</option>
-              <option value="Senegal (senegal)">Senegal (senegal)</option>
-              <option value="Serbia (serbia)">Serbia (serbia)</option>
-              <option value="Seychelles (seychelles)">Seychelles (seychelles)</option>
-              <option value="Sierra Leona (sierra_leona)">Sierra Leona (sierra_leona)</option>
-              <option value="Singapur (singapur)">Singapur (singapur)</option>
-              <option value="Siria (siria)">Siria (siria)</option>
-              <option value="Somalia (somalia)">Somalia (somalia)</option>
-              <option value="Sri Lanka (sri_lanka)">Sri Lanka (sri_lanka)</option>
-              <option value="Suazilandia (suazilandia)">Suazilandia (suazilandia)</option>
-              <option value="Sudáfrica (sudafrica)">Sudáfrica (sudafrica)</option>
-              <option value="Sudán (sudan)">Sudán (sudan)</option>
-              <option value="Sudán del Sur (sudan_del_sur)">Sudán del Sur (sudan_del_sur)</option>
-              <option value="Suecia (suecia)">Suecia (suecia)</option>
-              <option value="Suiza (suiza)">Suiza (suiza)</option>
-              <option value="Surinam (surinam)">Surinam (surinam)</option>
-              <option value="Tailandia (tailandia)">Tailandia (tailandia)</option>
-              <option value="Tanzania (tanzania)">Tanzania (tanzania)</option>
-              <option value="Tayikistán (tayikistan)">Tayikistán (tayikistan)</option>
-              <option value="Timor Oriental (timor_oriental)">Timor Oriental (timor_oriental)</option>
-              <option value="Togo (togo)">Togo (togo)</option>
-              <option value="Tonga (tonga)">Tonga (tonga)</option>
-              <option value="Trinidad y Tobago (trinidad_y_tobago)">Trinidad y Tobago (trinidad_y_tobago)</option>
-              <option value="Túnez (tunez)">Túnez (tunez)</option>
-              <option value="Turkmenistán (turkmenistan)">Turkmenistán (turkmenistan)</option>
-              <option value="Turquía (turquia)">Turquía (turquia)</option>
-              <option value="Tuvalu (tuvalu)">Tuvalu (tuvalu)</option>
-              <option value="Ucrania (ucrania)">Ucrania (ucrania)</option>
-              <option value="Uganda (uganda)">Uganda (uganda)</option>
-              <option value="Uruguay (uruguay)">Uruguay (uruguay)</option>
-              <option value="Uzbekistán (uzbekistan)">Uzbekistán (uzbekistan)</option>
-              <option value="Vanuatu (vanuatu)">Vanuatu (vanuatu)</option>
-              <option value="Vaticano (vaticano)">Vaticano (vaticano)</option>
-              <option value="Venezuela (venezuela)">Venezuela (venezuela)</option>
-              <option value="Vietnam (vietnam)">Vietnam (vietnam)</option>
-              <option value="Yemen (yemen)">Yemen (yemen)</option>
-              <option value="Yibuti (yibuti)">Yibuti (yibuti)</option>
-              <option value="Zambia (zambia)">Zambia (zambia)</option>
-              <option value="Zimbabue (zimbabue)">Zimbabue (zimbabue)</option>
-    </select>
-  </div>
-  <h3 class="postula-section">Tu camino educativo y laboral</h3>
-  <div class="postula-field">
-    <label>Nivel educacional *</label>
-    <select name="maximo_nivel_educacional" required>
-      <option value="">— Seleccionar —</option>
-      <option value="Universidad completa">Universidad completa</option>
-              <option value="Universidad incompleta o en curso">Universidad incompleta o en curso</option>
-              <option value="Instituto profesional o CFT completa">Instituto profesional o CFT completa</option>
-              <option value="Instituto profesional o CFT en curso">Instituto profesional o CFT en curso</option>
-              <option value="Educación media completa">Educación media completa</option>
-              <option value="Bootcamp completo">Bootcamp completo</option>
-              <option value="Bootcamp completo o en curso">Bootcamp completo o en curso</option>
-              <option value="Escolar completa">Escolar completa</option>
-              <option value="Escolar incompleta">Escolar incompleta</option>
-              <option value="Postgrado Completo">Postgrado Completo</option>
-              <option value="Postgrado Incompleto">Postgrado Incompleto</option>
-    </select>
-  </div>
-  <div class="postula-field">
-    <label>¿Cómo es tu situación laboral actual? *</label>
-    <select name="como_es_tu_situacion_laboral_actual_" required>
-      <option value="">— Seleccionar —</option>
-      <option value="Tengo empleo pero quiero mejores oportunidades">Tengo empleo pero quiero mejores oportunidades</option>
-              <option value="Estoy con empleo presencial y quiero un empleo remoto">Estoy con empleo presencial y quiero un empleo remoto</option>
-              <option value="Estoy sin empleo, buscando oportunidades">Estoy sin empleo, buscando oportunidades</option>
-    </select>
-  </div>
-  <div class="postula-field" data-show-when='{"field":"como_es_tu_situacion_laboral_actual_","value":"Tengo empleo pero quiero mejores oportunidades"}' style="display:none;">
-    <label>Nombre Empresa/Emprendimiento</label>
-    <input name="nombre_empresa_emprendimiento" type="text" disabled />
-  </div>
-  <h3 class="postula-section">Disponibilidad y apoyos</h3>
-  <div class="postula-field">
-    <label>¿En qué franja horaria te acomodan las clases en vivo? *</label>
-    <p class="postula-help">Puedes marcar más de una opción</p>
-    <div class="postula-checkbox-group">
-      <label class="postula-checkbox"><input type="checkbox" name="en_que_franja_horaria_te_acomodan_las_clases_en_vivo_" value="Diurno (9:00am-18:00pm)" /> <span>Diurno (9:00am-18:00pm)</span></label>
-            <label class="postula-checkbox"><input type="checkbox" name="en_que_franja_horaria_te_acomodan_las_clases_en_vivo_" value="Vespertino (18:00pm-23:00pm)" /> <span>Vespertino (18:00pm-23:00pm)</span></label>
-            <label class="postula-checkbox"><input type="checkbox" name="en_que_franja_horaria_te_acomodan_las_clases_en_vivo_" value="Diurno" /> <span>Diurno</span></label>
-            <label class="postula-checkbox"><input type="checkbox" name="en_que_franja_horaria_te_acomodan_las_clases_en_vivo_" value="Vespertino" /> <span>Vespertino</span></label>
-            <label class="postula-checkbox"><input type="checkbox" name="en_que_franja_horaria_te_acomodan_las_clases_en_vivo_" value="Ambos" /> <span>Ambos</span></label>
+<!-- Modal: Declaración de veracidad -->
+<div class="postula-modal" id="modal-veracidad" hidden role="dialog" aria-labelledby="modal-veracidad-title" aria-modal="true">
+  <div class="postula-modal-backdrop" data-close></div>
+  <div class="postula-modal-content">
+    <div class="postula-modal-header">
+      <h4 id="modal-veracidad-title">Declaración de veracidad</h4>
+      <button type="button" class="postula-modal-close" data-close aria-label="Cerrar">&times;</button>
+    </div>
+    <div class="postula-modal-body">
+      <p>Declaro que la información entregada en este formulario es verdadera, completa y actualizada. Entiendo que será utilizada para evaluar mi postulación al programa y que la entrega de información incorrecta o incompleta podría afectar mi participación en el proceso.</p>
+    </div>
+    <div class="postula-modal-footer">
+      <span class="postula-modal-footer-icon">✓</span>
+      <span>Para continuar, cierra esta ventana y marca el checkbox para aceptar los términos.</span>
     </div>
   </div>
-  <div class="postula-field">
-    <label>¿Eres una persona en situación de discapacidad? *</label>
-    <p class="postula-help">Esta información es voluntaria y nos ayuda a entregar los apoyos necesarios</p>
-    <div class="postula-checkbox-group">
-      <label class="postula-checkbox"><input type="checkbox" name="tipo_de_discapacidad" value="No" /> <span>No</span></label>
-            <label class="postula-checkbox"><input type="checkbox" name="tipo_de_discapacidad" value="Discapacidad Auditiva" /> <span>Discapacidad Auditiva</span></label>
-            <label class="postula-checkbox"><input type="checkbox" name="tipo_de_discapacidad" value="Discapacidad Intelectual" /> <span>Discapacidad Intelectual</span></label>
-            <label class="postula-checkbox"><input type="checkbox" name="tipo_de_discapacidad" value="Discapacidad Visual" /> <span>Discapacidad Visual</span></label>
-            <label class="postula-checkbox"><input type="checkbox" name="tipo_de_discapacidad" value="Discapacidad Física" /> <span>Discapacidad Física</span></label>
-            <label class="postula-checkbox"><input type="checkbox" name="tipo_de_discapacidad" value="Discapacidad Psíquica" /> <span>Discapacidad Psíquica</span></label>
-            <label class="postula-checkbox"><input type="checkbox" name="tipo_de_discapacidad" value="Discapacidad Visceral" /> <span>Discapacidad Visceral</span></label>
+</div>
+
+<!-- Modal: Autorización de datos -->
+<div class="postula-modal" id="modal-datos" hidden role="dialog" aria-labelledby="modal-datos-title" aria-modal="true">
+  <div class="postula-modal-backdrop" data-close></div>
+  <div class="postula-modal-content">
+    <div class="postula-modal-header">
+      <h4 id="modal-datos-title">Autorización de contacto y uso de datos personales</h4>
+      <button type="button" class="postula-modal-close" data-close aria-label="Cerrar">&times;</button>
+    </div>
+    <div class="postula-modal-body">
+      <p>De acuerdo con la normativa chilena sobre protección de datos personales, autorizo el tratamiento de los datos entregados en este formulario para gestionar mi postulación, evaluar mi admisibilidad, contactarme por correo electrónico, teléfono o WhatsApp, informarme sobre el estado del proceso, coordinar actividades relacionadas con el programa y elaborar reportes internos o institucionales asociados a la ejecución del proyecto.</p>
+      <p>Declaro estar informado/a de que mis datos serán tratados solo para fines relacionados con este proceso de postulación y ejecución del programa, y que podré solicitar información, modificación, eliminación o bloqueo de mis datos personales cuando corresponda, conforme a la normativa vigente.</p>
+      <p>Autorizo además que mis datos puedan ser compartidos con las instituciones vinculadas al programa, únicamente para fines de evaluación, ejecución, seguimiento, reportería y cumplimiento de obligaciones asociadas al proyecto.</p>
+    </div>
+    <div class="postula-modal-footer">
+      <span class="postula-modal-footer-icon">✓</span>
+      <span>Para continuar, cierra esta ventana y marca el checkbox para autorizar.</span>
     </div>
   </div>
-  <div class="postula-field">
-    <label>¿Perteneces a alguno de los siguientes grupos de interés para nuestro programa con enfoque inclusivo?</label>
-    <p class="postula-help">Opcional. Puedes marcar todas las que apliquen</p>
-    <div class="postula-checkbox-group">
-      <label class="postula-checkbox"><input type="checkbox" name="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo" value="Mujeres" /> <span>Mujeres</span></label>
-            <label class="postula-checkbox"><input type="checkbox" name="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo" value="Personas cesantes" /> <span>Personas cesantes</span></label>
-            <label class="postula-checkbox"><input type="checkbox" name="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo" value="Personas mayores de 45 años" /> <span>Personas mayores de 45 años</span></label>
-            <label class="postula-checkbox"><input type="checkbox" name="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo" value="Estudiantes de educación técnico-profesional" /> <span>Estudiantes de educación técnico-profesional</span></label>
-            <label class="postula-checkbox"><input type="checkbox" name="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo" value="Trabajo en PYMEs" /> <span>Trabajo en PYMEs</span></label>
-            <label class="postula-checkbox"><input type="checkbox" name="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo" value="Persona en situación de discapacidad" /> <span>Persona en situación de discapacidad</span></label>
-            <label class="postula-checkbox"><input type="checkbox" name="perteneces_a_alguno_de_los_siguientes_grupos_de_interes_para_nuestro_programa_con_enfoque_inclusivo" value="No pertenezco a ningún grupo" /> <span>No pertenezco a ningún grupo</span></label>
-    </div>
-  </div>
-  <h3 class="postula-section">Tus intereses</h3>
-  <div class="postula-field">
-    <label>Primera preferencia de programa *</label>
-    <select name="indicanos_cual_es_tu_primera_preferencia_nodo" required>
-      <option value="">— Seleccionar —</option>
-      <option value="IA para marketing y ventas">IA para marketing y ventas</option>
-              <option value="Automatización de procesos">Automatización de procesos</option>
-              <option value="Ciberseguridad">Ciberseguridad</option>
-              <option value="Data Analytics">Data Analytics</option>
-              <option value="Testing Automation">Testing Automation</option>
-    </select>
-  </div>
-  <div class="postula-field">
-    <label>Segunda preferencia de programa *</label>
-    <select name="indicanos_cual_es_tu_segunda_preferencia_nodo" required>
-      <option value="">— Seleccionar —</option>
-      <option value="IA para marketing y ventas">IA para marketing y ventas</option>
-              <option value="Automatización de procesos">Automatización de procesos</option>
-              <option value="Ciberseguridad">Ciberseguridad</option>
-              <option value="Data Analytics">Data Analytics</option>
-              <option value="Testing Automation">Testing Automation</option>
-    </select>
-  </div>
-  <button type="submit" class="postula-submit">¡INSCRÍBETE!</button>
-  <p id="postula-msg" class="postula-msg"></p>
+</div>
+<div class="postula-field postula-field-full postula-submit-row">
+  <button type="submit" class="postula-submit">Enviar postulación</button>
+  <div id="postulacionStatus" class="postula-status" role="status" aria-live="polite"></div>
+</div>
 </form>
+<!-- END postulación form -->
+
 <script>
 (function(){
-  var form=document.getElementById("postulacionForm");
-  // Show/hide conditional fields based on situacion_laboral value
-  function refreshConditionals(){
-    form.querySelectorAll("[data-show-when]").forEach(function(el){
-      try{
-        var rule=JSON.parse(el.getAttribute("data-show-when"));
-        var src=form.querySelector('[name="'+rule.field+'"]');
-        var match=src&&src.value===rule.value;
-        el.style.display=match?"":"none";
-        el.querySelectorAll("input,select,textarea").forEach(function(i){
-          i.disabled=!match;
-          if(!match)i.removeAttribute("required");
-        });
-      }catch(_){}
-    });
+  var form = document.getElementById("postulacionForm");
+  if (!form) return;
+  var formId = form.dataset.formId;
+  var uploadEndpoint = "https://crm.agentsmind.ai/api/form-upload/" + formId;
+  var submitEndpoint = "https://crm.agentsmind.ai/api/form-submit/" + formId;
+  var statusEl = document.getElementById("postulacionStatus");
+  var submitBtn = form.querySelector('button[type="submit"]');
+
+  // Conditional fields: nacionalidad=Otra -> otra_nacionalidad; pais=Otro -> otro_pais_residencia
+  var conditions = [
+    {trigger:'nacionalidad', value:'Otra', target:'otra_nacionalidad'},
+    {trigger:'pais',         value:'Otro', target:'otro_pais_residencia'}
+  ];
+  conditions.forEach(function(c){
+    var trig = form.querySelector('[name="'+c.trigger+'"]');
+    var tgt  = form.querySelector('[name="'+c.target+'"]');
+    if (!trig || !tgt) return;
+    var wrapper = tgt.closest('.postula-field');
+    function refresh(){
+      var match = trig.value === c.value;
+      if (wrapper) wrapper.style.display = match ? '' : 'none';
+      tgt.disabled = !match;
+    }
+    trig.addEventListener('change', refresh);
+    refresh();
+  });
+
+  async function uploadFiles(){
+    var fileInputs = form.querySelectorAll('input[type="file"][data-upload="true"]');
+    var fileUrls = {};
+    for (var i=0; i<fileInputs.length; i++){
+      var fi = fileInputs[i];
+      if (fi.disabled || !fi.files || !fi.files[0]) continue;
+      var fd = new FormData();
+      fd.append('file', fi.files[0]);
+      var r = await fetch(uploadEndpoint, {method:'POST', body:fd});
+      if (!r.ok){
+        var err = await r.json().catch(function(){return {};});
+        throw new Error(err.error || 'No se pudo subir el archivo: '+fi.name);
+      }
+      var j = await r.json();
+      fileUrls[fi.name] = j.url;
+    }
+    return fileUrls;
   }
-  form.addEventListener("change",refreshConditionals);
-  refreshConditionals();
-  form.addEventListener("submit",function(e){
+
+  function collectData(fileUrls){
+    var data = Object.assign({}, fileUrls);
+    var fd = new FormData(form);
+    fd.forEach(function(v, k){
+      var input = form.querySelector('[name="'+k+'"]');
+      if (input && (input.type === 'file' || input.disabled)) return;
+      if (v === '' || v == null) return;
+      if (data[k] !== undefined){
+        if (Array.isArray(data[k])) data[k].push(v);
+        else data[k] = [data[k], v];
+      } else {
+        data[k] = v;
+      }
+    });
+    // Required checkboxes: convert 'true' to bool
+    ['declaracion_veracidad','autorizacion_contacto_datos'].forEach(function(k){
+      if (data[k] === 'true') data[k] = true;
+    });
+    return data;
+  }
+
+  form.addEventListener('submit', async function(e){
     e.preventDefault();
-    var msg=document.getElementById("postula-msg");
-    var btn=form.querySelector('button[type="submit"]');
-    btn.disabled=true;btn.textContent="Enviando...";
-    var d={};
-    new FormData(form).forEach(function(v,k){
-      if(!v)return;
-      var input=form.querySelector('[name="'+k+'"]');
-      if(input&&input.disabled)return;
-      if(d[k]){d[k]=Array.isArray(d[k])?d[k].concat(v):[d[k],v];}else{d[k]=v;}
+    statusEl.textContent = '';
+    statusEl.style.color = '';
+    submitBtn.disabled = true;
+    var origText = submitBtn.textContent;
+    submitBtn.textContent = 'Enviando…';
+    try {
+      var fileUrls = await uploadFiles();
+      var data = collectData(fileUrls);
+      var r = await fetch(submitEndpoint, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify(data)
+      });
+      if (!r.ok){
+        var err = await r.json().catch(function(){return {};});
+        throw new Error(err.error || 'Error al enviar la postulación');
+      }
+      window.location.href = 'https://somosnodo.cl/exito/';
+    } catch (err){
+      statusEl.style.color = '#dc2626';
+      statusEl.textContent = err.message || 'Error al enviar. Intenta nuevamente.';
+      submitBtn.disabled = false;
+      submitBtn.textContent = origText;
+    }
+  });
+
+  // Modal handlers for términos y política de datos
+  var legalSeen = { veracidad: false, datos: false };
+  function openLegalModal(key){
+    var modal = document.getElementById('modal-' + key);
+    if (modal) modal.removeAttribute('hidden');
+    legalSeen[key] = true;
+  }
+  // Intercept first click on legal checkboxes → open modal, don't toggle yet
+  var legalCheckboxes = [
+    { name: 'declaracion_veracidad',         key: 'veracidad' },
+    { name: 'autorizacion_contacto_datos',   key: 'datos' }
+  ];
+  legalCheckboxes.forEach(function(c){
+    var input = form.querySelector('input[name="'+c.name+'"]');
+    if (!input) return;
+    input.addEventListener('click', function(e){
+      if (!legalSeen[c.key]) {
+        e.preventDefault();
+        openLegalModal(c.key);
+      }
     });
-    fetch("https://crm.agentsmind.ai/api/form-submit/b5508fb1-35f5-418b-9f93-0caee7cac3fd",{
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify(d)
-    }).then(function(r){
-      if(!r.ok)throw new Error();
-      window.location.href="https://somosnodo.cl/exito/";
-    }).catch(function(){
-      msg.style.color="#dc2626";msg.textContent="Error al enviar. Intenta nuevamente.";
-      btn.disabled=false;btn.textContent="¡INSCRÍBETE!";
+  });
+  // Explicit "Ver términos" / "Ver política de datos" links
+  document.querySelectorAll('.postula-legal-link').forEach(function(link){
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      openLegalModal(link.dataset.modal);
     });
+  });
+  document.querySelectorAll('.postula-modal [data-close]').forEach(function(el){
+    el.addEventListener('click', function(){
+      el.closest('.postula-modal').setAttribute('hidden', '');
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.postula-modal:not([hidden])').forEach(function(m){
+        m.setAttribute('hidden', '');
+      });
+    }
   });
 })();
 </script>
-                <!-- END postulación form -->
+<style>
+/* === Form NODO 2026: nuevos estilos === */
+.postula-field-full { grid-column: 1 / -1; }
+.postula-group-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+}
+.postula-field small {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.4;
+}
+.postula-status {
+  margin-left: 1rem;
+  font-size: 14px;
+  color: var(--white);
+}
+.postula-submit-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 16px;
+}
+.postula-field input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  color: #11110e;
+  background: #f8f9fa;
+  border: 1.5px dashed #d0d5dd;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.postula-field input[type="file"]::file-selector-button {
+  background: var(--primary-color);
+  color: var(--primary-navy);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-right: 12px;
+}
+.cta-section#postulacion .postula-form .postula-field small {
+  color: #6b7280;
+}
+.cta-section#postulacion .postula-form .postula-group-label {
+  color: #11110e;
+}
+.postula-legal-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: #11110e;
+  margin: 0 0 0.6rem 0;
+}
+.postula-legal {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #4b5563;
+  margin: 0 0 0.75rem 0;
+  text-align: justify;
+}
+.postula-req {
+  color: #dc2626;
+  font-weight: 800;
+}
+.postula-legal-link {
+  color: var(--primary-navy);
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-left: 0.25rem;
+}
+.postula-legal-link:hover { color: #2563eb; }
+.postula-modal[hidden] { display: none; }
+.postula-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.postula-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 29, 63, 0.7);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  animation: pmBackdropIn 0.2s ease;
+}
+.postula-modal-content {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 560px;
+  width: 100%;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  animation: pmContentIn 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+.postula-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f8f9fa;
+}
+.postula-modal-header h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  line-height: 1.3;
+}
+.postula-modal-close {
+  background: transparent;
+  border: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #6b7280;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.postula-modal-close:hover {
+  background: #e5e7eb;
+  color: #11110e;
+}
+.postula-modal-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  flex: 1;
+  color: #374151;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.postula-modal-body p {
+  margin: 0 0 1rem 0;
+  text-align: justify;
+}
+.postula-modal-body p:last-child { margin-bottom: 0; }
+.postula-modal-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1rem 1.5rem;
+  background: var(--primary-color);
+  color: var(--primary-navy);
+  border-top: 1px solid #e5e7eb;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.postula-modal-footer-icon {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  background: var(--primary-navy);
+  color: var(--primary-color);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+@keyframes pmBackdropIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pmContentIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+</style>
 
                 <!-- Contact Information -->
                 <div class="contact-card" style="margin-top: 3rem;">
