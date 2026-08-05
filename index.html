@@ -17,8 +17,9 @@
     <link rel="icon" type="image/png" href="assets/logo.png">
     <link rel="stylesheet" href="styles.css?v=1755651573">
     <link rel="stylesheet" href="evento/styles-evento.css?v=1755651573">
-    <link rel="stylesheet" href="styles-home.css?v=1">
+    <link rel="stylesheet" href="styles-home.css?v=2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -331,15 +332,54 @@
                 <h2 class="cta-title">¿Listo para multiplicar tu impacto?</h2>
                 <p class="cta-subtitle">Agenda una reunión con nuestro equipo y descubre cómo NODO puede transformar tu
                     cadena de valor</p>
-                <form class="contact-form" id="contactForm">
-                    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-                    <script>
-                        hbspt.forms.create({
-                            portalId: "9149156",
-                            formId: "2055bbb8-b510-4a4a-a22e-423202edc152",
-                            region: "na1"
-                        });
-                    </script>
+                <form class="contact-form" id="contactForm"
+                    data-form-id="777ee552-edc5-4b00-9550-783a3b48379f">
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <input type="text" name="company" placeholder="Nombre de tu empresa *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="firstname" placeholder="Tu nombre *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="lastname" placeholder="Tu apellido *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email corporativo *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="contactPhone" name="phone" placeholder="Teléfono *" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="industria_nodo" required>
+                                <option value="">Selecciona tu industria *</option>
+                                <option value="Retail">Retail</option>
+                                <option value="Manufactura">Manufactura</option>
+                                <option value="Servicios">Servicios</option>
+                                <option value="Tecnología">Tecnología</option>
+                                <option value="Educación">Educación</option>
+                                <option value="Salud">Salud</option>
+                                <option value="Otros">Otros</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select name="foco_de_interes_nodo" required>
+                                <option value="">Foco de interés *</option>
+                                <option value="Mujeres en Tech">Mujeres en Tech</option>
+                                <option value="Reconversión Laboral">Reconversión Laboral</option>
+                                <option value="Talento +45">Talento +45</option>
+                                <option value="Desarrollo Territorial">Desarrollo Territorial</option>
+                                <option value="Cadena de Valor">Cadena de Valor</option>
+                                <option value="Múltiples focos">Múltiples focos</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <textarea name="objetivos_de_impacto_nodo" rows="4"
+                            placeholder="Cuéntanos sobre tus objetivos de impacto (opcional)"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Agendar Reunión</button>
+                    <div id="contactFormStatus" class="contact-form-status" role="status" aria-live="polite"></div>
                 </form>
                 <!-- Contact Card -->
                 <!-- <div class="contact-card">
@@ -384,6 +424,81 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- Formulario de contacto B2B → CRM (proyecto Nodo) -->
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+    <script>
+        (function () {
+            var form = document.getElementById("contactForm");
+            if (!form) return;
+            var statusEl = document.getElementById("contactFormStatus");
+            var submitBtn = form.querySelector('button[type="submit"]');
+            var submitEndpoint = "https://crm.agentsmind.ai/api/form-submit/" + form.dataset.formId;
+
+            // Teléfono: selector de país + envío en formato E.164 (+56912345678)
+            var phoneInput = document.getElementById("contactPhone");
+            var iti = (window.intlTelInput && phoneInput)
+                ? window.intlTelInput(phoneInput, {
+                    initialCountry: "cl",
+                    preferredCountries: ["cl", "ar", "pe", "co", "mx"],
+                    separateDialCode: false
+                })
+                : null;
+
+            function collectData() {
+                var data = {};
+                new FormData(form).forEach(function (value, key) {
+                    if (typeof value === "string") value = value.trim();
+                    if (value) data[key] = value;
+                });
+                if (iti) data.phone = iti.getNumber() || data.phone;
+                return data;
+            }
+
+            function trackLead() {
+                try { window.dataLayer && window.dataLayer.push({ event: "nodo_lead_empresas" }); } catch (e) { }
+                try { window.fbq && window.fbq("track", "Lead"); } catch (e) { }
+                try { window.ttq && window.ttq.track("SubmitForm"); } catch (e) { }
+            }
+
+            function showSuccess() {
+                form.innerHTML = '<div class="contact-form-success">' +
+                    "<h3>¡Gracias por tu interés en NODO!</h3>" +
+                    "<p>Recibimos tus datos. Nuestro equipo se pondrá en contacto contigo a la brevedad " +
+                    "para agendar la reunión.</p>" +
+                    "</div>";
+            }
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                if (iti && !iti.isValidNumber()) {
+                    statusEl.className = "contact-form-status is-error";
+                    statusEl.textContent = "Revisa el número de teléfono.";
+                    return;
+                }
+                statusEl.className = "contact-form-status";
+                statusEl.textContent = "";
+                submitBtn.disabled = true;
+                var origText = submitBtn.textContent;
+                submitBtn.textContent = "Enviando…";
+
+                fetch(submitEndpoint, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(collectData())
+                }).then(function (r) {
+                    if (!r.ok) throw new Error("No se pudo enviar el formulario");
+                    trackLead();
+                    showSuccess();
+                }).catch(function (err) {
+                    statusEl.className = "contact-form-status is-error";
+                    statusEl.textContent = err.message + ". Intenta nuevamente o escríbenos a somosnodo@desafiolatam.com";
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = origText;
+                });
+            });
+        })();
+    </script>
 </body>
 
 </html>

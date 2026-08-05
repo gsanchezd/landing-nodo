@@ -283,3 +283,54 @@
         text-align: center;
     }
 }
+
+/* ── Formulario de contacto B2B (CRM) ─────────────────────────────────── */
+.contact-form .form-group textarea {
+    resize: vertical;
+    font-family: inherit;
+}
+
+.contact-form .btn-large {
+    width: 100%;
+}
+
+.contact-form-status {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    text-align: center;
+    min-height: 1.2em;
+}
+
+.contact-form-status.is-error {
+    color: #dc2626;
+}
+
+.contact-form-success {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.contact-form-success h3 {
+    color: var(--primary-navy);
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+}
+
+.contact-form-success p {
+    color: var(--gray-dark);
+    font-size: 1.05rem;
+}
+
+/* Selector de país del teléfono (intl-tel-input) */
+.contact-form .iti {
+    width: 100%;
+}
+
+.contact-form .iti__tel-input {
+    padding-left: 3.5rem;
+}
+
+.contact-form .form-group select {
+    background: var(--white);
+    color: var(--gray-dark);
+}
