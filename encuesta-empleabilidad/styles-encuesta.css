@@ -212,6 +212,19 @@ body {
     color: rgb(156, 163, 175);
 }
 
+/* Correo inyectado desde el enlace del correo: se muestra para que la persona
+   sepa a qué registro queda asociada su respuesta, pero no se puede editar. */
+.encuesta-field input.is-locked {
+    background: #f3f4f6;
+    color: var(--gray);
+    border-color: #e5e7eb;
+    cursor: not-allowed;
+}
+
+.encuesta-field input.is-locked:focus {
+    outline-color: var(--border);
+}
+
 /* Estado nativo de validación, solo después de intentar enviar */
 .encuesta-form.was-validated :invalid {
     border-color: rgb(220, 38, 38);
@@ -367,6 +380,62 @@ body {
     font-size: 14px;
     text-decoration: underline;
     text-underline-offset: 3px;
+}
+
+/* ---------- Sin enlace personal ---------- */
+
+.encuesta-bloqueado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+    background: var(--white);
+    padding: 46px 32px;
+    border-radius: 16px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3);
+}
+
+.encuesta-bloqueado[hidden] {
+    display: none;
+}
+
+.encuesta-bloqueado-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(8, 29, 63, 0.08);
+    color: var(--primary-navy);
+}
+
+.encuesta-bloqueado h2 {
+    font-size: 1.4rem;
+    font-weight: 900;
+    line-height: 1.25;
+    color: var(--primary-navy);
+}
+
+.encuesta-bloqueado p {
+    max-width: 440px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--gray);
+}
+
+.encuesta-bloqueado-ayuda {
+    font-size: 13.5px !important;
+    padding-top: 6px;
+    border-top: 1px solid #e5e7eb;
+    width: 100%;
+    max-width: 440px;
+}
+
+.encuesta-bloqueado a {
+    color: var(--primary-navy);
+    font-weight: 700;
 }
 
 .encuesta-legal {

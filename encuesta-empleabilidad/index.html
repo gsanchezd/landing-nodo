@@ -57,7 +57,7 @@
                     <input id="f-email" name="email" type="email" required autocomplete="email"
                            placeholder="nombre@correo.cl" />
                     <small class="encuesta-help" id="email-help" hidden>
-                        Confirmamos que este es su correo. Si no es el suyo, corríjalo antes de enviar.
+                        Su respuesta quedará asociada a este correo.
                     </small>
                 </div>
 
@@ -153,6 +153,26 @@
                 <a class="encuesta-back" href="https://somosnodo.cl/">Volver a somosnodo.cl</a>
             </div>
 
+            <div id="encuestaBloqueado" class="encuesta-bloqueado" hidden>
+                <div class="encuesta-bloqueado-icon" aria-hidden="true">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="5" width="18" height="14" rx="2" />
+                        <polyline points="3 7 12 13 21 7" />
+                    </svg>
+                </div>
+                <h2>Abra el enlace desde su correo</h2>
+                <p>
+                    Esta encuesta se responde con el enlace personal que le enviamos por correo
+                    electrónico, para poder asociar sus respuestas a su registro. Búsquelo en su
+                    bandeja de entrada y presione el botón <strong>Responder la encuesta</strong>.
+                </p>
+                <p class="encuesta-bloqueado-ayuda">
+                    ¿No encuentra el correo o el enlace no le funciona? Escríbanos a
+                    <a href="mailto:contacto@somosnodo.cl">contacto@somosnodo.cl</a> y le reenviamos su enlace.
+                </p>
+            </div>
+
             <p class="encuesta-legal">
                 Sus respuestas se usan de forma agregada para el seguimiento del programa NODO.
             </p>
@@ -173,19 +193,36 @@
   var emailInput = form.querySelector('input[name="email"]');
   var emailHelp  = document.getElementById('email-help');
 
+  var bloqueadoEl = document.getElementById('encuestaBloqueado');
+
   // El correo llega por query string, inyectado desde el correo del CRM con el
-  // merge tag {{contact.email}}. Queda prellenado pero EDITABLE: si el merge
-  // tag falla (envío manual sin lista lo manda crudo — ver el incidente de
-  // Conecta Norte), la persona puede escribirlo y la respuesta no se pierde ni
-  // cae en un contacto fantasma.
+  // merge tag {{contact.email}}. Es la ÚNICA fuente admitida: sin él no se
+  // puede responder, así toda respuesta queda amarrada a un contacto real y
+  // nadie puede descolgarla escribiendo otra dirección.
+  //
+  // El campo va `readonly` y no `disabled`: un campo disabled no viaja en el
+  // FormData y el correo no llegaría al CRM.
+  //
+  // OJO: si la campaña se manda SIN lista, el merge tag sale sin interpolar
+  // (literal "{{contact.email}}") y la encuesta queda inaccesible para todos.
+  // Es un fallo total pero ruidoso y visible — preferible al contacto fantasma
+  // silencioso del incidente de Conecta Norte.
   var params  = new URLSearchParams(window.location.search);
   var rawMail = (params.get('email') || '').trim();
-  // Un merge tag sin interpolar llega literal como "{{contact.email}}": se descarta.
   var looksReal = rawMail && rawMail.indexOf('{{') === -1 && rawMail.indexOf('@') > 0;
-  if (looksReal) {
-    emailInput.value = rawMail;
-    if (emailHelp) emailHelp.hidden = false;
+
+  if (!looksReal) {
+    form.hidden = true;
+    if (bloqueadoEl) bloqueadoEl.hidden = false;
+    return;
   }
+
+  emailInput.value = rawMail;
+  emailInput.readOnly = true;
+  emailInput.classList.add('is-locked');
+  emailInput.setAttribute('aria-readonly', 'true');
+  if (emailHelp) emailHelp.hidden = false;
+
   var contactId = (params.get('contact_id') || '').trim();
   var hasContactId = contactId && contactId.indexOf('{{') === -1;
 
