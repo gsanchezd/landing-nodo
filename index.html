@@ -441,7 +441,10 @@
                 ? window.intlTelInput(phoneInput, {
                     initialCountry: "cl",
                     preferredCountries: ["cl", "ar", "pe", "co", "mx"],
-                    separateDialCode: false
+                    separateDialCode: false,
+                    // Sin utilsScript, isValidNumber() devuelve null y getNumber() "" →
+                    // el envío quedaba bloqueado y el teléfono nunca se normalizaba a E.164.
+                    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"
                 })
                 : null;
 
@@ -471,7 +474,7 @@
 
             form.addEventListener("submit", function (e) {
                 e.preventDefault();
-                if (iti && !iti.isValidNumber()) {
+                if (iti && iti.isValidNumber() === false) {
                     statusEl.className = "contact-form-status is-error";
                     statusEl.textContent = "Revisa el número de teléfono.";
                     return;

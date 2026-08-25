@@ -90,29 +90,12 @@ document.querySelectorAll('.impact-number').forEach(counter => {
     counterObserver.observe(counter);
 });
 
-// Form Submission
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(contactForm);
-        const data = {};
-        formData.forEach((value, key) => {
-            data[key] = value;
-        });
-        
-        // Here you would normally send the data to a server
-        console.log('Form submitted:', data);
-        
-        // Show success message
-        alert('¡Gracias por tu interés! Nos pondremos en contacto contigo pronto para agendar una reunión.');
-        
-        // Reset form
-        contactForm.reset();
-    });
-}
+// El formulario de contacto del home (#contactForm) NO se maneja aquí: lo maneja el
+// script inline de index.html, que postea al CRM (form 777ee552-...-3b48379f).
+// NO agregar listeners de submit en este archivo — lo comparten 8 páginas, y los dos
+// listeners que estaban acá hacían alert() + form.reset(): el reset vaciaba los campos
+// antes de que el script inline recolectara los datos, así que el POST al CRM nunca
+// llegaba a ocurrir y todos los leads de empresas se perdían en silencio.
 
 // Add scroll effect to navbar
 window.addEventListener('scroll', function() {
@@ -210,53 +193,3 @@ document.querySelectorAll('.contact-form input, .contact-form select, .contact-f
 });
 
 // Removed parallax effect to prevent overlap issues
-
-// Validate form inputs
-function validateForm(form) {
-    const inputs = form.querySelectorAll('[required]');
-    let isValid = true;
-    
-    inputs.forEach(input => {
-        if (!input.value.trim()) {
-            input.style.borderColor = 'var(--primary-red)';
-            isValid = false;
-        } else {
-            input.style.borderColor = 'var(--gray-light)';
-        }
-        
-        // Email validation
-        if (input.type === 'email') {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(input.value)) {
-                input.style.borderColor = 'var(--primary-red)';
-                isValid = false;
-            }
-        }
-    });
-    
-    return isValid;
-}
-
-// Update form submission with validation
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        if (validateForm(this)) {
-            // Process form submission
-            const formData = new FormData(this);
-            const data = {};
-            formData.forEach((value, key) => {
-                data[key] = value;
-            });
-            
-            console.log('Form submitted:', data);
-            trackEvent('Form', 'submit_success', 'contact_form');
-            
-            alert('¡Gracias por tu interés! Nos pondremos en contacto contigo pronto para agendar una reunión.');
-            this.reset();
-        } else {
-            alert('Por favor completa todos los campos requeridos correctamente.');
-        }
-    });
-}
