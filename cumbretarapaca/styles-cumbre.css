@@ -1,0 +1,554 @@
+/* Encuesta de Empleabilidad NODO — página de un solo formulario.
+   Autocontenida a propósito: no arrastra styles.css/evento/postula porque
+   esta página no tiene navbar, hero ni secciones del landing. */
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-VariableFont_wght.ttf') format('truetype-variations');
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+:root {
+    --primary-color: rgb(248, 237, 27);
+    --primary-navy: rgb(8, 29, 63);
+    --secondary-blue: rgb(50, 75, 160);
+    --secondary-cyan: rgb(0, 178, 183);
+    --white: rgb(255, 255, 255);
+    --ink: rgb(17, 17, 14);
+    --gray: rgb(107, 114, 128);
+    --border: rgb(208, 213, 221);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--primary-navy);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Layout ---------- */
+
+.cumbre-page {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 56px 20px 72px;
+    background: linear-gradient(150deg, var(--primary-navy) 0%, rgb(15, 42, 88) 55%, var(--secondary-blue) 100%);
+}
+
+.cumbre-glow {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.cumbre-glow--top {
+    width: 560px;
+    height: 560px;
+    top: -240px;
+    right: -180px;
+    background: radial-gradient(circle, rgba(248, 237, 27, 0.16) 0%, transparent 70%);
+}
+
+.cumbre-glow--bottom {
+    width: 460px;
+    height: 460px;
+    bottom: -220px;
+    left: -140px;
+    background: radial-gradient(circle, rgba(0, 178, 183, 0.22) 0%, transparent 70%);
+}
+
+.cumbre-wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+/* ---------- Encabezado ---------- */
+
+.cumbre-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.cumbre-logo {
+    display: inline-block;
+    margin-bottom: 26px;
+}
+
+.cumbre-logo img {
+    display: block;
+    height: 44px;
+    width: auto;
+}
+
+.cumbre-eyebrow {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.cumbre-title {
+    font-size: clamp(1.9rem, 5vw, 2.7rem);
+    font-weight: 900;
+    line-height: 1.12;
+    color: var(--white);
+    margin-bottom: 14px;
+}
+
+.cumbre-lead {
+    font-size: 16px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.78);
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+/* ---------- Formulario ---------- */
+
+.cumbre-form {
+    display: grid;
+    gap: 18px;
+    background: var(--white);
+    padding: 34px 32px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+/* `display: grid` de un autor le gana al `hidden` del user agent: sin esto el
+   formulario sigue visible tras enviarlo. Mismo caso en .cumbre-success. */
+.cumbre-form[hidden] {
+    display: none;
+}
+
+.cumbre-section {
+    margin: 10px 0 0;
+    padding-bottom: 10px;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--primary-navy);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.cumbre-section:first-child {
+    margin-top: 0;
+}
+
+.cumbre-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+    border: 0;
+}
+
+.cumbre-field > label,
+.cumbre-field > legend {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.4;
+    padding: 0;
+}
+
+.req {
+    color: rgb(220, 38, 38);
+}
+
+.cumbre-field input:not([type="checkbox"]),
+.cumbre-field select {
+    padding: 12px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    background: var(--white);
+    color: var(--ink);
+    width: 100%;
+    line-height: 1.2;
+}
+
+.cumbre-field input:not([type="checkbox"]):focus,
+.cumbre-field select:focus {
+    outline: 2px solid var(--primary-navy);
+    outline-offset: -1px;
+}
+
+.cumbre-field input::placeholder {
+    color: rgb(156, 163, 175);
+}
+
+/* Correo inyectado desde el enlace del correo: se muestra para que la persona
+   sepa a qué registro queda asociada su respuesta, pero no se puede editar. */
+.cumbre-field input.is-locked {
+    background: #f3f4f6;
+    color: var(--gray);
+    border-color: #e5e7eb;
+    cursor: not-allowed;
+}
+
+.cumbre-field input.is-locked:focus {
+    outline-color: var(--border);
+}
+
+/* Estado nativo de validación, solo después de intentar enviar */
+.cumbre-form.was-validated :invalid {
+    border-color: rgb(220, 38, 38);
+}
+
+.cumbre-help {
+    font-size: 13px;
+    line-height: 1.45;
+    color: var(--gray);
+    font-style: italic;
+}
+
+/* ---------- Escala 1–5 ---------- */
+
+.cumbre-scale {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 3px;
+}
+
+.cumbre-scale-opt input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.cumbre-scale-opt span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--primary-navy);
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.cumbre-scale-opt span:hover {
+    border-color: var(--primary-navy);
+    transform: translateY(-1px);
+}
+
+.cumbre-scale-opt input:checked + span {
+    background: var(--primary-navy);
+    border-color: var(--primary-navy);
+    color: var(--white);
+}
+
+.cumbre-scale-opt input:focus-visible + span {
+    outline: 2px solid var(--secondary-cyan);
+    outline-offset: 2px;
+}
+
+.cumbre-scale-legend {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--gray);
+    margin-top: 2px;
+}
+
+/* ---------- Envío ---------- */
+
+.cumbre-submit {
+    margin-top: 12px;
+    padding: 16px 28px;
+    background: var(--primary-navy);
+    color: var(--white);
+    border: none;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 800;
+    font-family: inherit;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cumbre-submit:hover:not(:disabled) {
+    background: var(--ink);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(8, 29, 63, 0.28);
+}
+
+.cumbre-submit:disabled {
+    opacity: 0.55;
+    cursor: wait;
+    transform: none;
+}
+
+.cumbre-status {
+    text-align: center;
+    font-size: 14px;
+    min-height: 1px;
+}
+
+.cumbre-status.is-error {
+    color: rgb(220, 38, 38);
+    font-weight: 600;
+}
+
+/* ---------- Éxito ---------- */
+
+.cumbre-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+    background: var(--white);
+    padding: 48px 32px;
+    border-radius: 16px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3);
+}
+
+.cumbre-success[hidden] {
+    display: none;
+}
+
+.cumbre-success-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(8, 29, 63, 0.08);
+    color: var(--primary-navy);
+}
+
+.cumbre-success h2 {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--primary-navy);
+}
+
+.cumbre-success p {
+    max-width: 420px;
+    color: var(--gray);
+    font-size: 15px;
+}
+
+.cumbre-back {
+    margin-top: 6px;
+    color: var(--primary-navy);
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* ---------- Sin enlace personal ---------- */
+
+.cumbre-bloqueado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+    background: var(--white);
+    padding: 46px 32px;
+    border-radius: 16px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3);
+}
+
+.cumbre-bloqueado[hidden] {
+    display: none;
+}
+
+.cumbre-bloqueado-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(8, 29, 63, 0.08);
+    color: var(--primary-navy);
+}
+
+.cumbre-bloqueado h2 {
+    font-size: 1.4rem;
+    font-weight: 900;
+    line-height: 1.25;
+    color: var(--primary-navy);
+}
+
+.cumbre-bloqueado p {
+    max-width: 440px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--gray);
+}
+
+.cumbre-bloqueado-ayuda {
+    font-size: 13.5px !important;
+    padding-top: 6px;
+    border-top: 1px solid #e5e7eb;
+    width: 100%;
+    max-width: 440px;
+}
+
+.cumbre-bloqueado a {
+    color: var(--primary-navy);
+    font-weight: 700;
+}
+
+.cumbre-legal {
+    margin-top: 22px;
+    text-align: center;
+    font-size: 12.5px;
+    line-height: 1.5;
+    /* va dentro de la tarjeta blanca del formulario, no sobre el fondo navy
+       como en la plantilla original: tiene que ser texto oscuro. */
+    color: var(--gray);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 560px) {
+    .cumbre-page {
+        padding: 36px 16px 56px;
+    }
+
+    .cumbre-form {
+        padding: 26px 20px;
+    }
+
+    /* iOS Safari hace zoom al enfocar un campo de menos de 16px y deja la
+       página descuadrada. La mayoría abre esta encuesta desde el correo en
+       el celular, así que en móvil los campos van a 16px. */
+    .cumbre-field input:not([type="checkbox"]),
+    .cumbre-field select {
+        font-size: 16px;
+    }
+
+    .cumbre-scale {
+        gap: 7px;
+    }
+
+    .cumbre-scale-opt span {
+        height: 48px;
+        font-size: 16px;
+    }
+}
+
+/* ── Cláusula de autorización Corfo ──────────────────────────────────────
+   Es requisito de bases: tiene que leerse, no pasar desapercibida. Va en
+   un bloque con fondo propio, checkbox grande y área de clic amplia. */
+.cumbre-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 1.15rem 1.25rem;
+    margin-top: 0.5rem;
+    background: rgba(0, 178, 183, 0.07);
+    border: 1px solid rgba(0, 178, 183, 0.35);
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.cumbre-consent input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    margin: 2px 0 0;
+    flex-shrink: 0;
+    accent-color: #00b2b7;
+    cursor: pointer;
+}
+
+.cumbre-consent-text {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--ink);
+}
+
+.cumbre-consent-text strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    /* cyan oscurecido: el #00b2b7 de marca no contrasta lo suficiente
+       sobre el fondo claro del bloque */
+    color: #0a7075;
+}
+
+/* Al fallar la validación nativa, el bloque se marca en rojo */
+.cumbre-form.was-validated .cumbre-consent input:invalid {
+    outline: 2px solid #ee3f23;
+    outline-offset: 3px;
+}
+
+.cumbre-form.was-validated .cumbre-consent:has(input:invalid) {
+    border-color: #ee3f23;
+    background: rgba(238, 63, 35, 0.08);
+}
+
+/* Dos columnas en pantallas anchas: el form tiene 11 campos y de una sola
+   columna queda larguísimo */
+@media (min-width: 720px) {
+    .cumbre-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 1.1rem;
+    }
+
+    .cumbre-grid .cumbre-field--wide {
+        grid-column: 1 / -1;
+    }
+}
+
+/* intl-tel-input envuelve el input en un .iti: sin esto el campo de teléfono
+   queda angosto y desalineado respecto de los demás. */
+.cumbre-field .iti {
+    width: 100%;
+}
+
+.cumbre-field .iti input {
+    width: 100%;
+}
