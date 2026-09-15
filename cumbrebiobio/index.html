@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cumbre Pacto Pyme Biobío - Preinscripción</title>
+    <meta name="description"
+        content="Dos días de inteligencia artificial aplicada a las industrias productivas del Biobío. Concepción, abril 2027. Preinscripción sin costo para las pymes de la región.">
+    <meta property="og:title" content="Cumbre Pacto Pyme Biobío">
+    <meta property="og:description"
+        content="IA aplicada a las industrias productivas del Biobío. Concepción, abril 2027. Sin costo para las pymes de la región.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://somosnodo.cl/cumbrebiobio/">
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PV9S5DL6');</script>
+    <!-- End Google Tag Manager -->
+
+    <style>
+    /* Identidad Pacto Pyme (misma paleta y tipografías que pactopyme.cl y que el
+       one-pager que se adjunta a la postulación Corfo). La página es autocontenida
+       a propósito: no arrastra el CSS de somosnodo, y así se puede mover tal cual
+       a pactopyme.cl con solo copiar la carpeta. */
+    :root {
+        --verde: #0F3D2E; --verde-hover: #0A2A20; --verde-tint: #E7EFE9;
+        --lima: #C4F24C; --lima-hover: #B2E63A;
+        --alerta: #B3261E; --ok: #0F7A3D;
+        --tinta: #1C1F24; --paper: #FBFAF6; --gris: #F2EFE7;
+        --rule: #E0DDD2; --gris-txt: #3F5A66;
+        --display: "Space Grotesk", "Archivo", sans-serif;
+        --body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+        --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+        --pad: clamp(20px, 5vw, 72px);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+        margin: 0; background: var(--paper); color: var(--tinta);
+        font-family: var(--body); font-size: 17px; line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3 { font-family: var(--display); font-weight: 600; margin: 0; letter-spacing: -.02em; line-height: 1.05; }
+    p { margin: 0; }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid var(--verde); outline-offset: 3px; }
+    [hidden] { display: none !important; }
+
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 var(--pad); }
+
+    /* ---------- Barra ---------- */
+    .nav { position: sticky; top: 0; z-index: 50; background: rgba(251,250,246,.94);
+           backdrop-filter: blur(10px); border-bottom: 1px solid var(--rule); }
+    .nav-in { display: flex; align-items: center; gap: 14px; padding: 12px var(--pad);
+              max-width: 1120px; margin: 0 auto; }
+    .mark { display: flex; align-items: center; gap: 11px; text-decoration: none; margin-right: auto; }
+    .mark .wm { font-family: var(--display); font-weight: 700; font-size: 21px; letter-spacing: -.03em;
+                line-height: 1; display: flex; gap: .26em; color: var(--verde); }
+    .mark .wm span { font-weight: 500; color: #4E6B79; }
+    .nav-region { font-family: var(--mono); font-size: 10.5px; letter-spacing: .13em;
+                  text-transform: uppercase; color: #8A8F96; white-space: nowrap; }
+    @media (max-width: 559px) { .nav-region { display: none; } }
+
+    .btn { font-family: var(--body); font-weight: 600; font-size: 14.5px; background: var(--verde);
+           color: #fff; border: 0; border-radius: 2px; padding: 12px 22px; cursor: pointer;
+           text-decoration: none; display: inline-block; transition: background .18s ease, transform .18s ease; }
+    .btn:hover { background: var(--verde-hover); transform: translateY(-1px); }
+    .btn[disabled] { opacity: .55; cursor: default; transform: none; }
+
+    /* ---------- Hero ---------- */
+    .hero { padding: clamp(46px, 7vw, 92px) 0 clamp(34px, 5vw, 60px); }
+    .eyebrow { display: flex; align-items: center; gap: 12px; font-family: var(--mono); font-size: 11px;
+               letter-spacing: .19em; text-transform: uppercase; color: var(--verde); }
+    .eyebrow::after { content: ""; flex: 1 1 auto; height: 1px; min-width: 24px;
+                      background: linear-gradient(to right, var(--lima) 0, var(--lima) 34px, var(--rule) 34px); }
+    .hero h1 { font-size: clamp(38px, 6.6vw, 76px); color: var(--verde); margin-top: 16px;
+               letter-spacing: -.035em; text-wrap: balance; }
+    .hero .sub { font-family: var(--display); font-weight: 500; font-size: clamp(19px, 2.7vw, 29px);
+                 color: var(--tinta); margin-top: 10px; letter-spacing: -.02em; }
+    .hero .lede { color: var(--gris-txt); margin-top: 22px; max-width: 54ch; font-size: 17.5px; }
+    .hero .cta { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 14px 20px; align-items: center; }
+    .hero .cta .nota-cta { font-family: var(--mono); font-size: 11px; letter-spacing: .09em;
+                           text-transform: uppercase; color: #55707B; }
+
+    /* ---------- Datos clave ---------- */
+    .datos { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 26px;
+             margin-top: clamp(34px, 5vw, 56px); }
+    @media (min-width: 760px) { .datos { grid-template-columns: repeat(4, 1fr); } }
+    .dato { border-top: 3px solid var(--verde); padding-top: 10px; }
+    .dato .k { font-family: var(--mono); font-size: 10px; letter-spacing: .15em;
+               text-transform: uppercase; color: #55707B; }
+    .dato .v { font-family: var(--display); font-weight: 600; font-size: clamp(22px, 3vw, 30px);
+               color: var(--verde); margin: 4px 0 4px; letter-spacing: -.02em; line-height: 1.1; }
+    .dato .d { font-size: 14px; color: var(--gris-txt); line-height: 1.45; }
+
+    /* ---------- Qué es ---------- */
+    .quees { background: var(--gris); padding: clamp(50px, 7vw, 92px) 0; margin-top: clamp(46px, 6vw, 80px); }
+    .h-sec { font-size: clamp(28px, 4vw, 46px); color: var(--verde); letter-spacing: -.03em;
+             margin-top: 14px; text-wrap: balance; }
+    .quees p { color: var(--gris-txt); margin-top: 18px; max-width: 62ch; }
+    .cadenas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+    .cadena { font-family: var(--mono); font-size: 11.5px; letter-spacing: .09em; text-transform: uppercase;
+              background: #fff; border: 1px solid var(--rule); border-left: 4px solid var(--lima);
+              color: var(--verde); padding: 9px 14px; border-radius: 2px; }
+    .incluye { display: grid; gap: 12px; margin-top: 30px; max-width: 66ch; }
+    .incluye li { position: relative; padding-left: 20px; list-style: none; color: var(--gris-txt); font-size: 15.5px; }
+    .incluye li::before { content: ""; position: absolute; left: 0; top: 9px; width: 7px; height: 7px;
+                          background: var(--lima); border-radius: 50%; }
+    .incluye b { color: var(--verde); font-weight: 600; }
+
+    /* ---------- Formulario ---------- */
+    .registro { padding: clamp(50px, 7vw, 92px) 0 clamp(60px, 8vw, 100px); }
+    .form { margin-top: 30px; display: grid; grid-template-columns: 1fr; gap: 16px; max-width: 680px; }
+    @media (min-width: 640px) { .form { grid-template-columns: 1fr 1fr; } }
+    .form-block { grid-column: 1/-1; font-family: var(--mono); font-size: 10.5px; letter-spacing: .19em;
+                  text-transform: uppercase; color: var(--verde); margin: 14px 0 -2px;
+                  border-top: 1px solid var(--rule); padding-top: 22px; }
+    .form-block:first-child { margin-top: 0; border-top: 0; padding-top: 0; }
+    .field { display: flex; flex-direction: column; gap: 7px; }
+    .field--full { grid-column: 1/-1; }
+    label { font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em;
+            text-transform: uppercase; color: #55707B; }
+    /* El selector cubre text/tel/email a la vez: en la página de Tarapacá los
+       input[type=text] y [type=tel] quedaron sin estilo por listar solo el email. */
+    input[type="text"], input[type="tel"], input[type="email"], select {
+        background: #fff; border: 1px solid var(--rule); color: var(--tinta);
+        font-family: var(--body); font-size: 16px; padding: 11px 12px; border-radius: 2px; width: 100%;
+    }
+    input::placeholder { color: #6B818A; }
+    input:focus, select:focus { outline: 0; border-color: var(--verde); box-shadow: 0 0 0 3px rgba(15,61,46,.13); }
+    .req { color: var(--alerta); }
+    .form.was-validated input:invalid, .form.was-validated select:invalid {
+        border-color: var(--alerta); box-shadow: 0 0 0 3px rgba(179,38,30,.12);
+    }
+    /* intl-tel-input envuelve el input en un div propio: sin esto el campo
+       teléfono queda más angosto que el resto de la grilla. */
+    .iti { width: 100%; }
+
+    .consent { grid-column: 1/-1; display: flex; align-items: flex-start; gap: 12px;
+               background: var(--verde-tint); border-left: 4px solid var(--verde);
+               padding: 16px 18px; margin-top: 8px; cursor: pointer; }
+    .consent input { width: 18px; height: 18px; flex: 0 0 auto; margin-top: 3px; accent-color: var(--verde); }
+    .consent-text { font-family: var(--body); font-size: 14.5px; line-height: 1.55;
+                    color: var(--tinta); text-transform: none; letter-spacing: 0; }
+    .consent-text b { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: .13em;
+                      text-transform: uppercase; color: var(--verde); margin-bottom: 6px; }
+    .form-foot { grid-column: 1/-1; display: flex; flex-wrap: wrap; align-items: center;
+                 gap: 16px 22px; margin-top: 10px; }
+    .msg { font-family: var(--mono); font-size: 12px; color: var(--alerta); }
+    .legal { grid-column: 1/-1; font-family: var(--mono); font-size: 11px; line-height: 1.75;
+             color: #8A8F96; letter-spacing: .03em; max-width: 68ch; margin-top: 6px; }
+
+    .exito { max-width: 680px; border: 2px solid var(--verde); background: #fff; padding: clamp(28px, 4vw, 44px); }
+    .exito .tick { width: 46px; height: 46px; border-radius: 50%; background: var(--lima); color: var(--verde);
+                   display: flex; align-items: center; justify-content: center; font-size: 25px;
+                   font-weight: 700; margin-bottom: 18px; }
+    .exito h2 { font-size: clamp(26px, 3.4vw, 36px); color: var(--verde); }
+    .exito p { color: var(--gris-txt); margin-top: 14px; max-width: 52ch; }
+    .exito a { display: inline-block; margin-top: 24px; font-family: var(--mono); font-size: 11px;
+               letter-spacing: .13em; text-transform: uppercase; color: var(--verde);
+               border-bottom: 2px solid rgba(15,61,46,.28); text-decoration: none; padding-bottom: 2px; }
+
+    /* ---------- Pie ---------- */
+    footer { background: var(--verde); color: #fff; padding: 40px 0 52px; font-size: 13.5px; }
+    .f-in { display: flex; flex-wrap: wrap; gap: 20px 34px; align-items: center; justify-content: space-between; }
+    .f-in .mono { font-family: var(--mono); font-size: 11px; letter-spacing: .1em;
+                  text-transform: uppercase; color: var(--lima); }
+    .f-in .who { color: rgba(255,255,255,.78); max-width: 46ch; line-height: 1.6; }
+    .f-links { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 13px; }
+    .f-links a { color: rgba(255,255,255,.86); text-decoration: none;
+                 border-bottom: 1px solid rgba(196,242,76,.45); padding-bottom: 1px; }
+    .f-links a:hover { color: var(--lima); }
+    </style>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PV9S5DL6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager -->
+
+    <nav class="nav">
+        <div class="nav-in">
+            <a class="mark" href="https://pactopyme.cl/">
+                <svg viewBox="0 0 100 100" width="30" height="30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M15 53 L50 20 L85 53" fill="none" stroke="#0F3D2E" stroke-width="17"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M29 86 L50 67 L71 86" fill="none" stroke="#4E6B79" stroke-width="15"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span class="wm">Pacto<span>Pyme</span></span>
+            </a>
+            <span class="nav-region">Región del Biobío</span>
+            <a class="btn" href="#registro">Preinscribirme</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="wrap">
+            <span class="eyebrow">Pacto Pyme · Biobío · Abril 2027</span>
+            <h1>Cumbre Pacto Pyme Biobío</h1>
+            <p class="sub">IA para las industrias productivas del Biobío</p>
+            <p class="lede">
+                Dos días presenciales en Concepción, con actividades satélite en Los Ángeles y la
+                provincia de Arauco, para que las pymes de la región apliquen inteligencia artificial
+                a su operación. Participación sin costo.
+            </p>
+            <div class="cta">
+                <a class="btn" href="#registro">Reservar mi cupo</a>
+                <span class="nota-cta">Preinscripción abierta · Cupos limitados</span>
+            </div>
+
+            <div class="datos">
+                <div class="dato">
+                    <div class="k">Fecha</div>
+                    <div class="v">Abril 2027</div>
+                    <div class="d">Dos días continuos.</div>
+                </div>
+                <div class="dato">
+                    <div class="k">Sede</div>
+                    <div class="v">Concepción</div>
+                    <div class="d">Con satélites en Los Ángeles y la provincia de Arauco.</div>
+                </div>
+                <div class="dato">
+                    <div class="k">Asistentes</div>
+                    <div class="v">300</div>
+                    <div class="d">Pymes, emprendedores y estudiantes de la región.</div>
+                </div>
+                <div class="dato">
+                    <div class="k">Costo</div>
+                    <div class="v">Gratis</div>
+                    <div class="d">Inscripción sin costo para las pymes del Biobío.</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="quees">
+        <div class="wrap">
+            <span class="eyebrow">De qué se trata</span>
+            <h2 class="h-sec">La IA aterrizada a las cadenas productivas de la región</h2>
+            <p>
+                La Cumbre Pacto Pyme Biobío es el hito de lanzamiento regional del Pacto Pyme, la
+                iniciativa nacional impulsada por Desafío Latam junto a Abastible y ACTI, cuya
+                vocación es que las pymes de Chile vendan más, gasten menos y operen mejor. Dos días
+                de inteligencia artificial aplicada y digitalización, bajados a las cadenas
+                productivas emblemáticas del Biobío.
+            </p>
+
+            <div class="cadenas">
+                <span class="cadena">Agroalimentario</span>
+                <span class="cadena">Enoturismo</span>
+                <span class="cadena">Industrial</span>
+                <span class="cadena">Naval</span>
+                <span class="cadena">Forestal</span>
+                <span class="cadena">Energía verde</span>
+            </div>
+
+            <ul class="incluye">
+                <li><b>Formación en IA aplicada</b> a la gestión, las ventas y la operación de una pyme,
+                    en talleres prácticos.</li>
+                <li><b>Expertos internacionales presenciales</b> en IA aplicada a industrias productivas.</li>
+                <li><b>Ruedas de negocios y matchmaking</b> entre pymes, proveedores y actores de industria.</li>
+                <li><b>Legado por al menos 24 meses</b>: vertical Pacto Pyme Biobío operativa, Copiloto IA
+                    Regional gratuito y Reporte de Inteligencia Territorial Biobío de acceso abierto.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="registro" id="registro">
+        <div class="wrap">
+            <span class="eyebrow">Preinscripción</span>
+            <h2 class="h-sec">Reserve su cupo</h2>
+            <p class="hero-lede" style="color:var(--gris-txt);margin-top:18px;max-width:54ch">
+                Complete el formulario y le confirmaremos por correo la fecha exacta, el lugar y el
+                programa de los dos días.
+            </p>
+
+            <!-- BEGIN preinscripción Cumbre Biobío (CRM form_id 92403079-8901-4098-9823-c03956610fb9,
+                 proyecto Viraliza). Form propio y no el iframe del CRM: la cláusula Corfo necesita un
+                 checkbox único obligatorio, y el iframe solo renderiza checkboxes vía
+                 multi_enumeration. Misma receta verificada en cumbretarapaca/. -->
+            <form id="biobioForm" class="form"
+                  data-form-id="92403079-8901-4098-9823-c03956610fb9" novalidate>
+
+                <div class="form-block">Sus datos</div>
+
+                <div class="field field--full">
+                    <label for="f-name">Nombre y apellido <span class="req">*</span></label>
+                    <input id="f-name" name="name" type="text" required autocomplete="name"
+                           placeholder="Ej: María Pérez" />
+                </div>
+
+                <div class="field">
+                    <label for="f-email">Correo electrónico <span class="req">*</span></label>
+                    <input id="f-email" name="email" type="email" required autocomplete="email"
+                           placeholder="nombre@correo.cl" />
+                </div>
+
+                <div class="field">
+                    <label for="f-phone">Teléfono <span class="req">*</span></label>
+                    <input id="f-phone" name="phone" type="tel" required autocomplete="tel" />
+                </div>
+
+                <div class="field">
+                    <label for="f-genero">Género <span class="req">*</span></label>
+                    <select id="f-genero" name="genero" required>
+                        <option value="">— Seleccionar —</option>
+                        <option value="Mujer">Mujer</option>
+                        <option value="Hombre">Hombre</option>
+                        <option value="Prefiero no responder">Prefiero no responder</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="f-comuna">Comuna de residencia <span class="req">*</span></label>
+                    <select id="f-comuna" name="viraliza_comuna" required>
+                        <option value="">— Seleccionar —</option>
+                        <optgroup label="Provincia de Concepción">
+                            <option value="Concepción">Concepción</option>
+                            <option value="Chiguayante">Chiguayante</option>
+                            <option value="Coronel">Coronel</option>
+                            <option value="Florida">Florida</option>
+                            <option value="Hualpén">Hualpén</option>
+                            <option value="Hualqui">Hualqui</option>
+                            <option value="Lota">Lota</option>
+                            <option value="Penco">Penco</option>
+                            <option value="San Pedro de la Paz">San Pedro de la Paz</option>
+                            <option value="Santa Juana">Santa Juana</option>
+                            <option value="Talcahuano">Talcahuano</option>
+                            <option value="Tomé">Tomé</option>
+                        </optgroup>
+                        <optgroup label="Provincia de Biobío">
+                            <option value="Los Ángeles">Los Ángeles</option>
+                            <option value="Alto Biobío">Alto Biobío</option>
+                            <option value="Antuco">Antuco</option>
+                            <option value="Cabrero">Cabrero</option>
+                            <option value="Laja">Laja</option>
+                            <option value="Mulchén">Mulchén</option>
+                            <option value="Nacimiento">Nacimiento</option>
+                            <option value="Negrete">Negrete</option>
+                            <option value="Quilaco">Quilaco</option>
+                            <option value="Quilleco">Quilleco</option>
+                            <option value="San Rosendo">San Rosendo</option>
+                            <option value="Santa Bárbara">Santa Bárbara</option>
+                            <option value="Tucapel">Tucapel</option>
+                            <option value="Yumbel">Yumbel</option>
+                        </optgroup>
+                        <optgroup label="Provincia de Arauco">
+                            <option value="Arauco">Arauco</option>
+                            <option value="Cañete">Cañete</option>
+                            <option value="Contulmo">Contulmo</option>
+                            <option value="Curanilahue">Curanilahue</option>
+                            <option value="Lebu">Lebu</option>
+                            <option value="Los Álamos">Los Álamos</option>
+                            <option value="Tirúa">Tirúa</option>
+                        </optgroup>
+                        <optgroup label="Fuera de la región">
+                            <option value="Otra región de Chile">Otra región de Chile</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="form-block">Su organización</div>
+
+                <div class="field field--full">
+                    <label for="f-company">Empresa u organización <span class="req">*</span></label>
+                    <input id="f-company" name="company" type="text" required autocomplete="organization"
+                           placeholder="Nombre de su empresa u organización" />
+                </div>
+
+                <div class="field">
+                    <label for="f-sector">Sector <span class="req">*</span></label>
+                    <select id="f-sector" name="viraliza_sector" required>
+                        <option value="">— Seleccionar —</option>
+                        <option value="Agroalimentario">Agroalimentario</option>
+                        <option value="Forestal y madera">Forestal y madera</option>
+                        <option value="Naval y metalmecánica">Naval y metalmecánica</option>
+                        <option value="Enoturismo">Enoturismo</option>
+                        <option value="Energía e hidrógeno verde">Energía e hidrógeno verde</option>
+                        <option value="Pesca y acuicultura">Pesca y acuicultura</option>
+                        <option value="Logística y transporte">Logística y transporte</option>
+                        <option value="Puerto y comercio internacional">Puerto y comercio internacional</option>
+                        <option value="Construcción">Construcción</option>
+                        <option value="Comercio">Comercio</option>
+                        <option value="Turismo">Turismo</option>
+                        <option value="Tecnología y servicios digitales">Tecnología y servicios digitales</option>
+                        <option value="Servicios profesionales">Servicios profesionales</option>
+                        <option value="Educación y formación">Educación y formación</option>
+                        <option value="Sector público">Sector público</option>
+                        <option value="Gremio, ONG o fundación">Gremio, ONG o fundación</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="f-rol">Su rol o cargo <span class="req">*</span></label>
+                    <select id="f-rol" name="viraliza_rol" required>
+                        <option value="">— Seleccionar —</option>
+                        <option value="Dueño/a o socio/a">Dueño/a o socio/a</option>
+                        <option value="Gerencia o dirección">Gerencia o dirección</option>
+                        <option value="Jefatura o subgerencia">Jefatura o subgerencia</option>
+                        <option value="Profesional o técnico/a">Profesional o técnico/a</option>
+                        <option value="Emprendedor/a independiente">Emprendedor/a independiente</option>
+                        <option value="Investigador/a o académico/a">Investigador/a o académico/a</option>
+                        <option value="Funcionario/a público">Funcionario/a público</option>
+                        <option value="Estudiante">Estudiante</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="f-tamano">Tamaño de la organización <span class="req">*</span></label>
+                    <select id="f-tamano" name="viraliza_tamano_organizacion" required>
+                        <option value="">— Seleccionar —</option>
+                        <option value="Trabajo por cuenta propia">Trabajo por cuenta propia</option>
+                        <option value="Micro · 1 a 9 personas">Micro · 1 a 9 personas</option>
+                        <option value="Pequeña · 10 a 49 personas">Pequeña · 10 a 49 personas</option>
+                        <option value="Mediana · 50 a 199 personas">Mediana · 50 a 199 personas</option>
+                        <option value="Grande · 200 o más personas">Grande · 200 o más personas</option>
+                        <option value="Institución pública">Institución pública</option>
+                        <option value="Universidad o centro de formación">Universidad o centro de formación</option>
+                        <option value="ONG o fundación">ONG o fundación</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="f-eje">Cadena productiva de interés <span class="req">*</span></label>
+                    <select id="f-eje" name="viraliza_eje_interes" required>
+                        <option value="">— Seleccionar —</option>
+                        <option value="Agroalimentario">Agroalimentario</option>
+                        <option value="Enoturismo">Enoturismo</option>
+                        <option value="Industrial">Industrial</option>
+                        <option value="Naval">Naval</option>
+                        <option value="Forestal">Forestal</option>
+                        <option value="Energía verde">Energía verde</option>
+                    </select>
+                </div>
+
+                <div class="form-block">Autorización</div>
+
+                <!-- Requisito obligatorio de las bases: sin esta autorización la lista de
+                     asistencia no vale como respaldo formal ante Corfo. -->
+                <label class="consent" for="f-corfo">
+                    <input id="f-corfo" name="viraliza_autoriza_corfo" type="checkbox" required />
+                    <span class="consent-text">
+                        <b>Obligatorio</b>
+                        Autorizo a Corfo para que, directamente o a través de terceros que designe, me
+                        contacte para el seguimiento y la evaluación del instrumento al que corresponde
+                        esta actividad.
+                    </span>
+                </label>
+
+                <div class="form-foot">
+                    <button type="submit" class="btn">Reservar mi cupo</button>
+                    <span id="biobioStatus" class="msg" role="status" aria-live="polite"></span>
+                </div>
+
+                <p class="legal">
+                    Sus datos se usan para gestionar su participación en la Cumbre y para el reporte del
+                    programa. No se comparten con terceros ajenos al programa.
+                    <!-- Nota de transparencia: la Cumbre está postulando al concurso Corfo que cierra
+                         el 23-09-2026. Si el proyecto se adjudica, esta línea se borra. -->
+                    La Cumbre se ejecuta en el marco del concurso Corfo Viraliza Eventos Biobío 2026,
+                    actualmente en evaluación; le confirmaremos por correo la fecha y el lugar definitivos.
+                </p>
+            </form>
+
+            <div id="biobioExito" class="exito" hidden>
+                <div class="tick">✓</div>
+                <h2>¡Preinscripción registrada!</h2>
+                <p>
+                    Gracias por reservar su cupo en la Cumbre Pacto Pyme Biobío. Le enviaremos los
+                    detalles de fecha, lugar y programa al correo que nos indicó.
+                </p>
+                <a href="https://pactopyme.cl/">Conocer el Pacto Pyme</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrap f-in">
+            <div>
+                <div class="mono">Pacto Pyme · Si las pymes crecen, Chile crece</div>
+                <p class="who" style="margin-top:12px">
+                    Ejecuta Smart Latam SpA (Desafío Latam), junto a ACTI y Ecosistema Startup
+                    Corporation. Postulación al concurso Corfo Viraliza Eventos Biobío 2026.
+                </p>
+            </div>
+            <div class="f-links">
+                <a href="https://pactopyme.cl/">pactopyme.cl</a>
+                <a href="https://pactopyme.cl/politica-de-privacidad">Política de privacidad</a>
+                <a href="mailto:camila@desafiolatam.com">camila@desafiolatam.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+    <script>
+    (function () {
+        var form = document.getElementById('biobioForm');
+        if (!form) return;
+
+        var CRM_BASE  = 'https://crm.agentsmind.ai/api';
+        var submitUrl = CRM_BASE + '/form-submit/' + form.dataset.formId;
+        var statusEl  = document.getElementById('biobioStatus');
+        var successEl = document.getElementById('biobioExito');
+        var submitBtn = form.querySelector('button[type="submit"]');
+        var phoneEl   = document.getElementById('f-phone');
+
+        // utilsScript (libphonenumber) es OBLIGATORIO: sin él isValidNumber() devuelve
+        // null y getNumber() "" — eso tuvo el form de empresas de somosnodo 20 días
+        // sin enviar nada al CRM, en silencio.
+        var iti = (window.intlTelInput && phoneEl)
+            ? window.intlTelInput(phoneEl, {
+                initialCountry: 'cl',
+                preferredCountries: ['cl', 'pe', 'bo', 'ar'],
+                separateDialCode: false,
+                utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js'
+            })
+            : null;
+
+        function showError(text) { statusEl.textContent = text; }
+        function clearError() { statusEl.textContent = ''; }
+
+        function collectData() {
+            var data = {};
+            new FormData(form).forEach(function (value, key) {
+                if (typeof value === 'string') value = value.trim();
+                if (value) data[key] = value;
+            });
+
+            // El teléfono viaja en E.164 (+56912345678), convención de los forms de ADL.
+            if (iti) {
+                var num = iti.getNumber();
+                if (num) data.phone = num;
+            }
+
+            // El CRM guarda custom_fields TAL CUAL llegan, sin castear. El campo
+            // viraliza_autoriza_corfo es bool, así que va el booleano y no "Sí":
+            // un string en un campo bool rompe el filtro de listas.
+            data.viraliza_autoriza_corfo = form.querySelector('#f-corfo').checked;
+
+            return data;
+        }
+
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            clearError();
+
+            if (!form.checkValidity()) {
+                form.classList.add('was-validated');
+                form.reportValidity();
+                return;
+            }
+
+            // isValidNumber() === false, no !isValidNumber(): si el utils todavía no
+            // cargó devuelve null, y con la negación simple se bloquearían TODOS los
+            // envíos. Ante la duda, mejor un teléfono mal formateado que un cupo perdido.
+            if (iti && iti.isValidNumber() === false) {
+                form.classList.add('was-validated');
+                showError('Revise el número de teléfono.');
+                phoneEl.focus();
+                return;
+            }
+
+            form.classList.remove('was-validated');
+            submitBtn.disabled = true;
+            var originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Enviando…';
+
+            try {
+                var res = await fetch(submitUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    // JSON PLANO. Envuelto en {data:{…}} el CRM responde 201 igual pero
+                    // no crea ni matchea el contacto: falso positivo peligroso.
+                    body: JSON.stringify(collectData())
+                });
+                if (!res.ok) throw new Error('No se pudo completar la preinscripción.');
+
+                try {
+                    window.dataLayer && window.dataLayer.push({
+                        event: 'viraliza_registro_cumbre_biobio',
+                        cadena: form.querySelector('#f-eje').value,
+                        comuna: form.querySelector('#f-comuna').value
+                    });
+                } catch (_) { }
+
+                form.hidden = true;
+                successEl.hidden = false;
+                successEl.scrollIntoView({ block: 'center' });
+            } catch (err) {
+                showError((err && err.message) ||
+                    'Hubo un problema al enviar. Revise su conexión e intente nuevamente.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
+        });
+    })();
+    </script>
+</body>
+
+</html>
