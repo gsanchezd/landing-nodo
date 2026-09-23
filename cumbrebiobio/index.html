@@ -167,6 +167,8 @@
                    font-weight: 700; margin-bottom: 18px; }
     .exito h2 { font-size: clamp(26px, 3.4vw, 36px); color: var(--verde); }
     .exito p { color: var(--gris-txt); margin-top: 14px; max-width: 52ch; }
+    .exito .exito-id b { font-family: var(--mono); letter-spacing: .08em; color: var(--verde); }
+    .exito .exito-id[hidden] { display: none; }
     .exito a { display: inline-block; margin-top: 24px; font-family: var(--mono); font-size: 11px;
                letter-spacing: .13em; text-transform: uppercase; color: var(--verde);
                border-bottom: 2px solid rgba(15,61,46,.28); text-decoration: none; padding-bottom: 2px; }
@@ -319,6 +321,7 @@
                         <option value="">— Seleccionar —</option>
                         <option value="Mujer">Mujer</option>
                         <option value="Hombre">Hombre</option>
+                        <option value="Otro / No binario">Otro / No binario</option>
                         <option value="Prefiero no responder">Prefiero no responder</option>
                     </select>
                 </div>
@@ -450,15 +453,19 @@
 
                 <div class="form-block">Autorización</div>
 
-                <!-- Requisito obligatorio de las bases: sin esta autorización la lista de
-                     asistencia no vale como respaldo formal ante Corfo. -->
+                <!-- Requisito obligatorio: texto literal de la Resolución de Focalización (tomado
+                     de la de Tarapacá; validar contra la de Biobío si se adjudica). Sin esta
+                     autorización la lista de asistencia no vale como respaldo formal ante Corfo. -->
                 <label class="consent" for="f-corfo">
                     <input id="f-corfo" name="viraliza_autoriza_corfo" type="checkbox" required />
                     <span class="consent-text">
                         <b>Obligatorio</b>
-                        Autorizo a Corfo para que, directamente o a través de terceros que designe, me
-                        contacte para el seguimiento y la evaluación del instrumento al que corresponde
-                        esta actividad.
+                        Autorizo expresamente a Corfo y a otros Órganos de la Administración del Estado
+                        para que, directamente o a través de un tercero, y de acuerdo con la información
+                        proporcionada en este formulario, me contacten para los efectos de la
+                        implementación y del adecuado seguimiento de las actividades del instrumento de
+                        financiamiento, así como para la elaboración de métricas y la evaluación del
+                        impacto del mismo.
                     </span>
                 </label>
 
@@ -469,7 +476,8 @@
 
                 <p class="legal">
                     Sus datos se usan para gestionar su participación en la Cumbre y para el reporte del
-                    programa. No se comparten con terceros ajenos al programa.
+                    proyecto a Corfo, conforme a la autorización otorgada. No se comparten con terceros
+                    distintos de los señalados en dicha autorización.
                     <!-- Nota de transparencia: la Cumbre está postulando al concurso Corfo que cierra
                          el 23-09-2026. Si el proyecto se adjudica, esta línea se borra. -->
                     La Cumbre se ejecuta en el marco del concurso Corfo Viraliza Eventos Biobío 2026,
@@ -483,6 +491,10 @@
                 <p>
                     Gracias por reservar su cupo en la Cumbre Pacto Pyme Biobío. Le enviaremos los
                     detalles de fecha, lugar y programa al correo que nos indicó.
+                </p>
+                <!-- ID determinístico (sale del correo), para desagregar el NPS. -->
+                <p class="exito-id" id="biobioIdBox" hidden>
+                    Su ID de inscripción: <b id="biobioId"></b>
                 </p>
                 <a href="https://pactopyme.cl/">Conocer el Pacto Pyme</a>
             </div>
@@ -555,6 +567,25 @@
             return data;
         }
 
+        // ID de inscripción: CB- + 6 caracteres Crockford (sin I, L, O, U) sacados del
+        // SHA-256 del correo normalizado. Determinístico: se recalcula desde el correo (p. ej.
+        // para cruzar la encuesta NPS) y no cambia si la persona se inscribe dos veces.
+        // Sin crypto.subtle (solo fuera de https) sale sin ID: nunca se bloquea un cupo.
+        var CROCKFORD = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
+        async function withId(data) {
+            try {
+                if (!data.email) return data;
+                var buf = await crypto.subtle.digest('SHA-256',
+                    new TextEncoder().encode(data.email.trim().toLowerCase()));
+                var b = new Uint8Array(buf);
+                var n = (((b[0] << 24) | (b[1] << 16) | (b[2] << 8) | b[3]) >>> 2);  // 30 bits
+                var out = '';
+                for (var i = 0; i < 6; i++) { out = CROCKFORD[n & 31] + out; n >>>= 5; }
+                data.viraliza_id_inscripcion = 'CB-' + out;
+            } catch (_) { }
+            return data;
+        }
+
         form.addEventListener('submit', async function (e) {
             e.preventDefault();
             clearError();
@@ -581,12 +612,13 @@
             submitBtn.textContent = 'Enviando…';
 
             try {
+                var data = await withId(collectData());
                 var res = await fetch(submitUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     // JSON PLANO. Envuelto en {data:{…}} el CRM responde 201 igual pero
                     // no crea ni matchea el contacto: falso positivo peligroso.
-                    body: JSON.stringify(collectData())
+                    body: JSON.stringify(data)
                 });
                 if (!res.ok) throw new Error('No se pudo completar la preinscripción.');
 
@@ -598,6 +630,10 @@
                     });
                 } catch (_) { }
 
+                if (data.viraliza_id_inscripcion) {
+                    document.getElementById('biobioId').textContent = data.viraliza_id_inscripcion;
+                    document.getElementById('biobioIdBox').hidden = false;
+                }
                 form.hidden = true;
                 successEl.hidden = false;
                 successEl.scrollIntoView({ block: 'center' });

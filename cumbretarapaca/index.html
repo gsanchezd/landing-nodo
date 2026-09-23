@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Cumbre Tarapacá - Viraliza</title>
     <meta name="description"
-        content="Reserve su cupo en la Cumbre Tarapacá de Viraliza: minería, logística e hidrógeno verde.">
+        content="Reserve su cupo en la Cumbre Tarapacá de Viraliza: minería, logística e hidrógeno verde. 19 y 20 de noviembre, Iquique.">
     <meta property="og:title" content="Registro Cumbre Tarapacá - Viraliza">
     <meta property="og:description"
-        content="Reserve su cupo en la Cumbre Tarapacá de Viraliza: minería, logística e hidrógeno verde.">
+        content="Reserve su cupo en la Cumbre Tarapacá de Viraliza: minería, logística e hidrógeno verde. 19 y 20 de noviembre, Iquique.">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="../assets/logo.png">
-    <link rel="stylesheet" href="styles-cumbre.css?v=20260910b">
+    <link rel="stylesheet" href="styles-cumbre.css?v=20260923">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
 
     <!-- Google Tag Manager -->
@@ -40,22 +40,28 @@
                     <img src="../assets/logo-nodo-am.png" alt="NODO" height="44">
                 </a>
                 <span class="cumbre-eyebrow">Viraliza · Región de Tarapacá</span>
-                <h1 class="cumbre-title">Registro Cumbre Tarapacá</h1>
-                <!-- TODO: cuando estén confirmados, agregar acá fecha, hora y lugar.
-                     Mientras, el lead promete los detalles por correo. -->
-                <p class="cumbre-lead">
-                    Complete el formulario para reservar su cupo en la Cumbre Tarapacá, el encuentro de
-                    minería, logística e hidrógeno verde de la región. Le enviaremos los detalles de
-                    fecha, hora y lugar a su correo.
+                <h1 class="cumbre-title" id="cumbreTitle">Registro Cumbre Tarapacá</h1>
+                <p class="cumbre-when">19 y 20 de noviembre de 2026 · Iquique</p>
+                <!-- El texto del lead cambia en modo invitación (Día 2), ver el script. -->
+                <p class="cumbre-lead" id="cumbreLead">
+                    Complete el formulario para reservar su cupo en el <strong>Summit del jueves 19 de
+                    noviembre</strong>, el encuentro de minería, logística e hidrógeno verde de la región.
+                    Le enviaremos la hora y el lugar exacto a su correo. El Workshop del Día 2 es para
+                    líderes de Alta Dirección, por invitación.
                 </p>
             </header>
 
             <!-- BEGIN registro Cumbre Tarapacá (CRM form_id 1cec8307-525f-4491-8d59-3409d1557d3a,
                  proyecto Viraliza). Form propio y no el iframe del CRM: la cláusula Corfo necesita
                  un checkbox único obligatorio, y el iframe solo renderiza checkboxes vía
-                 multi_enumeration. -->
+                 multi_enumeration.
+                 Día 1 (Summit) y Día 2 (Workshop) van a forms DISTINTOS del CRM para poder
+                 reportarlos por separado: cada form estampa su propio marcador
+                 (viraliza_registro_cumbre_tarapaca_fecha y ..._dia_2_fecha). El Día 2 se abre
+                 solo con ?invitacion=<código> (ver DIA2 en el script). -->
             <form id="cumbreForm" class="cumbre-form"
-                  data-form-id="1cec8307-525f-4491-8d59-3409d1557d3a" novalidate>
+                  data-form-id="1cec8307-525f-4491-8d59-3409d1557d3a"
+                  data-form-id-dia2="5c5c9e1c-40d9-42d6-818f-a8b1a2caea1d" novalidate>
 
                 <h2 class="cumbre-section">Sus datos</h2>
 
@@ -83,6 +89,7 @@
                             <option value="">— Seleccionar —</option>
                             <option value="Mujer">Mujer</option>
                             <option value="Hombre">Hombre</option>
+                            <option value="Otro / No binario">Otro / No binario</option>
                             <option value="Prefiero no responder">Prefiero no responder</option>
                         </select>
                     </div>
@@ -177,15 +184,28 @@
 
                 <h2 class="cumbre-section">Autorización</h2>
 
-                <!-- Requisito obligatorio de las bases: sin esta autorización la lista de
-                     asistencia no vale como respaldo formal ante Corfo. -->
+                <!-- Requisito obligatorio: texto LITERAL de la Resolución de Focalización de
+                     Tarapacá, no editarlo. Sin esta autorización la lista de asistencia no vale
+                     como respaldo formal ante Corfo. -->
                 <label class="cumbre-consent" for="f-corfo">
                     <input id="f-corfo" name="viraliza_autoriza_corfo" type="checkbox" required />
                     <span class="cumbre-consent-text">
                         <strong>Obligatorio</strong>
-                        Autorizo a Corfo para que, directamente o a través de terceros que designe, me
-                        contacte para el seguimiento y la evaluación del instrumento al que corresponde
-                        esta actividad.
+                        Autorizo expresamente a Corfo y a otros Órganos de la Administración del Estado
+                        para que, directamente o a través de un tercero, y de acuerdo con la información
+                        proporcionada en este formulario, me contacten para los efectos de la
+                        implementación y del adecuado seguimiento de las actividades del instrumento de
+                        financiamiento, así como para la elaboración de métricas y la evaluación del
+                        impacto del mismo.
+                    </span>
+                </label>
+
+                <!-- Solo en modo invitación: el invitado al Día 2 puede sumarse también al
+                     Summit y el envío va a los dos forms. -->
+                <label class="cumbre-consent cumbre-dia1" for="f-dia1" hidden>
+                    <input id="f-dia1" type="checkbox" />
+                    <span class="cumbre-consent-text">
+                        También asistiré al <strong>Summit del Día 1</strong> (jueves 19 de noviembre).
                     </span>
                 </label>
 
@@ -194,20 +214,33 @@
                 <div id="cumbreStatus" class="cumbre-status" role="status" aria-live="polite"></div>
 
                 <p class="cumbre-legal">
-                    Sus datos se usan para gestionar su participación en la Cumbre y para el reporte
-                    del programa. No se comparten con terceros ajenos al programa.
+                    Sus datos se usan para gestionar su participación en la Cumbre y para el reporte del
+                    proyecto a Corfo, conforme a la autorización otorgada. No se comparten con terceros
+                    distintos de los señalados en dicha autorización.
                 </p>
             </form>
 
             <div id="cumbreSuccess" class="cumbre-success" hidden>
                 <div class="cumbre-success-icon">✓</div>
                 <h2>¡Registro confirmado!</h2>
-                <p>
-                    Gracias por inscribirse en la Cumbre Tarapacá. Le enviaremos los detalles de fecha,
-                    hora y lugar al correo que nos indicó.
+                <p id="cumbreSuccessText">
+                    Gracias por inscribirse en la Cumbre Tarapacá. Le enviaremos la hora y el lugar
+                    exacto al correo que nos indicó.
+                </p>
+                <!-- ID determinístico (sale del correo): la misma persona siempre recibe el mismo,
+                     también si se inscribe a los dos días. Sirve para desagregar el NPS. -->
+                <p class="cumbre-id" id="cumbreIdBox" hidden>
+                    Su ID de inscripción: <strong id="cumbreId"></strong>
                 </p>
                 <a class="cumbre-back" href="https://somosnodo.cl/">Volver a NODO</a>
             </div>
+
+            <!-- Obligatorio por las Bases Administrativas Generales: toda pieza pública de
+                 difusión declara el apoyo de Corfo. -->
+            <footer class="cumbre-footer">
+                Proyecto apoyado por Corfo a través del Comité de Desarrollo Productivo Regional de
+                Tarapacá. Instrumento Viraliza Eventos 2026, código 26VIR-320352.
+            </footer>
         </div>
     </main>
 
@@ -218,7 +251,8 @@
         if (!form) return;
 
         var CRM_BASE  = 'https://crm.agentsmind.ai/api';
-        var submitUrl = CRM_BASE + '/form-submit/' + form.dataset.formId;
+        var urlDia1   = CRM_BASE + '/form-submit/' + form.dataset.formId;
+        var urlDia2   = CRM_BASE + '/form-submit/' + form.dataset.formIdDia2;
         var statusEl  = document.getElementById('cumbreStatus');
         var successEl = document.getElementById('cumbreSuccess');
         var submitBtn = form.querySelector('button[type="submit"]');
@@ -235,6 +269,61 @@
                 utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js'
             })
             : null;
+
+        // ---------- Día 2 (Workshop, por invitación curada) ----------
+        // El link privado es ?invitacion=<código>. Acá va solo el SHA-256 del código, así el
+        // código no queda legible en el repo. Cambiar el código = cambiar este hash.
+        // Ojo: es un control de acceso blando (el endpoint del CRM es público); la curaduría
+        // final de los 50 se hace sobre la lista del form del Día 2.
+        var DIA2_HASH = 'da377d61611593f5be4763e4ffb4a9b00be0965dd5c640af26935ab57f53748a';
+        var esDia2 = false;
+        var dia1Box = form.querySelector('.cumbre-dia1');
+
+        async function sha256Hex(text) {
+            var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+            return Array.from(new Uint8Array(buf)).map(function (b) {
+                return b.toString(16).padStart(2, '0');
+            }).join('');
+        }
+
+        // ID de inscripción: CT- + 6 caracteres Crockford (sin I, L, O, U) sacados del
+        // SHA-256 del correo normalizado. Determinístico: se puede recalcular desde el correo
+        // (p. ej. para cruzar la encuesta NPS) y no cambia si la persona se inscribe dos veces.
+        var CROCKFORD = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
+        async function idInscripcion(email) {
+            var hex = await sha256Hex(email.trim().toLowerCase());
+            var n = parseInt(hex.slice(0, 8), 16) >>> 2;   // 30 bits
+            var out = '';
+            for (var i = 0; i < 6; i++) { out = CROCKFORD[n & 31] + out; n >>>= 5; }
+            return 'CT-' + out;
+        }
+
+        function activarDia2() {
+            esDia2 = true;
+            document.querySelector('.cumbre-eyebrow').textContent = 'Viraliza · Invitación Alta Dirección';
+            document.getElementById('cumbreTitle').textContent = 'Workshop Día 2 · Cumbre Tarapacá';
+            document.getElementById('cumbreLead').innerHTML =
+                'Usted fue invitado/a al <strong>Workshop de Alta Dirección del viernes 20 de ' +
+                'noviembre</strong>, la jornada de trabajo del segundo día de la Cumbre. Complete ' +
+                'el formulario para confirmar su cupo; le enviaremos la hora y el lugar exacto a su correo.';
+            document.getElementById('cumbreSuccessText').textContent =
+                'Gracias por confirmar su participación en el Workshop del Día 2. Le enviaremos la ' +
+                'hora y el lugar exacto al correo que nos indicó.';
+            submitBtn.textContent = 'Confirmar mi cupo';
+            dia1Box.hidden = false;
+        }
+
+        (async function () {
+            try {
+                var codigo = new URLSearchParams(location.search).get('invitacion');
+                if (!codigo) return;
+                if (await sha256Hex(codigo.trim().toUpperCase()) === DIA2_HASH) {
+                    activarDia2();
+                } else {
+                    showError('El código de invitación no es válido. Puede inscribirse igual al Summit del Día 1.');
+                }
+            } catch (_) { }
+        })();
 
         function showError(text) {
             statusEl.textContent = text;
@@ -267,6 +356,15 @@
             return data;
         }
 
+        // Si el navegador no tiene crypto.subtle (solo pasa fuera de https) el registro sale
+        // igual sin ID: nunca se bloquea un cupo por esto.
+        async function withId(data) {
+            try {
+                if (data.email) data.viraliza_id_inscripcion = await idInscripcion(data.email);
+            } catch (_) { }
+            return data;
+        }
+
         form.addEventListener('submit', async function (e) {
             e.preventDefault();
             clearError();
@@ -293,23 +391,37 @@
             submitBtn.textContent = 'Enviando…';
 
             try {
-                var res = await fetch(submitUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    // JSON PLANO. Envuelto en {data:{…}} el CRM responde 201 igual pero
-                    // no crea ni matchea el contacto: falso positivo peligroso.
-                    body: JSON.stringify(collectData())
-                });
-                if (!res.ok) throw new Error('No se pudo completar el registro.');
+                var data = await withId(collectData());
+                var destinos = esDia2
+                    ? (form.querySelector('#f-dia1').checked ? [urlDia2, urlDia1] : [urlDia2])
+                    : [urlDia1];
+
+                var respuestas = await Promise.all(destinos.map(function (url) {
+                    return fetch(url, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        // JSON PLANO. Envuelto en {data:{…}} el CRM responde 201 igual pero
+                        // no crea ni matchea el contacto: falso positivo peligroso.
+                        body: JSON.stringify(data)
+                    });
+                }));
+                if (respuestas.some(function (r) { return !r.ok; })) {
+                    throw new Error('No se pudo completar el registro.');
+                }
 
                 try {
                     window.dataLayer && window.dataLayer.push({
                         event: 'viraliza_registro_cumbre',
+                        dia: esDia2 ? 'dia2' : 'dia1',
                         eje: form.querySelector('#f-eje').value,
                         comuna: form.querySelector('#f-comuna').value
                     });
                 } catch (_) { }
 
+                if (data.viraliza_id_inscripcion) {
+                    document.getElementById('cumbreId').textContent = data.viraliza_id_inscripcion;
+                    document.getElementById('cumbreIdBox').hidden = false;
+                }
                 form.hidden = true;
                 successEl.hidden = false;
                 successEl.scrollIntoView({ block: 'center' });

@@ -552,3 +552,44 @@ body {
 .cumbre-field .iti input {
     width: 100%;
 }
+
+/* ---------- Fecha, ID de inscripción y pie Corfo (23-sep-2026) ---------- */
+.cumbre-when {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 14px;
+}
+
+.cumbre-lead strong {
+    color: var(--white);
+}
+
+.cumbre-dia1 {
+    margin-top: 14px;
+}
+
+.cumbre-id {
+    margin: 4px 0 20px;
+    font-size: 15px;
+}
+
+.cumbre-id strong {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    letter-spacing: 0.08em;
+    color: var(--primary-navy);
+}
+
+.cumbre-footer {
+    margin-top: 28px;
+    text-align: center;
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* .cumbre-consent es flex y le gana al atributo hidden */
+.cumbre-dia1[hidden],
+.cumbre-id[hidden] {
+    display: none;
+}
