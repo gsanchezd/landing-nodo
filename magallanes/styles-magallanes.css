@@ -55,7 +55,7 @@ a { color: inherit; }
     overflow: hidden;
     background: var(--yellow);
     color: var(--ink);
-    padding: 28px 0 0;
+    padding: clamp(16px, 3vh, 28px) 0 0;
 }
 
 .mg-hero-inner { position: relative; z-index: 1; }
@@ -85,7 +85,9 @@ a { color: inherit; }
     border-left: 1px solid var(--navy);
 }
 
-.mg-hero-copy { padding: 72px 0 56px; max-width: 760px; }
+/* Las medidas del hero escalan también con la ALTURA (vh): en pantallas bajas o con zoom
+   del navegador, las cifras y el inicio de la sección siguiente deben verse sin scroll. */
+.mg-hero-copy { padding: clamp(20px, 6vh, 72px) 0 clamp(20px, 5vh, 56px); max-width: 760px; }
 
 .mg-eyebrow {
     display: inline-block;
@@ -96,11 +98,11 @@ a { color: inherit; }
     background: var(--navy);
     color: var(--yellow);
     padding: 6px 10px;
-    margin-bottom: 22px;
+    margin-bottom: clamp(12px, 2.4vh, 22px);
 }
 
 .mg-title {
-    font-size: clamp(52px, 10vw, 112px);
+    font-size: clamp(44px, min(10vw, 13vh), 112px);
     line-height: 0.92;
     font-weight: 800;
     letter-spacing: -0.035em;
@@ -108,21 +110,21 @@ a { color: inherit; }
 }
 
 .mg-lead {
-    margin-top: 26px;
-    font-size: clamp(19px, 2.2vw, 23px);
+    margin-top: clamp(12px, 2.8vh, 26px);
+    font-size: clamp(17px, min(2.2vw, 2.9vh), 23px);
     line-height: 1.4;
     max-width: 600px;
 }
 
 .mg-cta {
     display: inline-block;
-    margin-top: 32px;
+    margin-top: clamp(16px, 3.4vh, 32px);
     background: var(--navy);
     color: var(--white);
     font-weight: 700;
     font-size: 17px;
     text-decoration: none;
-    padding: 16px 28px;
+    padding: clamp(12px, 1.8vh, 16px) 28px;
     border: 2px solid var(--navy);
     transition: background-color .15s ease, color .15s ease;
 }
@@ -134,9 +136,11 @@ a { color: inherit; }
     grid-template-columns: repeat(4, 1fr);
     border-top: 2px solid var(--navy);
     max-width: 860px;
+    position: relative;
+    background: var(--yellow); /* tapa los anillos cuando se cruzan con las cifras */
 }
 
-.mg-facts > div { padding: 18px 20px 24px 0; }
+.mg-facts > div { padding: clamp(10px, 1.8vh, 18px) 20px clamp(12px, 2.4vh, 24px) 0; }
 
 .mg-facts > div + div { padding-left: 20px; border-left: 1px solid var(--navy); }
 
@@ -149,7 +153,7 @@ a { color: inherit; }
 
 .mg-facts dd {
     margin-top: 4px;
-    font-size: 26px;
+    font-size: clamp(20px, 2.8vh, 26px);
     font-weight: 800;
     line-height: 1.15;
     color: var(--navy);
@@ -465,12 +469,13 @@ a { color: inherit; }
 @media (max-width: 640px) {
     body { font-size: 16px; }
     .mg-wrap { padding: 0 16px; }
-    .mg-hero-copy { padding: 48px 0 40px; }
+    .mg-hero-copy { padding: clamp(20px, 5vh, 48px) 0 clamp(20px, 4vh, 40px); }
     .mg-brand-tag { display: none; }
     .mg-facts { grid-template-columns: 1fr 1fr; }
     .mg-facts > div:nth-child(3) { padding-left: 0; border-left: 0; }
     .mg-facts > div:nth-child(n+3) { border-top: 1px solid var(--navy); }
-    .mg-facts dd { font-size: 21px; }
+    .mg-facts > div { padding-top: 10px; padding-bottom: 12px; }
+    .mg-facts dd { font-size: 20px; }
     .mg-section { padding: 60px 0; }
     .mg-themes { padding: 56px 0; }
     .mg-themes-grid { grid-template-columns: 1fr; }
