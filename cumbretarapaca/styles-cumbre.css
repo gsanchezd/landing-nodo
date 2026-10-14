@@ -593,3 +593,17 @@ body {
 .cumbre-id[hidden] {
     display: none;
 }
+
+/* Campo trampa para bots: fuera de la vista y del lector de pantalla. */
+.cumbre-trampa {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* El aviso del correo de acceso a Copiloto IA, en el mensaje de éxito. */
+.cumbre-acceso {
+    margin-top: 12px;
+}

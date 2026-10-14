@@ -66,16 +66,32 @@
                 <h2 class="cumbre-section">Sus datos</h2>
 
                 <div class="cumbre-grid">
-                    <div class="cumbre-field cumbre-field--wide">
-                        <label for="f-name">Nombre y apellido <span class="req">*</span></label>
-                        <input id="f-name" name="name" type="text" required autocomplete="name"
-                               placeholder="Ej: María Pérez" />
-                    </div>
-
                     <div class="cumbre-field">
                         <label for="f-email">Correo electrónico <span class="req">*</span></label>
                         <input id="f-email" name="email" type="email" required autocomplete="email"
                                placeholder="nombre@correo.cl" />
+                    </div>
+
+                    <!-- Solo para validar que coincida: no tiene name, así que no viaja al CRM. -->
+                    <div class="cumbre-field">
+                        <label for="f-email2">Confirme su correo <span class="req">*</span></label>
+                        <input id="f-email2" type="email" required autocomplete="email"
+                               placeholder="nombre@correo.cl" />
+                    </div>
+
+                    <!-- Nombre y apellidos por separado, pero al CRM viaja además `name` con el
+                         nombre completo: firstname/lastname no son campos estándar del CRM y sin
+                         `name` el contacto queda sin nombre (ver collectData). -->
+                    <div class="cumbre-field">
+                        <label for="f-firstname">Nombre <span class="req">*</span></label>
+                        <input id="f-firstname" name="firstname" type="text" required
+                               autocomplete="given-name" placeholder="Ej: María" />
+                    </div>
+
+                    <div class="cumbre-field">
+                        <label for="f-lastname">Apellidos <span class="req">*</span></label>
+                        <input id="f-lastname" name="lastname" type="text" required
+                               autocomplete="family-name" placeholder="Ej: Pérez Soto" />
                     </div>
 
                     <div class="cumbre-field">
@@ -120,38 +136,58 @@
                     </div>
 
                     <div class="cumbre-field">
-                        <label for="f-sector">Sector <span class="req">*</span></label>
+                        <!-- Los mismos rubros que la empresa elige en Copiloto IA (Company::INDUSTRIES en viraliza). -->
+                        <label for="f-sector">Rubro <span class="req">*</span></label>
                         <select id="f-sector" name="viraliza_sector" required>
                             <option value="">— Seleccionar —</option>
-                            <option value="Minería">Minería</option>
-                            <option value="Logística y transporte">Logística y transporte</option>
-                            <option value="Energía e hidrógeno verde">Energía e hidrógeno verde</option>
-                            <option value="Puerto y comercio internacional">Puerto y comercio internacional</option>
-                            <option value="Tecnología y servicios digitales">Tecnología y servicios digitales</option>
-                            <option value="Construcción">Construcción</option>
-                            <option value="Servicios profesionales">Servicios profesionales</option>
-                            <option value="Comercio">Comercio</option>
-                            <option value="Turismo">Turismo</option>
-                            <option value="Pesca y acuicultura">Pesca y acuicultura</option>
-                            <option value="Educación y formación">Educación y formación</option>
-                            <option value="Sector público">Sector público</option>
-                            <option value="Gremio, ONG o fundación">Gremio, ONG o fundación</option>
+                            <option value="Comercio y retail">Comercio y retail</option>
+                            <option value="Energía, Minería y Recursos Naturales">Energía, Minería y Recursos Naturales</option>
+                            <option value="Gastronomía">Gastronomía</option>
+                            <option value="Turismo y hotelería">Turismo y hotelería</option>
+                            <option value="Construcción y oficios">Construcción y oficios</option>
+                            <option value="Salud y bienestar">Salud y bienestar</option>
+                            <option value="Industria, Manufactura y Producción">Industria, Manufactura y Producción</option>
+                            <option value="Transporte y logística">Transporte y logística</option>
+                            <option value="Educación y capacitación">Educación y capacitación</option>
+                            <option value="Agricultura, Ganadería, Silvicultura y Pesca">Agricultura, Ganadería, Silvicultura y Pesca</option>
                             <option value="Otro">Otro</option>
                         </select>
                     </div>
 
                     <div class="cumbre-field">
-                        <label for="f-rol">Su rol o cargo <span class="req">*</span></label>
+                        <label for="f-rol">Cargo o posición <span class="req">*</span></label>
                         <select id="f-rol" name="viraliza_rol" required>
                             <option value="">— Seleccionar —</option>
-                            <option value="Dueño/a o socio/a">Dueño/a o socio/a</option>
-                            <option value="Gerencia o dirección">Gerencia o dirección</option>
-                            <option value="Jefatura o subgerencia">Jefatura o subgerencia</option>
-                            <option value="Profesional o técnico/a">Profesional o técnico/a</option>
-                            <option value="Emprendedor/a independiente">Emprendedor/a independiente</option>
-                            <option value="Investigador/a o académico/a">Investigador/a o académico/a</option>
-                            <option value="Funcionario/a público">Funcionario/a público</option>
+                            <option value="Abogado / Asesor Legal">Abogado / Asesor Legal</option>
+                            <option value="Académico / Investigador">Académico / Investigador</option>
+                            <option value="Analista (diversas especializaciones)">Analista (diversas especializaciones)</option>
+                            <option value="Consultor/a">Consultor/a</option>
+                            <option value="Director Ejecutivo / Gerente General (CEO)">Director Ejecutivo / Gerente General (CEO)</option>
+                            <option value="Ejecutivo de Ventas / Representante Comercial">Ejecutivo de Ventas / Representante Comercial</option>
+                            <option value="Emprendedor / Fundador de startup">Emprendedor / Fundador de startup</option>
+                            <option value="Especialista (área específica)">Especialista (área específica)</option>
                             <option value="Estudiante">Estudiante</option>
+                            <option value="Fiscal">Fiscal</option>
+                            <option value="Geólogo/a">Geólogo/a</option>
+                            <option value="Gerente de Comunicaciones">Gerente de Comunicaciones</option>
+                            <option value="Gerente de Datos (CDO - Chief Data Officer)">Gerente de Datos (CDO - Chief Data Officer)</option>
+                            <option value="Gerente de Innovación">Gerente de Innovación</option>
+                            <option value="Gerente de Marketing (CMO - Chief Marketing Officer)">Gerente de Marketing (CMO - Chief Marketing Officer)</option>
+                            <option value="Gerente de Operaciones (COO - Chief Operating Officer)">Gerente de Operaciones (COO - Chief Operating Officer)</option>
+                            <option value="Gerente de Sostenibilidad">Gerente de Sostenibilidad</option>
+                            <option value="Gerente de Tecnología (CTO - Chief Technology Officer)">Gerente de Tecnología (CTO - Chief Technology Officer)</option>
+                            <option value="Gerente Financiero (CFO - Chief Financial Officer)">Gerente Financiero (CFO - Chief Financial Officer)</option>
+                            <option value="Ingeniero (diversas especializaciones)">Ingeniero (diversas especializaciones)</option>
+                            <option value="Inversor / Capitalista de Riesgo">Inversor / Capitalista de Riesgo</option>
+                            <option value="Jefa/e de Casa">Jefa/e de Casa</option>
+                            <option value="Jefe/a de Departamento o Área">Jefe/a de Departamento o Área</option>
+                            <option value="Médico / Profesional de la Salud">Médico / Profesional de la Salud</option>
+                            <option value="Operario / Trabajador de Producción">Operario / Trabajador de Producción</option>
+                            <option value="Otras Gerencias">Otras Gerencias</option>
+                            <option value="Periodista / Profesional de los Medios de Comunicación">Periodista / Profesional de los Medios de Comunicación</option>
+                            <option value="Profesional Administrativo (Administrativos, Asistentes Administrativos, Secretarios)">Profesional Administrativo (Administrativos, Asistentes Administrativos, Secretarios)</option>
+                            <option value="Profesional Independiente / Freelancer">Profesional Independiente / Freelancer</option>
+                            <option value="Profesor/a">Profesor/a</option>
                             <option value="Otro">Otro</option>
                         </select>
                     </div>
@@ -182,6 +218,50 @@
                     </div>
                 </div>
 
+                <h2 class="cumbre-section">Su participación</h2>
+
+                <div class="cumbre-grid">
+                    <div class="cumbre-field">
+                        <label for="f-entero">¿Cómo se enteró de la Cumbre? <span class="req">*</span></label>
+                        <select id="f-entero" name="viraliza_como_se_entero" required>
+                            <option value="">— Seleccionar —</option>
+                            <option value="Redes sociales">Redes sociales</option>
+                            <option value="Correo de invitación">Correo de invitación</option>
+                            <option value="NODO o Corfo">NODO o Corfo</option>
+                            <option value="Mi empresa o gremio">Mi empresa o gremio</option>
+                            <option value="Recomendación de un conocido">Recomendación de un conocido</option>
+                            <option value="Prensa o radio">Prensa o radio</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="cumbre-field">
+                        <label for="f-objetivo">Objetivo de asistir al evento <span class="req">*</span></label>
+                        <select id="f-objetivo" name="viraliza_objetivo_asistencia" required>
+                            <option value="">— Seleccionar —</option>
+                            <option value="Aprender sobre IA y transformación digital">Aprender sobre IA y transformación digital</option>
+                            <option value="Conocer soluciones y proveedores">Conocer soluciones y proveedores</option>
+                            <option value="Hacer contactos de negocio">Hacer contactos de negocio</option>
+                            <option value="Buscar financiamiento o apoyo público">Buscar financiamiento o apoyo público</option>
+                            <option value="Conocer casos de la región">Conocer casos de la región</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="cumbre-field cumbre-field--wide">
+                        <label for="f-desafio">¿Cuál es el principal desafío digital de su organización? <span class="req">*</span></label>
+                        <select id="f-desafio" name="viraliza_desafio_digital" required>
+                            <option value="">— Seleccionar —</option>
+                            <option value="Incorporar IA en los procesos">Incorporar IA en los procesos</option>
+                            <option value="Automatizar tareas">Automatizar tareas</option>
+                            <option value="Vender por canales digitales">Vender por canales digitales</option>
+                            <option value="Ordenar y aprovechar los datos">Ordenar y aprovechar los datos</option>
+                            <option value="Ciberseguridad">Ciberseguridad</option>
+                            <option value="Capacitar al equipo">Capacitar al equipo</option>
+                            <option value="Conectividad e infraestructura">Conectividad e infraestructura</option>
+                            <option value="Financiar la transformación">Financiar la transformación</option>
+                        </select>
+                    </div>
+                </div>
+
                 <h2 class="cumbre-section">Autorización</h2>
 
                 <!-- Requisito obligatorio: texto LITERAL de la Resolución de Focalización de
@@ -200,6 +280,20 @@
                     </span>
                 </label>
 
+                <!-- Opcional y aparte de la de Corfo. Va al CRM solo si se marca (true): un
+                     false no se escribiría igual (el CRM salta los valores en blanco). -->
+                <label class="cumbre-consent" for="f-auspiciadores">
+                    <input id="f-auspiciadores" type="checkbox" />
+                    <span class="cumbre-consent-text">
+                        <strong>Opcional</strong>
+                        Autorizo a NODO a compartir mis datos de contacto con los auspiciadores y
+                        aliados de la Cumbre, que podrán contactarme para enviarme información,
+                        invitaciones a actividades o comunicaciones sobre innovación, tecnología y
+                        transformación digital. Esta autorización es voluntaria y puedo revocarla
+                        en cualquier momento.
+                    </span>
+                </label>
+
                 <!-- Solo en modo invitación: el invitado al Día 2 puede sumarse también al
                      Summit y el envío va a los dos forms. -->
                 <label class="cumbre-consent cumbre-dia1" for="f-dia1" hidden>
@@ -209,6 +303,12 @@
                     </span>
                 </label>
 
+                <!-- Campo trampa para bots: invisible, una persona no lo llena. -->
+                <div class="cumbre-trampa" aria-hidden="true">
+                    <label for="f-website">Sitio web</label>
+                    <input id="f-website" type="text" tabindex="-1" autocomplete="off" />
+                </div>
+
                 <button type="submit" class="cumbre-submit">Reservar mi cupo</button>
 
                 <div id="cumbreStatus" class="cumbre-status" role="status" aria-live="polite"></div>
@@ -216,7 +316,7 @@
                 <p class="cumbre-legal">
                     Sus datos se usan para gestionar su participación en la Cumbre y para el reporte del
                     proyecto a Corfo, conforme a la autorización otorgada. No se comparten con terceros
-                    distintos de los señalados en dicha autorización.
+                    distintos de los señalados en las autorizaciones que usted marque.
                 </p>
             </form>
 
@@ -226,6 +326,11 @@
                 <p id="cumbreSuccessText">
                     Gracias por inscribirse en la Cumbre Tarapacá. Le enviaremos la hora y el lugar
                     exacto al correo que nos indicó.
+                </p>
+                <p class="cumbre-acceso" id="cumbreAcceso" hidden>
+                    También le enviamos a su correo el acceso a <strong>Copiloto IA</strong>, la
+                    plataforma donde puede hacer el diagnóstico de madurez digital de su negocio
+                    antes de la Cumbre.
                 </p>
                 <!-- ID determinístico (sale del correo): la misma persona siempre recibe el mismo,
                      también si se inscribe a los dos días. Sirve para desagregar el NPS. -->
@@ -257,6 +362,13 @@
         var successEl = document.getElementById('cumbreSuccess');
         var submitBtn = form.querySelector('button[type="submit"]');
         var phoneEl   = document.getElementById('f-phone');
+        var emailEl   = document.getElementById('f-email');
+        var email2El  = document.getElementById('f-email2');
+
+        // La plataforma Copiloto IA vive en el mismo dominio (somosnodo.cl/iatarapaca, por el
+        // Worker de Cloudflare), así que no hay CORS. Le pasa la inscripción para que mande el
+        // correo con el acceso. Ver PreregistrationsController en el repo viraliza.
+        var PLATAFORMA = '/iatarapaca/preinscripcion';
 
         // utilsScript (libphonenumber) es OBLIGATORIO: sin él isValidNumber() devuelve
         // null y getNumber() "" — eso tuvo el form de empresas de somosnodo 20 días
@@ -342,6 +454,10 @@
                 if (value) data[key] = value;
             });
 
+            // Nombre completo en `name`, la columna base del contacto. firstname y lastname
+            // viajan también, como custom fields.
+            data.name = [data.firstname, data.lastname].filter(Boolean).join(' ');
+
             // El teléfono viaja en E.164 (+56912345678), convención de los forms de ADL.
             if (iti) {
                 var num = iti.getNumber();
@@ -352,6 +468,7 @@
             // viraliza_autoriza_corfo es bool, así que va el booleano y no "Sí":
             // un string en un campo bool rompe el filtro de listas.
             data.viraliza_autoriza_corfo = form.querySelector('#f-corfo').checked;
+            if (form.querySelector('#f-auspiciadores').checked) data.viraliza_autoriza_auspiciadores = true;
 
             return data;
         }
@@ -365,9 +482,33 @@
             return data;
         }
 
+        async function avisarPlataforma(data) {
+            try {
+                var r = await fetch(PLATAFORMA, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({
+                        name: data.name, email: data.email, phone: data.phone,
+                        gender: data.genero, source: 'cumbretarapaca',
+                        website: document.getElementById('f-website').value
+                    })
+                });
+                return r.ok;
+            } catch (_) {
+                return false;
+            }
+        }
+
+        email2El.addEventListener('input', function () { email2El.setCustomValidity(''); });
+
         form.addEventListener('submit', async function (e) {
             e.preventDefault();
             clearError();
+
+            // Los dos correos tienen que coincidir. setCustomValidity antes de checkValidity,
+            // para que el navegador lo marque en el campo como cualquier otro error.
+            var coinciden = emailEl.value.trim().toLowerCase() === email2El.value.trim().toLowerCase();
+            email2El.setCustomValidity(coinciden ? '' : 'Los correos no coinciden.');
 
             if (!form.checkValidity()) {
                 form.classList.add('was-validated');
@@ -408,6 +549,11 @@
                 if (respuestas.some(function (r) { return !r.ok; })) {
                     throw new Error('No se pudo completar el registro.');
                 }
+
+                // El acceso a la plataforma va después del CRM y no bloquea: si falla, la
+                // inscripción ya quedó y solo no se muestra el aviso del correo de acceso.
+                var conAcceso = await avisarPlataforma(data);
+                document.getElementById('cumbreAcceso').hidden = !conAcceso;
 
                 try {
                     window.dataLayer && window.dataLayer.push({
