@@ -351,6 +351,8 @@ a { color: inherit; }
 
 .mg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 20px; }
 
+.mg-form-note { color: var(--muted); font-size: 15px; line-height: 1.5; margin: 0 0 18px; }
+
 .mg-field { display: flex; flex-direction: column; min-width: 0; }
 
 .mg-field--wide { grid-column: 1 / -1; }

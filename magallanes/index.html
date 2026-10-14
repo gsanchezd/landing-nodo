@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://somosnodo.cl/magallanes/">
     <link rel="canonical" href="https://somosnodo.cl/magallanes/">
     <link rel="icon" type="image/png" href="../assets/logo.png">
-    <link rel="stylesheet" href="styles-magallanes.css?v=20261002">
+    <link rel="stylesheet" href="styles-magallanes.css?v=20261014">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
 
     <!-- Google Tag Manager -->
@@ -91,7 +91,8 @@
                         <div>
                             <h3>40 horas lectivas presenciales</h3>
                             <p>Clases en sala para aprender a usar herramientas de inteligencia
-                            artificial en ventas, atención de clientes, gestión y operación.</p>
+                            artificial en ventas, atención de clientes, gestión y operación. Son
+                            10 sesiones, una vez por semana.</p>
                         </div>
                     </li>
                     <li>
@@ -317,7 +318,23 @@
 
                     <fieldset>
                         <legend>Participación</legend>
+                        <p class="mg-form-note">
+                            Las clases se realizan una vez por semana, durante 10 sesiones. Cada sesión
+                            tiene dos bloques de 2 horas con un coffee break entre ellos. Con su respuesta
+                            definiremos el horario final según la disponibilidad de los participantes y
+                            de las salas.
+                        </p>
                         <div class="mg-grid">
+                            <div class="mg-field mg-field--wide">
+                                <label for="f-horario">¿Qué día y horario le acomoda más?</label>
+                                <select id="f-horario" name="magallanes_horario" required>
+                                    <option value="">Seleccione</option>
+                                    <option>Viernes, de 16:00 a 20:30 hrs.</option>
+                                    <option>Sábado, de 09:00 a 13:30 hrs.</option>
+                                    <option>Me acomodan ambos días</option>
+                                    <option>Ninguno de los dos me acomoda</option>
+                                </select>
+                            </div>
                             <div class="mg-field">
                                 <label for="f-disp">¿Puede asistir a las 40 horas presenciales?</label>
                                 <select id="f-disp" name="magallanes_disponibilidad" required>
