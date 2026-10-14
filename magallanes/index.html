@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://somosnodo.cl/magallanes/">
     <link rel="canonical" href="https://somosnodo.cl/magallanes/">
     <link rel="icon" type="image/png" href="../assets/logo.png">
-    <link rel="stylesheet" href="styles-magallanes.css?v=20261014">
+    <link rel="stylesheet" href="styles-magallanes.css?v=20261014b">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
 
     <!-- Google Tag Manager -->
@@ -186,7 +186,7 @@
             <div class="mg-wrap mg-apply-grid">
                 <div class="mg-apply-head">
                     <h2 id="postularTitle" class="mg-h2">Postule a su beca</h2>
-                    <p class="mg-muted">Le tomará unos 3 minutos. Todos los campos son obligatorios.</p>
+                    <p class="mg-muted">Le tomará unos 3 minutos. Las preguntas marcadas con&nbsp;<span class="mg-req" aria-hidden="true">*</span> son obligatorias.</p>
                 </div>
 
                 <!-- BEGIN postulación NODO Magallanes (CRM form_id 2b6e1f4a-7c39-4d58-9a0e-5f1c8d3b6a27,
@@ -201,17 +201,17 @@
                         <legend>Sus datos</legend>
                         <div class="mg-grid">
                             <div class="mg-field mg-field--wide">
-                                <label for="f-name">Nombre y apellido</label>
+                                <label for="f-name">Nombre y apellido&nbsp;<span class="mg-req" aria-hidden="true">*</span></label>
                                 <input id="f-name" name="name" type="text" required autocomplete="name"
                                        placeholder="Ej: María Pérez">
                             </div>
                             <div class="mg-field">
-                                <label for="f-rut">RUT</label>
+                                <label for="f-rut">RUT&nbsp;<span class="mg-req" aria-hidden="true">*</span></label>
                                 <input id="f-rut" name="rut" type="text" required inputmode="text"
                                        autocomplete="off" placeholder="12.345.678-9" maxlength="12">
                             </div>
                             <div class="mg-field">
-                                <label for="f-genero">Género</label>
+                                <label for="f-genero">Género&nbsp;<span class="mg-req" aria-hidden="true">*</span></label>
                                 <select id="f-genero" name="genero" required>
                                     <option value="">Seleccione</option>
                                     <option value="Mujer">Mujer</option>
@@ -221,16 +221,16 @@
                                 </select>
                             </div>
                             <div class="mg-field">
-                                <label for="f-email">Correo electrónico</label>
+                                <label for="f-email">Correo electrónico&nbsp;<span class="mg-req" aria-hidden="true">*</span></label>
                                 <input id="f-email" name="email" type="email" required autocomplete="email"
                                        placeholder="nombre@correo.cl">
                             </div>
                             <div class="mg-field">
-                                <label for="f-phone">Teléfono (WhatsApp)</label>
+                                <label for="f-phone">Teléfono (WhatsApp)&nbsp;<span class="mg-req" aria-hidden="true">*</span></label>
                                 <input id="f-phone" name="phone" type="tel" required autocomplete="tel">
                             </div>
                             <div class="mg-field mg-field--wide">
-                                <label for="f-comuna">Comuna donde funciona su emprendimiento</label>
+                                <label for="f-comuna">Comuna donde funciona su emprendimiento&nbsp;<span class="mg-req" aria-hidden="true">*</span></label>
                                 <select id="f-comuna" name="magallanes_comuna" required>
                                     <option value="">Seleccione</option>
                                     <optgroup label="Provincia de Magallanes">
@@ -262,12 +262,12 @@
                         <legend>Su emprendimiento</legend>
                         <div class="mg-grid">
                             <div class="mg-field mg-field--wide">
-                                <label for="f-company">Nombre del emprendimiento o empresa</label>
+                                <label for="f-company">Nombre del emprendimiento o empresa&nbsp;<span class="mg-req" aria-hidden="true">*</span></label>
                                 <input id="f-company" name="company" type="text" required
                                        autocomplete="organization" placeholder="Ej: Cafetería del Estrecho">
                             </div>
                             <div class="mg-field">
-                                <label for="f-sector">Sector</label>
+                                <label for="f-sector">Sector&nbsp;<span class="mg-req" aria-hidden="true">*</span></label>
                                 <select id="f-sector" name="magallanes_sector" required>
                                     <option value="">Seleccione</option>
                                     <option>Turismo</option>
@@ -278,7 +278,7 @@
                                 </select>
                             </div>
                             <div class="mg-field">
-                                <label for="f-etapa">Etapa del negocio</label>
+                                <label for="f-etapa">Etapa del negocio&nbsp;<span class="mg-req" aria-hidden="true">*</span></label>
                                 <select id="f-etapa" name="magallanes_etapa_negocio" required>
                                     <option value="">Seleccione</option>
                                     <option>Idea o emprendimiento sin ventas aún</option>
@@ -289,7 +289,7 @@
                                 </select>
                             </div>
                             <div class="mg-field">
-                                <label for="f-antiguedad">Antigüedad del negocio</label>
+                                <label for="f-antiguedad">Antigüedad del negocio&nbsp;<span class="mg-req" aria-hidden="true">*</span></label>
                                 <select id="f-antiguedad" name="magallanes_antiguedad" required>
                                     <option value="">Seleccione</option>
                                     <option>Menos de 1 año</option>
@@ -299,7 +299,7 @@
                                 </select>
                             </div>
                             <div class="mg-field">
-                                <label for="f-ia">¿Cuánto usa hoy la inteligencia artificial?</label>
+                                <label for="f-ia">¿Cuánto usa hoy la inteligencia artificial?&nbsp;<span class="mg-req" aria-hidden="true">*</span></label>
                                 <select id="f-ia" name="magallanes_uso_ia" required>
                                     <option value="">Seleccione</option>
                                     <option>Nunca la he usado</option>
@@ -309,7 +309,7 @@
                                 </select>
                             </div>
                             <div class="mg-field mg-field--wide">
-                                <label for="f-desafio">¿Qué le gustaría resolver en su negocio con la IA?</label>
+                                <label for="f-desafio">¿Qué le gustaría resolver en su negocio con la IA?&nbsp;<span class="mg-req" aria-hidden="true">*</span></label>
                                 <textarea id="f-desafio" name="magallanes_desafio" rows="3" required maxlength="600"
                                           placeholder="Ej: responder más rápido las consultas de turistas por WhatsApp"></textarea>
                             </div>
@@ -319,24 +319,24 @@
                     <fieldset>
                         <legend>Participación</legend>
                         <p class="mg-form-note">
-                            Las clases se realizan una vez por semana, durante 10 sesiones. Cada sesión
-                            tiene dos bloques de 2 horas con un coffee break entre ellos. Con su respuesta
-                            definiremos el horario final según la disponibilidad de los participantes y
-                            de las salas.
+                            Las clases se realizarán una vez por semana, durante 10 sesiones. Con su
+                            respuesta definiremos el horario final según la disponibilidad de los
+                            participantes y de las salas.
                         </p>
                         <div class="mg-grid">
-                            <div class="mg-field mg-field--wide">
-                                <label for="f-horario">¿Qué día y horario le acomoda más?</label>
-                                <select id="f-horario" name="magallanes_horario" required>
-                                    <option value="">Seleccione</option>
-                                    <option>Viernes, de 16:00 a 20:30 hrs.</option>
-                                    <option>Sábado, de 09:00 a 13:30 hrs.</option>
-                                    <option>Me acomodan ambos días</option>
-                                    <option>Ninguno de los dos me acomoda</option>
-                                </select>
+                            <div class="mg-field mg-field--wide mg-choices" role="radiogroup" aria-labelledby="l-horario" aria-required="true">
+                                <p id="l-horario" class="mg-label">¿Qué día y horario le acomoda más?&nbsp;<span class="mg-req" aria-hidden="true">*</span></p>
+                                <label class="mg-choice">
+                                    <input type="radio" name="magallanes_horario" value="Viernes: 16:00 a 18:00 hrs. y 18:30 a 20:30 hrs. (coffee break entre ambos bloques)" required>
+                                    <span><strong>Viernes:</strong> 16:00 a 18:00 hrs. y 18:30 a 20:30 hrs. (coffee break entre ambos bloques)</span>
+                                </label>
+                                <label class="mg-choice">
+                                    <input type="radio" name="magallanes_horario" value="Sábado: 09:00 a 11:00 hrs. y 11:30 a 13:30 hrs. (coffee break entre ambos bloques)" required>
+                                    <span><strong>Sábado:</strong> 09:00 a 11:00 hrs. y 11:30 a 13:30 hrs. (coffee break entre ambos bloques)</span>
+                                </label>
                             </div>
                             <div class="mg-field">
-                                <label for="f-disp">¿Puede asistir a las 40 horas presenciales?</label>
+                                <label for="f-disp">¿Puede asistir a las 40 horas presenciales?&nbsp;<span class="mg-req" aria-hidden="true">*</span></label>
                                 <select id="f-disp" name="magallanes_disponibilidad" required>
                                     <option value="">Seleccione</option>
                                     <option>Sí, a todas las clases</option>
@@ -345,7 +345,7 @@
                                 </select>
                             </div>
                             <div class="mg-field">
-                                <label for="f-entero">¿Cómo se enteró de NODO Magallanes?</label>
+                                <label for="f-entero">¿Cómo se enteró de NODO Magallanes?&nbsp;<span class="mg-req" aria-hidden="true">*</span></label>
                                 <select id="f-entero" name="magallanes_como_se_entero" required>
                                     <option value="">Seleccione</option>
                                     <option>Redes sociales de NODO</option>
@@ -364,7 +364,7 @@
                         <span>
                             Declaro que la información entregada es verdadera y autorizo a Desafío Latam,
                             ejecutor de NODO, a usar mis datos para gestionar mi postulación, contactarme
-                            sobre el programa y elaborar los reportes del proyecto.
+                            sobre el programa y elaborar los reportes del proyecto.&nbsp;<span class="mg-req" aria-hidden="true">*</span>
                         </span>
                     </label>
 
