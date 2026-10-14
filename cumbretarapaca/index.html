@@ -12,7 +12,7 @@
         content="Reserve su cupo en la Cumbre Tarapacá de Viraliza: minería, logística e hidrógeno verde. 19 y 20 de noviembre, Iquique.">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="../assets/logo.png">
-    <link rel="stylesheet" href="styles-cumbre.css?v=20261014b">
+    <link rel="stylesheet" href="styles-cumbre.css?v=20261014d">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
 
     <!-- Google Tag Manager -->
@@ -300,57 +300,60 @@
                      solo aparece con ?invitacion=. Las actividades viajan como lista (los campos
                      viraliza_talleres_dia1/_dia2 son multi_enumeration en el CRM).
                      La lista de actividades es provisoria: el programa aún se está cerrando. -->
-                <div class="cumbre-dias">
-                    <label class="cumbre-consent cumbre-dia" for="f-dia1">
-                        <input id="f-dia1" type="checkbox" checked />
-                        <span class="cumbre-consent-text">
-                            <strong>Día 1 · jueves 19 de noviembre</strong>
-                            Summit: charlas, paneles y networking.
-                        </span>
-                    </label>
-                    <div class="cumbre-talleres" id="talleresDia1">
-                        <p class="cumbre-talleres-titulo">Actividades del Día 1 a las que quiere asistir (opcional)</p>
-                        <label class="cumbre-check">
-                            <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Almuerzo y matchmaking dirigido" />
-                            <span>Almuerzo y matchmaking dirigido <small>13:00 – 14:30</small></span>
-                        </label>
-                        <label class="cumbre-check">
-                            <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Mesa técnica territorial: Ecosistema H2V y Litio Tarapacá" />
-                            <span>Mesa técnica territorial: Ecosistema H2V y Litio Tarapacá <small>15:45 – 17:00</small></span>
-                        </label>
-                        <label class="cumbre-check">
-                            <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Sesión de pitch: Emprendedores tecnológicos del norte" />
-                            <span>Sesión de pitch: Emprendedores tecnológicos del norte <small>17:00 – 18:30</small></span>
-                        </label>
-                    </div>
+                <div class="cumbre-grid">
+                    <fieldset class="cumbre-field">
+                        <legend>¿Qué día asistirá? <span class="req">*</span></legend>
+                        <div class="cumbre-checks">
+                            <label class="cumbre-check">
+                                <input id="f-dia1" type="checkbox" checked />
+                                <span>Día 1 · jueves 19 de noviembre</span>
+                            </label>
+                            <label class="cumbre-check" id="dia2Box" hidden>
+                                <input id="f-dia2" type="checkbox" />
+                                <span>Día 2 · viernes 20 de noviembre <span class="cumbre-hora">por invitación</span></span>
+                            </label>
+                        </div>
+                    </fieldset>
 
-                    <label class="cumbre-consent cumbre-dia" for="f-dia2" id="dia2Box" hidden>
-                        <input id="f-dia2" type="checkbox" />
-                        <span class="cumbre-consent-text">
-                            <strong>Día 2 · viernes 20 de noviembre</strong>
-                            Por invitación.
-                        </span>
-                    </label>
-                    <div class="cumbre-talleres" id="talleresDia2" hidden>
-                        <p class="cumbre-talleres-titulo">Actividades del Día 2 a las que quiere asistir (opcional)</p>
-                        <label class="cumbre-check">
-                            <input type="checkbox" data-grupo="viraliza_talleres_dia2" value="Almuerzo y matchmaking dirigido" />
-                            <span>Almuerzo y matchmaking dirigido <small>13:00 – 14:30</small></span>
-                        </label>
-                        <p class="cumbre-talleres-titulo">Workshop paralelo, 14:30 – 16:00 (elija uno)</p>
-                        <label class="cumbre-check">
-                            <input type="radio" name="workshop" data-grupo="viraliza_talleres_dia2" value="Workshop A: Logística portuaria e IA (Puerto de Iquique)" />
-                            <span>Workshop A: Logística portuaria e IA (Puerto de Iquique)</span>
-                        </label>
-                        <label class="cumbre-check">
-                            <input type="radio" name="workshop" data-grupo="viraliza_talleres_dia2" value="Workshop B: Sustentabilidad alimentaria y turismo con IA" />
-                            <span>Workshop B: Sustentabilidad alimentaria y turismo con IA</span>
-                        </label>
-                        <label class="cumbre-check">
-                            <input type="radio" name="workshop" value="" checked />
-                            <span>Ninguno</span>
-                        </label>
-                    </div>
+                    <fieldset class="cumbre-field">
+                        <legend>Actividades en las que participará</legend>
+                        <div class="cumbre-checks" id="talleresDia1">
+                            <p class="cumbre-checks-dia">Día 1</p>
+                            <label class="cumbre-check">
+                                <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Almuerzo y matchmaking dirigido" />
+                                <span>Almuerzo y matchmaking dirigido <span class="cumbre-hora">13:00 – 14:30</span></span>
+                            </label>
+                            <label class="cumbre-check">
+                                <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Mesa técnica territorial: Ecosistema H2V y Litio Tarapacá" />
+                                <span>Mesa técnica territorial: Ecosistema H2V y Litio Tarapacá <span class="cumbre-hora">15:45 – 17:00</span></span>
+                            </label>
+                            <label class="cumbre-check">
+                                <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Sesión de pitch: Emprendedores tecnológicos del norte" />
+                                <span>Sesión de pitch: Emprendedores tecnológicos del norte <span class="cumbre-hora">17:00 – 18:30</span></span>
+                            </label>
+                        </div>
+                        <div class="cumbre-checks" id="talleresDia2" hidden>
+                            <p class="cumbre-checks-dia">Día 2</p>
+                            <label class="cumbre-check">
+                                <input type="checkbox" data-grupo="viraliza_talleres_dia2" value="Almuerzo y matchmaking dirigido" />
+                                <span>Almuerzo y matchmaking dirigido <span class="cumbre-hora">13:00 – 14:30</span></span>
+                            </label>
+                            <p class="cumbre-checks-dia">Workshop paralelo, 14:30 – 16:00 (elija uno)</p>
+                            <label class="cumbre-check">
+                                <input type="radio" name="workshop" data-grupo="viraliza_talleres_dia2" value="Workshop A: Logística portuaria e IA (Puerto de Iquique)" />
+                                <span>Workshop A: Logística portuaria e IA (Puerto de Iquique)</span>
+                            </label>
+                            <label class="cumbre-check">
+                                <input type="radio" name="workshop" data-grupo="viraliza_talleres_dia2" value="Workshop B: Sustentabilidad alimentaria y turismo con IA" />
+                                <span>Workshop B: Sustentabilidad alimentaria y turismo con IA</span>
+                            </label>
+                            <label class="cumbre-check">
+                                <input type="radio" name="workshop" value="" checked />
+                                <span>Ninguno</span>
+                            </label>
+                        </div>
+                        <p class="cumbre-hint" id="talleresVacio" hidden>Marque un día para ver sus actividades.</p>
+                    </fieldset>
                 </div>
 
                 <h2 class="cumbre-section">Autorización</h2>
@@ -510,6 +513,7 @@
         function syncDias() {
             document.getElementById('talleresDia1').hidden = !dia1El.checked;
             document.getElementById('talleresDia2').hidden = !(esDia2 && dia2El.checked);
+            document.getElementById('talleresVacio').hidden = dia1El.checked || (esDia2 && dia2El.checked);
         }
         dia1El.addEventListener('change', syncDias);
         dia2El.addEventListener('change', syncDias);

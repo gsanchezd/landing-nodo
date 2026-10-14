@@ -157,7 +157,7 @@ body {
    etiqueta de un campo quedaba pegada al input de arriba. */
 .cumbre-grid {
     display: grid;
-    gap: 20px;
+    gap: 26px;
 }
 
 .cumbre-section {
@@ -196,7 +196,7 @@ body {
     color: rgb(220, 38, 38);
 }
 
-.cumbre-field input:not([type="checkbox"]),
+.cumbre-field input:not([type="checkbox"]):not([type="radio"]),
 .cumbre-field select {
     padding: 12px 14px;
     border: 1.5px solid var(--border);
@@ -209,7 +209,7 @@ body {
     line-height: 1.2;
 }
 
-.cumbre-field input:not([type="checkbox"]):focus,
+.cumbre-field input:not([type="checkbox"]):not([type="radio"]):focus,
 .cumbre-field select:focus {
     outline: 2px solid var(--primary-navy);
     outline-offset: -1px;
@@ -469,7 +469,7 @@ body {
     /* iOS Safari hace zoom al enfocar un campo de menos de 16px y deja la
        página descuadrada. La mayoría abre esta encuesta desde el correo en
        el celular, así que en móvil los campos van a 16px. */
-    .cumbre-field input:not([type="checkbox"]),
+    .cumbre-field input:not([type="checkbox"]):not([type="radio"]),
     .cumbre-field select {
         font-size: 16px;
     }
@@ -541,7 +541,7 @@ body {
 @media (min-width: 720px) {
     .cumbre-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 22px 20px;
+        gap: 28px 20px;
     }
 
     .cumbre-grid .cumbre-field--wide {
@@ -614,53 +614,61 @@ body {
     margin-top: 12px;
 }
 
-/* ---------- Días y actividades ---------- */
-.cumbre-dias {
+/* ---------- Días y actividades ----------
+   Como el form de referencia: listas simples de checks, días a la izquierda y
+   actividades a la derecha, cada una con su horario en gris. */
+fieldset.cumbre-field {
+    margin: 0;
+    padding: 0;
+}
+.cumbre-checks {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 10px;
 }
-.cumbre-talleres {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 0 0 0.5rem 1.25rem;
-    border-left: 2px solid rgba(0, 178, 183, 0.35);
-    margin-left: 1.25rem;
-}
-.cumbre-talleres[hidden] {
+.cumbre-checks[hidden],
+.cumbre-check[hidden] {
     display: none;
 }
-.cumbre-talleres-titulo {
-    margin: 0.5rem 0 0.25rem;
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--primary-navy);
+.cumbre-checks + .cumbre-checks {
+    margin-top: 14px;
+}
+.cumbre-checks-dia {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray);
 }
 .cumbre-check {
     display: flex;
     align-items: flex-start;
-    gap: 0.65rem;
-    font-size: 0.95rem;
+    gap: 10px;
+    font-size: 15px;
     line-height: 1.4;
     color: var(--ink);
     cursor: pointer;
 }
 .cumbre-check input {
-    width: 20px;
-    height: 20px;
-    margin: 1px 0 0;
+    width: 18px;
+    height: 18px;
+    margin: 2px 0 0;
     flex-shrink: 0;
-    accent-color: #00b2b7;
+    accent-color: var(--primary-navy);
     cursor: pointer;
 }
-.cumbre-check small {
+.cumbre-hora {
     display: block;
     color: var(--gray);
-    font-size: 0.8rem;
+    font-size: 13px;
 }
-/* El Día 2 solo aparece con la invitación: el display:flex de .cumbre-consent le
-   ganaba al atributo hidden. */
-.cumbre-dia[hidden] {
-    display: none;
+.cumbre-hint {
+    margin: 0;
+    font-size: 14px;
+    color: var(--gray);
+}
+/* La leyenda de un fieldset no toma el gap del flex: el aire va como margen. */
+fieldset.cumbre-field > legend {
+    margin-bottom: 12px;
 }
