@@ -59,6 +59,18 @@
                  reportarlos por separado: cada form estampa su propio marcador
                  (viraliza_registro_cumbre_tarapaca_fecha y ..._dia_2_fecha). El Día 2 se abre
                  solo con ?invitacion=<código> (ver DIA2 en el script). -->
+            <!-- Se muestra en vez del formulario al llegar al tope de inscripciones. La cuenta
+                 la lleva Copiloto IA (GET /iatarapaca/preinscripcion/cupos), porque el CRM no
+                 limita. No aplica a la invitación al Día 2. -->
+            <div id="cumbreLleno" class="cumbre-success" hidden>
+                <h2>Se completaron los cupos</h2>
+                <p>
+                    Gracias por su interés. Las inscripciones a la Cumbre Tarapacá llegaron a su
+                    máximo. Si se liberan cupos, lo informaremos en los canales de NODO.
+                </p>
+                <a class="cumbre-back" href="https://somosnodo.cl/">Volver a NODO</a>
+            </div>
+
             <form id="cumbreForm" class="cumbre-form"
                   data-form-id="1cec8307-525f-4491-8d59-3409d1557d3a"
                   data-form-id-dia2="5c5c9e1c-40d9-42d6-818f-a8b1a2caea1d" novalidate>
@@ -92,6 +104,14 @@
                         <label for="f-lastname">Apellidos <span class="req">*</span></label>
                         <input id="f-lastname" name="lastname" type="text" required
                                autocomplete="family-name" placeholder="Ej: Pérez Soto" />
+                    </div>
+
+                    <!-- RUT: respaldo de la lista de asistencia ante Corfo. Viaja normalizado
+                         (12345678-5) en `rut`, la convención de los forms de ADL. -->
+                    <div class="cumbre-field">
+                        <label for="f-rut">RUT <span class="req">*</span></label>
+                        <input id="f-rut" name="rut" type="text" required autocomplete="off"
+                               inputmode="text" maxlength="12" placeholder="12.345.678-5" />
                     </div>
 
                     <div class="cumbre-field">
@@ -129,6 +149,18 @@
                 <h2 class="cumbre-section">Su organización</h2>
 
                 <div class="cumbre-grid">
+                    <div class="cumbre-field cumbre-field--wide">
+                        <label for="f-ambito">¿Desde qué ámbito participa? <span class="req">*</span></label>
+                        <select id="f-ambito" name="viraliza_ambito" required>
+                            <option value="">— Seleccionar —</option>
+                            <option value="Empresa privada">Empresa privada</option>
+                            <option value="Sector público">Sector público</option>
+                            <option value="Emprendimiento propio o trabajo independiente">Emprendimiento propio o trabajo independiente</option>
+                            <option value="Estudiante">Estudiante</option>
+                            <option value="Academia, gremio u ONG">Academia, gremio u ONG</option>
+                        </select>
+                    </div>
+
                     <div class="cumbre-field cumbre-field--wide">
                         <label for="f-company">Empresa u organización <span class="req">*</span></label>
                         <input id="f-company" name="company" type="text" required
@@ -369,6 +401,38 @@
         // Worker de Cloudflare), así que no hay CORS. Le pasa la inscripción para que mande el
         // correo con el acceso. Ver PreregistrationsController en el repo viraliza.
         var PLATAFORMA = '/iatarapaca/preinscripcion';
+        var rutEl = document.getElementById('f-rut');
+
+        // RUT chileno: módulo 11. Devuelve "12345678-5" o null si no cuadra.
+        function normalizarRut(texto) {
+            var limpio = String(texto || '').replace(/[^0-9kK]/g, '').toUpperCase();
+            if (limpio.length < 2) return null;
+            var cuerpo = limpio.slice(0, -1), dv = limpio.slice(-1), suma = 0, mult = 2;
+            for (var i = cuerpo.length - 1; i >= 0; i--) {
+                suma += parseInt(cuerpo[i], 10) * mult;
+                mult = mult === 7 ? 2 : mult + 1;
+            }
+            var esperado = 11 - (suma % 11);
+            esperado = esperado === 11 ? '0' : esperado === 10 ? 'K' : String(esperado);
+            return esperado === dv ? cuerpo.replace(/^0+/, '') + '-' + dv : null;
+        }
+        rutEl.addEventListener('input', function () { rutEl.setCustomValidity(''); });
+
+        // El tope de inscripciones: con los cupos llenos se esconde el formulario. Si la
+        // consulta falla, el formulario queda abierto (mejor una de más que perder una).
+        async function cuposAbiertos() {
+            try {
+                var r = await fetch(PLATAFORMA + '/cupos?source=cumbretarapaca', { cache: 'no-store' });
+                if (!r.ok) return true;
+                return (await r.json()).abierto !== false;
+            } catch (_) {
+                return true;
+            }
+        }
+        function mostrarLleno() {
+            form.hidden = true;
+            document.getElementById('cumbreLleno').hidden = false;
+        }
 
         // utilsScript (libphonenumber) es OBLIGATORIO: sin él isValidNumber() devuelve
         // null y getNumber() "" — eso tuvo el form de empresas de somosnodo 20 días
@@ -437,6 +501,12 @@
             } catch (_) { }
         })();
 
+        (async function () {
+            // Se espera un poco a que la detección del Día 2 termine: la invitación no se cierra.
+            await new Promise(function (r) { setTimeout(r, 300); });
+            if (!esDia2 && !(await cuposAbiertos())) mostrarLleno();
+        })();
+
         function showError(text) {
             statusEl.textContent = text;
             statusEl.classList.add('is-error');
@@ -489,7 +559,8 @@
                     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                     body: JSON.stringify({
                         name: data.name, email: data.email, phone: data.phone,
-                        gender: data.genero, source: 'cumbretarapaca',
+                        gender: data.genero, rut: data.rut, company: data.company,
+                        industry: data.viraliza_sector, source: 'cumbretarapaca',
                         website: document.getElementById('f-website').value
                     })
                 });
@@ -507,6 +578,10 @@
 
             // Los dos correos tienen que coincidir. setCustomValidity antes de checkValidity,
             // para que el navegador lo marque en el campo como cualquier otro error.
+            var rut = normalizarRut(rutEl.value);
+            rutEl.setCustomValidity(rut ? '' : 'Revise el RUT: el dígito verificador no coincide.');
+            if (rut) rutEl.value = rut;
+
             var coinciden = emailEl.value.trim().toLowerCase() === email2El.value.trim().toLowerCase();
             email2El.setCustomValidity(coinciden ? '' : 'Los correos no coinciden.');
 
@@ -523,6 +598,11 @@
                 form.classList.add('was-validated');
                 showError('Revise el número de teléfono.');
                 phoneEl.focus();
+                return;
+            }
+
+            if (!esDia2 && !(await cuposAbiertos())) {
+                mostrarLleno();
                 return;
             }
 
