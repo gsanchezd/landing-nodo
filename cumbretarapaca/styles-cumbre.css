@@ -672,3 +672,50 @@ fieldset.cumbre-field {
 fieldset.cumbre-field > legend {
     margin-bottom: 12px;
 }
+
+/* Días en una fila; las actividades de cada día en columnas desde tablet. */
+.cumbre-checks--fila {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px 32px;
+}
+.cumbre-aviso {
+    margin: 0 0 18px;
+    padding: 10px 14px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--gray);
+    background: rgba(0, 0, 0, 0.035);
+    border-left: 3px solid var(--primary-navy);
+}
+.cumbre-dias {
+    display: grid;
+    gap: 28px;
+}
+.cumbre-dias .cumbre-checks + .cumbre-checks {
+    margin-top: 0;
+}
+.cumbre-checks-tipo,
+.cumbre-checks-sub {
+    margin: 8px 0 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+}
+.cumbre-checks-sub {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--gray);
+}
+.cumbre-sujeto {
+    margin-left: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray);
+}
+@media (min-width: 760px) {
+    .cumbre-dias {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 32px;
+    }
+}

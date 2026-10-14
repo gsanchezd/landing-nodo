@@ -12,7 +12,7 @@
         content="Reserve su cupo en la Cumbre Tarapacá de Viraliza: minería, logística e hidrógeno verde. 19 y 20 de noviembre, Iquique.">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="../assets/logo.png">
-    <link rel="stylesheet" href="styles-cumbre.css?v=20261014d">
+    <link rel="stylesheet" href="styles-cumbre.css?v=20261014e">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
 
     <!-- Google Tag Manager -->
@@ -44,10 +44,9 @@
                 <p class="cumbre-when">19 y 20 de noviembre de 2026 · Iquique</p>
                 <!-- El texto del lead cambia en modo invitación (Día 2), ver el script. -->
                 <p class="cumbre-lead" id="cumbreLead">
-                    Complete el formulario para reservar su cupo en el <strong>Summit del jueves 19 de
-                    noviembre</strong>, el encuentro de minería, logística e hidrógeno verde de la región.
-                    Le enviaremos la hora y el lugar exacto a su correo. El Workshop del Día 2 es para
-                    líderes de Alta Dirección, por invitación.
+                    Complete el formulario para reservar su cupo en la <strong>Cumbre del jueves 19 y
+                    viernes 20 de noviembre</strong>, el encuentro de minería, logística e hidrógeno
+                    verde de la región. Le enviaremos la hora y el lugar exacto a su correo.
                 </p>
             </header>
 
@@ -57,8 +56,9 @@
                  multi_enumeration.
                  Día 1 (Summit) y Día 2 (Workshop) van a forms DISTINTOS del CRM para poder
                  reportarlos por separado: cada form estampa su propio marcador
-                 (viraliza_registro_cumbre_tarapaca_fecha y ..._dia_2_fecha). El Día 2 se abre
-                 solo con ?invitacion=<código> (ver DIA2 en el script). -->
+                 (viraliza_registro_cumbre_tarapaca_fecha y ..._dia_2_fecha). Desde el 14-oct el
+                 Día 2 está abierto a todos; ?invitacion=<código> lo deja marcado con el texto de
+                 la invitación (ver DIA2 en el script). -->
             <!-- Se muestra en vez del formulario al llegar al tope de inscripciones. La cuenta
                  la lleva Copiloto IA (GET /iatarapaca/preinscripcion/cupos), porque el CRM no
                  limita. No aplica a la invitación al Día 2. -->
@@ -296,61 +296,108 @@
 
                 <h2 class="cumbre-section">Días y actividades</h2>
 
-                <!-- Cada día va a su form del CRM (marcador propio). El Día 2 es por invitación:
-                     solo aparece con ?invitacion=. Las actividades viajan como lista (los campos
-                     viraliza_talleres_dia1/_dia2 son multi_enumeration en el CRM).
-                     La lista de actividades es provisoria: el programa aún se está cerrando. -->
+                <!-- Cada día va a su form del CRM (marcador propio). Desde el 14-oct los dos días
+                     están abiertos a todos: se inscriben a todo y NODO confirma el cupo de los
+                     talleres según el perfil. El link ?invitacion= sigue entrando directo al Día 2.
+                     Las actividades viajan como lista (viraliza_talleres_dia1/_dia2 son
+                     multi_enumeration en el CRM: un valor nuevo hay que agregarlo también allá).
+                     Las charlas y paneles son para todo público; almuerzo, mesa, pitch y
+                     workshops son para emprendedores y empresas del área industrial. -->
                 <div class="cumbre-grid">
-                    <fieldset class="cumbre-field">
-                        <legend>¿Qué día asistirá? <span class="req">*</span></legend>
-                        <div class="cumbre-checks">
+                    <fieldset class="cumbre-field cumbre-field--wide">
+                        <legend>¿Qué días asistirá? <span class="req">*</span></legend>
+                        <div class="cumbre-checks cumbre-checks--fila">
                             <label class="cumbre-check">
                                 <input id="f-dia1" type="checkbox" checked />
                                 <span>Día 1 · jueves 19 de noviembre</span>
                             </label>
-                            <label class="cumbre-check" id="dia2Box" hidden>
+                            <label class="cumbre-check" id="dia2Box">
                                 <input id="f-dia2" type="checkbox" />
-                                <span>Día 2 · viernes 20 de noviembre <span class="cumbre-hora">por invitación</span></span>
+                                <span>Día 2 · viernes 20 de noviembre</span>
                             </label>
                         </div>
                     </fieldset>
 
-                    <fieldset class="cumbre-field">
+                    <fieldset class="cumbre-field cumbre-field--wide">
                         <legend>Actividades en las que participará</legend>
-                        <div class="cumbre-checks" id="talleresDia1">
-                            <p class="cumbre-checks-dia">Día 1</p>
-                            <label class="cumbre-check">
-                                <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Almuerzo y matchmaking dirigido" />
-                                <span>Almuerzo y matchmaking dirigido <span class="cumbre-hora">13:00 – 14:30</span></span>
-                            </label>
-                            <label class="cumbre-check">
-                                <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Mesa técnica territorial: Ecosistema H2V y Litio Tarapacá" />
-                                <span>Mesa técnica territorial: Ecosistema H2V y Litio Tarapacá <span class="cumbre-hora">15:45 – 17:00</span></span>
-                            </label>
-                            <label class="cumbre-check">
-                                <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Sesión de pitch: Emprendedores tecnológicos del norte" />
-                                <span>Sesión de pitch: Emprendedores tecnológicos del norte <span class="cumbre-hora">17:00 – 18:30</span></span>
-                            </label>
-                        </div>
-                        <div class="cumbre-checks" id="talleresDia2" hidden>
-                            <p class="cumbre-checks-dia">Día 2</p>
-                            <label class="cumbre-check">
-                                <input type="checkbox" data-grupo="viraliza_talleres_dia2" value="Almuerzo y matchmaking dirigido" />
-                                <span>Almuerzo y matchmaking dirigido <span class="cumbre-hora">13:00 – 14:30</span></span>
-                            </label>
-                            <p class="cumbre-checks-dia">Workshop paralelo, 14:30 – 16:00 (elija uno)</p>
-                            <label class="cumbre-check">
-                                <input type="radio" name="workshop" data-grupo="viraliza_talleres_dia2" value="Workshop A: Logística portuaria e IA (Puerto de Iquique)" />
-                                <span>Workshop A: Logística portuaria e IA (Puerto de Iquique)</span>
-                            </label>
-                            <label class="cumbre-check">
-                                <input type="radio" name="workshop" data-grupo="viraliza_talleres_dia2" value="Workshop B: Sustentabilidad alimentaria y turismo con IA" />
-                                <span>Workshop B: Sustentabilidad alimentaria y turismo con IA</span>
-                            </label>
-                            <label class="cumbre-check">
-                                <input type="radio" name="workshop" value="" checked />
-                                <span>Ninguno</span>
-                            </label>
+                        <p class="cumbre-aviso">
+                            Las charlas y paneles son abiertos a todo público. El almuerzo de
+                            matchmaking, la mesa técnica, el pitch y los workshops son para
+                            emprendedores y empresas del área industrial: puede inscribirse, y le
+                            confirmaremos su cupo según su perfil.
+                        </p>
+                        <div class="cumbre-dias">
+                            <div class="cumbre-checks" id="talleresDia1">
+                                <p class="cumbre-checks-dia">Día 1 · jueves 19</p>
+                                <p class="cumbre-checks-tipo">Charlas y paneles</p>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Charla plenaria internacional N°1: IA aplicada a Producción y Servicios para la Minería" />
+                                    <span>Charla plenaria internacional N°1: IA aplicada a Producción y Servicios para la Minería <span class="cumbre-hora">10:15 – 11:15</span></span>
+                                </label>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Panel: Proveedores locales para la gran minería tarapaqueña" />
+                                    <span>Panel: Proveedores locales para la gran minería tarapaqueña <span class="cumbre-hora">11:15 – 11:45</span></span>
+                                </label>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Charla plenaria internacional N°2: Hidrógeno Verde y Energías Renovables, IA para la transición energética" />
+                                    <span>Charla plenaria internacional N°2: Hidrógeno Verde y Energías Renovables, IA para la transición energética <span class="cumbre-hora">11:45 – 12:45</span></span>
+                                </label>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Cóctel de bienvenida y networking" />
+                                    <span>Cóctel de bienvenida y networking <span class="cumbre-hora">18:30 – 20:00</span></span>
+                                </label>
+                                <p class="cumbre-checks-tipo">Talleres <span class="cumbre-sujeto">sujeto a confirmación</span></p>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Almuerzo y matchmaking dirigido" />
+                                    <span>Almuerzo y matchmaking dirigido <span class="cumbre-hora">13:00 – 14:30</span></span>
+                                </label>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Mesa técnica territorial: Ecosistema H2V y Litio Tarapacá" />
+                                    <span>Mesa técnica territorial: Ecosistema H2V y Litio Tarapacá <span class="cumbre-hora">15:45 – 17:00</span></span>
+                                </label>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Sesión de pitch: Emprendedores tecnológicos del norte" />
+                                    <span>Sesión de pitch: Emprendedores tecnológicos del norte <span class="cumbre-hora">17:00 – 18:30</span></span>
+                                </label>
+                            </div>
+                            <div class="cumbre-checks" id="talleresDia2" hidden>
+                                <p class="cumbre-checks-dia">Día 2 · viernes 20</p>
+                                <p class="cumbre-checks-tipo">Charlas y paneles</p>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia2" value="Charla plenaria internacional N°3: IA aplicada a Logística y Comercio Internacional" />
+                                    <span>Charla plenaria internacional N°3: IA aplicada a Logística y Comercio Internacional <span class="cumbre-hora">10:15 – 11:15</span></span>
+                                </label>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia2" value="Panel: Cambios en la industria con IA" />
+                                    <span>Panel: Cambios en la industria con IA <span class="cumbre-hora">11:15 – 11:45</span></span>
+                                </label>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia2" value="Charlas plenarias nacionales" />
+                                    <span>Charlas plenarias nacionales <span class="cumbre-hora">11:45 – 12:45</span></span>
+                                </label>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia2" value="Panel plenario de cierre: Hoja de ruta" />
+                                    <span>Panel plenario de cierre: Hoja de ruta <span class="cumbre-hora">16:00 – 17:30</span></span>
+                                </label>
+                                <p class="cumbre-checks-tipo">Talleres <span class="cumbre-sujeto">sujeto a confirmación</span></p>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia2" value="Almuerzo y matchmaking dirigido" />
+                                    <span>Almuerzo y matchmaking dirigido <span class="cumbre-hora">13:00 – 14:30</span></span>
+                                </label>
+                                <p class="cumbre-checks-sub">Workshop paralelo, 14:30 – 16:00 (elija uno)</p>
+                                <label class="cumbre-check">
+                                    <input type="radio" name="workshop" data-grupo="viraliza_talleres_dia2" value="Workshop A: Logística portuaria e IA (Puerto de Iquique)" />
+                                    <span>Workshop A: Logística portuaria e IA (Puerto de Iquique)</span>
+                                </label>
+                                <label class="cumbre-check">
+                                    <input type="radio" name="workshop" data-grupo="viraliza_talleres_dia2" value="Workshop B: Sustentabilidad alimentaria y turismo con IA" />
+                                    <span>Workshop B: Sustentabilidad alimentaria y turismo con IA</span>
+                                </label>
+                                <label class="cumbre-check">
+                                    <input type="radio" name="workshop" value="" checked />
+                                    <span>Ninguno</span>
+                                </label>
+                            </div>
                         </div>
                         <p class="cumbre-hint" id="talleresVacio" hidden>Marque un día para ver sus actividades.</p>
                     </fieldset>
@@ -512,8 +559,8 @@
         // Cada día muestra sus actividades solo si está marcado.
         function syncDias() {
             document.getElementById('talleresDia1').hidden = !dia1El.checked;
-            document.getElementById('talleresDia2').hidden = !(esDia2 && dia2El.checked);
-            document.getElementById('talleresVacio').hidden = dia1El.checked || (esDia2 && dia2El.checked);
+            document.getElementById('talleresDia2').hidden = !dia2El.checked;
+            document.getElementById('talleresVacio').hidden = dia1El.checked || dia2El.checked;
         }
         dia1El.addEventListener('change', syncDias);
         dia2El.addEventListener('change', syncDias);
@@ -550,7 +597,6 @@
                 'hora y el lugar exacto al correo que nos indicó.';
             submitBtn.textContent = 'Confirmar mi cupo';
             // La invitación es al Día 2; el Día 1 queda opcional.
-            document.getElementById('dia2Box').hidden = false;
             dia2El.checked = true;
             dia1El.checked = false;
             syncDias();
@@ -658,7 +704,7 @@
             // Los dos correos tienen que coincidir. setCustomValidity antes de checkValidity,
             // para que el navegador lo marque en el campo como cualquier otro error.
             // Al menos un día.
-            var algunDia = dia1El.checked || (esDia2 && dia2El.checked);
+            var algunDia = dia1El.checked || dia2El.checked;
             dia1El.setCustomValidity(algunDia ? '' : 'Marque el día al que asistirá.');
 
             var rut = normalizarRut(rutEl.value);
@@ -697,7 +743,7 @@
             try {
                 var data = await withId(collectData());
                 var destinos = [];
-                if (esDia2 && dia2El.checked) destinos.push(urlDia2);
+                if (dia2El.checked) destinos.push(urlDia2);
                 if (dia1El.checked) destinos.push(urlDia1);
 
                 var respuestas = await Promise.all(destinos.map(function (url) {
@@ -721,7 +767,7 @@
                 try {
                     window.dataLayer && window.dataLayer.push({
                         event: 'viraliza_registro_cumbre',
-                        dia: esDia2 ? 'dia2' : 'dia1',
+                        dia: dia1El.checked && dia2El.checked ? 'ambos' : (dia2El.checked ? 'dia2' : 'dia1'),
                         eje: form.querySelector('#f-eje').value,
                         comuna: form.querySelector('#f-comuna').value
                     });
