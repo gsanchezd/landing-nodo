@@ -78,19 +78,6 @@
                 <h2 class="cumbre-section">Sus datos</h2>
 
                 <div class="cumbre-grid">
-                    <div class="cumbre-field">
-                        <label for="f-email">Correo electrónico <span class="req">*</span></label>
-                        <input id="f-email" name="email" type="email" required autocomplete="email"
-                               placeholder="nombre@correo.cl" />
-                    </div>
-
-                    <!-- Solo para validar que coincida: no tiene name, así que no viaja al CRM. -->
-                    <div class="cumbre-field">
-                        <label for="f-email2">Confirme su correo <span class="req">*</span></label>
-                        <input id="f-email2" type="email" required autocomplete="email"
-                               placeholder="nombre@correo.cl" />
-                    </div>
-
                     <!-- Nombre y apellidos por separado, pero al CRM viaja además `name` con el
                          nombre completo: firstname/lastname no son campos estándar del CRM y sin
                          `name` el contacto queda sin nombre (ver collectData). -->
@@ -115,11 +102,6 @@
                     </div>
 
                     <div class="cumbre-field">
-                        <label for="f-phone">Teléfono <span class="req">*</span></label>
-                        <input id="f-phone" name="phone" type="tel" required autocomplete="tel" />
-                    </div>
-
-                    <div class="cumbre-field">
                         <label for="f-genero">Género <span class="req">*</span></label>
                         <select id="f-genero" name="genero" required>
                             <option value="">— Seleccionar —</option>
@@ -128,6 +110,24 @@
                             <option value="Otro / No binario">Otro / No binario</option>
                             <option value="Prefiero no responder">Prefiero no responder</option>
                         </select>
+                    </div>
+
+                    <div class="cumbre-field">
+                        <label for="f-email">Correo electrónico <span class="req">*</span></label>
+                        <input id="f-email" name="email" type="email" required autocomplete="email"
+                               placeholder="nombre@correo.cl" />
+                    </div>
+
+                    <!-- Solo para validar que coincida: no tiene name, así que no viaja al CRM. -->
+                    <div class="cumbre-field">
+                        <label for="f-email2">Confirme su correo <span class="req">*</span></label>
+                        <input id="f-email2" type="email" required autocomplete="email"
+                               placeholder="nombre@correo.cl" />
+                    </div>
+
+                    <div class="cumbre-field">
+                        <label for="f-phone">Teléfono <span class="req">*</span></label>
+                        <input id="f-phone" name="phone" type="tel" required autocomplete="tel" />
                     </div>
 
                     <div class="cumbre-field">
@@ -294,6 +294,65 @@
                     </div>
                 </div>
 
+                <h2 class="cumbre-section">Días y actividades</h2>
+
+                <!-- Cada día va a su form del CRM (marcador propio). El Día 2 es por invitación:
+                     solo aparece con ?invitacion=. Las actividades viajan como lista (los campos
+                     viraliza_talleres_dia1/_dia2 son multi_enumeration en el CRM).
+                     La lista de actividades es provisoria: el programa aún se está cerrando. -->
+                <div class="cumbre-dias">
+                    <label class="cumbre-consent cumbre-dia" for="f-dia1">
+                        <input id="f-dia1" type="checkbox" checked />
+                        <span class="cumbre-consent-text">
+                            <strong>Día 1 · jueves 19 de noviembre</strong>
+                            Summit: charlas, paneles y networking.
+                        </span>
+                    </label>
+                    <div class="cumbre-talleres" id="talleresDia1">
+                        <p class="cumbre-talleres-titulo">Actividades del Día 1 a las que quiere asistir (opcional)</p>
+                        <label class="cumbre-check">
+                            <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Almuerzo y matchmaking dirigido" />
+                            <span>Almuerzo y matchmaking dirigido <small>13:00 – 14:30</small></span>
+                        </label>
+                        <label class="cumbre-check">
+                            <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Mesa técnica territorial: Ecosistema H2V y Litio Tarapacá" />
+                            <span>Mesa técnica territorial: Ecosistema H2V y Litio Tarapacá <small>15:45 – 17:00</small></span>
+                        </label>
+                        <label class="cumbre-check">
+                            <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Sesión de pitch: Emprendedores tecnológicos del norte" />
+                            <span>Sesión de pitch: Emprendedores tecnológicos del norte <small>17:00 – 18:30</small></span>
+                        </label>
+                    </div>
+
+                    <label class="cumbre-consent cumbre-dia" for="f-dia2" id="dia2Box" hidden>
+                        <input id="f-dia2" type="checkbox" />
+                        <span class="cumbre-consent-text">
+                            <strong>Día 2 · viernes 20 de noviembre</strong>
+                            Por invitación.
+                        </span>
+                    </label>
+                    <div class="cumbre-talleres" id="talleresDia2" hidden>
+                        <p class="cumbre-talleres-titulo">Actividades del Día 2 a las que quiere asistir (opcional)</p>
+                        <label class="cumbre-check">
+                            <input type="checkbox" data-grupo="viraliza_talleres_dia2" value="Almuerzo y matchmaking dirigido" />
+                            <span>Almuerzo y matchmaking dirigido <small>13:00 – 14:30</small></span>
+                        </label>
+                        <p class="cumbre-talleres-titulo">Workshop paralelo, 14:30 – 16:00 (elija uno)</p>
+                        <label class="cumbre-check">
+                            <input type="radio" name="workshop" data-grupo="viraliza_talleres_dia2" value="Workshop A: Logística portuaria e IA (Puerto de Iquique)" />
+                            <span>Workshop A: Logística portuaria e IA (Puerto de Iquique)</span>
+                        </label>
+                        <label class="cumbre-check">
+                            <input type="radio" name="workshop" data-grupo="viraliza_talleres_dia2" value="Workshop B: Sustentabilidad alimentaria y turismo con IA" />
+                            <span>Workshop B: Sustentabilidad alimentaria y turismo con IA</span>
+                        </label>
+                        <label class="cumbre-check">
+                            <input type="radio" name="workshop" value="" checked />
+                            <span>Ninguno</span>
+                        </label>
+                    </div>
+                </div>
+
                 <h2 class="cumbre-section">Autorización</h2>
 
                 <!-- Requisito obligatorio: texto LITERAL de la Resolución de Focalización de
@@ -326,14 +385,6 @@
                     </span>
                 </label>
 
-                <!-- Solo en modo invitación: el invitado al Día 2 puede sumarse también al
-                     Summit y el envío va a los dos forms. -->
-                <label class="cumbre-consent cumbre-dia1" for="f-dia1" hidden>
-                    <input id="f-dia1" type="checkbox" />
-                    <span class="cumbre-consent-text">
-                        También asistiré al <strong>Summit del Día 1</strong> (jueves 19 de noviembre).
-                    </span>
-                </label>
 
                 <!-- Campo trampa para bots: invisible, una persona no lo llena. -->
                 <div class="cumbre-trampa" aria-hidden="true">
@@ -453,7 +504,15 @@
         // final de los 50 se hace sobre la lista del form del Día 2.
         var DIA2_HASH = 'da377d61611593f5be4763e4ffb4a9b00be0965dd5c640af26935ab57f53748a';
         var esDia2 = false;
-        var dia1Box = form.querySelector('.cumbre-dia1');
+        var dia1El = document.getElementById('f-dia1');
+        var dia2El = document.getElementById('f-dia2');
+        // Cada día muestra sus actividades solo si está marcado.
+        function syncDias() {
+            document.getElementById('talleresDia1').hidden = !dia1El.checked;
+            document.getElementById('talleresDia2').hidden = !(esDia2 && dia2El.checked);
+        }
+        dia1El.addEventListener('change', syncDias);
+        dia2El.addEventListener('change', syncDias);
 
         async function sha256Hex(text) {
             var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
@@ -486,7 +545,11 @@
                 'Gracias por confirmar su participación en el Workshop del Día 2. Le enviaremos la ' +
                 'hora y el lugar exacto al correo que nos indicó.';
             submitBtn.textContent = 'Confirmar mi cupo';
-            dia1Box.hidden = false;
+            // La invitación es al Día 2; el Día 1 queda opcional.
+            document.getElementById('dia2Box').hidden = false;
+            dia2El.checked = true;
+            dia1El.checked = false;
+            syncDias();
         }
 
         (async function () {
@@ -523,6 +586,16 @@
                 if (typeof value === 'string') value = value.trim();
                 if (value) data[key] = value;
             });
+
+            // Las actividades de cada día, como lista: solo las del día marcado.
+            ['viraliza_talleres_dia1', 'viraliza_talleres_dia2'].forEach(function (grupo) {
+                var marcadas = Array.prototype.filter.call(
+                    form.querySelectorAll('[data-grupo="' + grupo + '"]'),
+                    function (el) { return el.checked && !el.closest('[hidden]'); }
+                ).map(function (el) { return el.value; });
+                if (marcadas.length) data[grupo] = marcadas;
+            });
+            delete data.workshop;
 
             // Nombre completo en `name`, la columna base del contacto. firstname y lastname
             // viajan también, como custom fields.
@@ -571,6 +644,8 @@
         }
 
         email2El.addEventListener('input', function () { email2El.setCustomValidity(''); });
+        dia1El.addEventListener('change', function () { dia1El.setCustomValidity(''); });
+        dia2El.addEventListener('change', function () { dia1El.setCustomValidity(''); });
 
         form.addEventListener('submit', async function (e) {
             e.preventDefault();
@@ -578,6 +653,10 @@
 
             // Los dos correos tienen que coincidir. setCustomValidity antes de checkValidity,
             // para que el navegador lo marque en el campo como cualquier otro error.
+            // Al menos un día.
+            var algunDia = dia1El.checked || (esDia2 && dia2El.checked);
+            dia1El.setCustomValidity(algunDia ? '' : 'Marque el día al que asistirá.');
+
             var rut = normalizarRut(rutEl.value);
             rutEl.setCustomValidity(rut ? '' : 'Revise el RUT: el dígito verificador no coincide.');
             if (rut) rutEl.value = rut;
@@ -613,9 +692,9 @@
 
             try {
                 var data = await withId(collectData());
-                var destinos = esDia2
-                    ? (form.querySelector('#f-dia1').checked ? [urlDia2, urlDia1] : [urlDia2])
-                    : [urlDia1];
+                var destinos = [];
+                if (esDia2 && dia2El.checked) destinos.push(urlDia2);
+                if (dia1El.checked) destinos.push(urlDia1);
 
                 var respuestas = await Promise.all(destinos.map(function (url) {
                     return fetch(url, {

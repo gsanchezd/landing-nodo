@@ -153,8 +153,15 @@ body {
     display: none;
 }
 
+/* Cada bloque del formulario es una grilla con aire entre filas: sin esto la
+   etiqueta de un campo quedaba pegada al input de arriba. */
+.cumbre-grid {
+    display: grid;
+    gap: 20px;
+}
+
 .cumbre-section {
-    margin: 10px 0 0;
+    margin: 22px 0 2px;
     padding-bottom: 10px;
     font-size: 13px;
     font-weight: 800;
@@ -171,7 +178,7 @@ body {
 .cumbre-field {
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    gap: 8px;
     min-width: 0;
     border: 0;
 }
@@ -533,9 +540,8 @@ body {
    columna queda larguísimo */
 @media (min-width: 720px) {
     .cumbre-grid {
-        display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 0 1.1rem;
+        gap: 22px 20px;
     }
 
     .cumbre-grid .cumbre-field--wide {
@@ -606,4 +612,55 @@ body {
 /* El aviso del correo de acceso a Copiloto IA, en el mensaje de éxito. */
 .cumbre-acceso {
     margin-top: 12px;
+}
+
+/* ---------- Días y actividades ---------- */
+.cumbre-dias {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+.cumbre-talleres {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 0 0.5rem 1.25rem;
+    border-left: 2px solid rgba(0, 178, 183, 0.35);
+    margin-left: 1.25rem;
+}
+.cumbre-talleres[hidden] {
+    display: none;
+}
+.cumbre-talleres-titulo {
+    margin: 0.5rem 0 0.25rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-navy);
+}
+.cumbre-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: var(--ink);
+    cursor: pointer;
+}
+.cumbre-check input {
+    width: 20px;
+    height: 20px;
+    margin: 1px 0 0;
+    flex-shrink: 0;
+    accent-color: #00b2b7;
+    cursor: pointer;
+}
+.cumbre-check small {
+    display: block;
+    color: var(--gray);
+    font-size: 0.8rem;
+}
+/* El Día 2 solo aparece con la invitación: el display:flex de .cumbre-consent le
+   ganaba al atributo hidden. */
+.cumbre-dia[hidden] {
+    display: none;
 }
