@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NODO · Página no disponible</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+    <link rel="stylesheet" href="styles-magallanes.css?v=20261015">
+    <style>
+        body { min-height: 100vh; display: flex; flex-direction: column; background: var(--yellow); }
+        .mg-hero { flex: 1; display: flex; padding-bottom: 28px; }
+        .mg-hero-inner { width: 100%; display: flex; flex-direction: column; }
+        .mg-hero-copy { margin: auto 0; }
+        .mg-code {
+            font-size: clamp(88px, 18vw, 200px);
+            line-height: .85;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -0.05em;
+            color: var(--navy);
+            margin-bottom: 18px;
+        }
+        .mg-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+        .mg-actions .mg-cta { margin-top: 0; }
+        .mg-cta-alt { background: transparent; color: var(--navy); }
+        .mg-cta-alt:hover { background: var(--navy); color: var(--white); }
+        .mg-foot { position: relative; z-index: 1; font-size: 15px; color: var(--navy); font-weight: 600; }
+        .mg-foot a { font-weight: 700; }
+        @media (max-width: 640px) {
+            .mg-wrap { padding: 0 16px; }
+            .mg-rings { top: auto; bottom: -40px; right: -40px; width: 70vw; opacity: .35; }
+            .mg-actions .mg-cta { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="mg-hero">
+        <div class="mg-wrap mg-hero-inner">
+            <a href="https://somosnodo.cl/" class="mg-brand" aria-label="NODO, ir al inicio">
+                <img src="../assets/logo.png" alt="" width="48" height="40">
+                <span class="mg-brand-word">nodo</span>
+                <span class="mg-brand-tag">Talento<br>Tecnología<br>Oportunidades<br>para Chile</span>
+            </a>
+
+            <div class="mg-hero-copy">
+                <p class="mg-code" aria-hidden="true">404</p>
+                <h1 class="mg-title">Página no<br>disponible</h1>
+                <p class="mg-lead">
+                    Esta página no está disponible por ahora. Si tiene dudas, escríbanos y le
+                    responderemos a la brevedad.
+                </p>
+                <div class="mg-actions">
+                    <a href="https://somosnodo.cl/" class="mg-cta">Ir a somosnodo.cl</a>
+                    <a href="mailto:contacto@somosnodo.cl" class="mg-cta mg-cta-alt">contacto@somosnodo.cl</a>
+                </div>
+            </div>
+
+        </div>
+
+        <svg class="mg-rings" viewBox="0 0 400 400" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round">
+                <path d="M400 60 A340 340 0 0 0 60 400"/>
+                <path d="M400 105 A295 295 0 0 0 105 400" stroke-dasharray="120 18"/>
+                <path d="M400 150 A250 250 0 0 0 150 400"/>
+                <path d="M400 195 A205 205 0 0 0 195 400" stroke-dasharray="70 16"/>
+                <path d="M400 240 A160 160 0 0 0 240 400"/>
+                <path d="M400 285 A115 115 0 0 0 285 400" stroke-dasharray="40 14"/>
+                <path d="M400 330 A70 70 0 0 0 330 400"/>
+            </g>
+        </svg>
+    </header>
+</body>
+
+</html>
