@@ -368,6 +368,21 @@ a { color: inherit; }
 
 .mg-allies .mg-muted { margin-top: 8px; }
 
+.mg-support {
+    display: flex;
+    align-items: center;
+    gap: 20px 40px;
+    flex-wrap: wrap;
+    margin-bottom: 56px;
+    padding: 28px 32px;
+    background: var(--white);
+    border: 1px solid var(--line-soft);
+}
+
+.mg-support img { width: 220px; height: auto; }
+
+.mg-support p { flex: 1 1 280px; max-width: 520px; font-size: 16px; color: var(--muted); }
+
 .mg-allies-grid {
     list-style: none;
     margin-top: 28px;
