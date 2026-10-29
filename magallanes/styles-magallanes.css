@@ -314,6 +314,40 @@ a { color: inherit; }
     color: var(--navy);
 }
 
+/* ---------- Aliados ---------- */
+
+.mg-allies { padding: 64px 0; border-top: 2px solid var(--line); }
+
+.mg-allies .mg-muted { margin-top: 8px; }
+
+.mg-allies-grid {
+    list-style: none;
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 16px;
+}
+
+.mg-allies-grid li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 120px;
+    padding: 18px;
+    background: var(--white);
+    border: 1px solid var(--line-soft);
+    text-align: center;
+}
+
+.mg-allies-grid img { max-width: 150px; max-height: 64px; object-fit: contain; }
+
+.mg-ally-name { font-weight: 700; font-size: 15px; color: var(--navy); }
+
+/* Sin logo, el nombre hace de logo. */
+.mg-allies-grid li > .mg-ally-name:only-child { font-size: 22px; font-weight: 800; }
+
 /* ---------- Formulario ---------- */
 
 .mg-apply { background: var(--yellow-soft); border-top: 2px solid var(--line); }
