@@ -322,6 +322,46 @@ a { color: inherit; }
 
 .mg-launch-note { margin-top: 14px; font-size: 14.5px; line-height: 1.45; }
 
+/* ---------- Programa ---------- */
+
+.mg-program { background: var(--white); }
+
+.mg-program-head { max-width: 680px; }
+
+.mg-program-head .mg-muted { margin-top: 10px; }
+
+.mg-modules {
+    list-style: none;
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border-top: 2px solid var(--line);
+}
+
+.mg-modules li { padding: 26px 28px 28px 0; border-bottom: 1px solid var(--line-soft); }
+
+.mg-modules li:nth-child(even) { padding: 26px 0 28px 28px; border-left: 1px solid var(--line-soft); }
+
+.mg-module-meta {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.mg-module-meta span { background: var(--yellow); color: var(--navy); padding: 2px 8px; }
+
+.mg-modules h3 { margin-top: 12px; font-size: 21px; line-height: 1.25; font-weight: 800; color: var(--navy); }
+
+.mg-modules li > p:last-child { margin-top: 8px; font-size: 15.5px; color: var(--muted); }
+
+.mg-program-foot { margin-top: 22px; }
+
 /* ---------- Aliados ---------- */
 
 .mg-allies { padding: 64px 0; border-top: 2px solid var(--line); }
@@ -518,7 +558,9 @@ a { color: inherit; }
 
 .mg-footer { background: var(--navy); color: rgba(255, 255, 255, .85); padding: 28px 0; font-size: 15px; }
 
-.mg-footer-inner { display: flex; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; }
+.mg-footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px 24px; flex-wrap: wrap; }
+
+.mg-corfo { width: 180px; height: auto; }
 
 .mg-footer a { color: var(--yellow); }
 
@@ -545,6 +587,9 @@ a { color: inherit; }
     .mg-section { padding: 60px 0; }
     .mg-themes { padding: 56px 0; }
     .mg-themes-grid { grid-template-columns: 1fr; }
+    .mg-modules { grid-template-columns: 1fr; }
+    .mg-modules li,
+    .mg-modules li:nth-child(even) { padding: 22px 0 24px; border-left: 0; }
     .mg-themes-grid article,
     .mg-themes-grid article + article { padding: 22px 0 18px; border-left: 0; }
     .mg-themes-grid article + article { border-top: 1px solid rgba(255, 255, 255, .35); }
