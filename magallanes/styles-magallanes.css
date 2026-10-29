@@ -314,6 +314,14 @@ a { color: inherit; }
     color: var(--navy);
 }
 
+.mg-themes-lead { margin-top: 10px; max-width: 640px; color: rgba(255, 255, 255, .78); }
+
+.mg-themes-grid .mg-theme-focus { margin-top: 10px; font-size: 14px; font-weight: 700; color: var(--yellow); }
+
+.mg-launch-row em { font-style: normal; font-weight: 500; font-size: 15px; }
+
+.mg-launch-note { margin-top: 14px; font-size: 14.5px; line-height: 1.45; }
+
 /* ---------- Aliados ---------- */
 
 .mg-allies { padding: 64px 0; border-top: 2px solid var(--line); }
@@ -341,7 +349,7 @@ a { color: inherit; }
     text-align: center;
 }
 
-.mg-allies-grid img { max-width: 150px; max-height: 64px; object-fit: contain; }
+.mg-allies-grid img { max-width: 140px; max-height: 56px; object-fit: contain; }
 
 .mg-ally-name { font-weight: 700; font-size: 15px; color: var(--navy); }
 
