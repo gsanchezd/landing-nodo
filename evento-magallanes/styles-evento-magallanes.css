@@ -34,3 +34,83 @@
 @media (max-width: 900px) {
     .ev-about-inner { grid-template-columns: 1fr; }
 }
+
+/* ---------- Hero invertido (navy), como cumbreiatarapaca.cl ---------- */
+
+.ev-hero { background: var(--navy); color: var(--white); }
+
+.ev-hero .mg-brand img { width: 40px; height: 40px; }
+.ev-hero .mg-brand-word,
+.ev-hero .mg-title,
+.ev-hero .mg-facts dd { color: var(--yellow); }
+.ev-hero .mg-brand-tag { color: var(--white); border-left-color: rgba(255, 255, 255, .5); }
+.ev-hero .mg-eyebrow { background: var(--yellow); color: var(--navy); }
+.ev-hero .mg-cta { background: var(--yellow); border-color: var(--yellow); color: var(--navy); }
+.ev-hero .mg-cta:hover { background: transparent; color: var(--yellow); }
+.ev-hero .mg-facts { border-top-color: var(--yellow); }
+.ev-hero .mg-facts > div + div { border-left-color: rgba(255, 255, 255, .3); }
+.ev-hero .mg-facts dt { color: rgba(255, 255, 255, .8); }
+
+/* Mapa de la región (Natural Earth, sin territorio antártico); el punto marca Punta Arenas. */
+.ev-map {
+    position: absolute;
+    right: max(24px, calc((100vw - 1120px) / 2 - 40px));
+    top: 40px;
+    height: min(calc(100% - 64px), 640px);
+    aspect-ratio: 600 / 786;
+    pointer-events: none;
+    z-index: 0;
+    /* Brillo sobre Punta Arenas, como el de la imagen de Tarapacá */
+    background: radial-gradient(circle at 51.3% 62.1%, rgba(248, 237, 27, .32), rgba(248, 237, 27, .08) 9%, transparent 20%);
+}
+
+.ev-map img { display: block; width: 100%; height: 100%; }
+
+/* Punta Arenas (51,3 % / 62,1 % del mapa): núcleo que respira y dos anillos desfasados. */
+.ev-map-dot {
+    position: absolute;
+    left: 51.3%;
+    top: 62.1%;
+    width: 12px;
+    height: 12px;
+    margin: -6px 0 0 -6px;
+    border-radius: 50%;
+    background: var(--white);
+    box-shadow: 0 0 10px 3px var(--yellow);
+    animation: ev-respira 2.4s ease-in-out infinite alternate;
+}
+
+.ev-map-dot::before,
+.ev-map-dot::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1.5px solid var(--yellow);
+    opacity: 0;
+    animation: ev-radar 3.2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.ev-map-dot::after { animation-delay: 1.6s; }
+
+@keyframes ev-radar {
+    0% { transform: scale(1); opacity: .8; }
+    100% { transform: scale(9); opacity: 0; }
+}
+
+@keyframes ev-respira {
+    from { box-shadow: 0 0 8px 2px var(--yellow); }
+    to { box-shadow: 0 0 22px 7px var(--yellow); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ev-map-dot, .ev-map-dot::before, .ev-map-dot::after { animation: none; }
+}
+
+@media (max-width: 900px) {
+    .ev-map { display: none; }
+}
+
+@media (max-width: 640px) {
+    .ev-hero .mg-facts > div:nth-child(n+3) { border-top-color: rgba(255, 255, 255, .3); }
+}
