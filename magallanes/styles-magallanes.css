@@ -89,6 +89,9 @@ a { color: inherit; }
 
 .mg-hero-corfo { display: block; width: 170px; height: auto; margin-bottom: 28px; }
 
+/* Logo blanco sobre fondo claro: el manual Corfo lo pide sobre fondo oscuro, por eso la placa navy */
+.mg-hero-corfo--placa { box-sizing: content-box; background: var(--navy); padding: 14px 18px; }
+
 .mg-eyebrow {
     display: inline-block;
     font-size: 13px;
