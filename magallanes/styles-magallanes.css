@@ -89,8 +89,10 @@ a { color: inherit; }
 
 .mg-hero-corfo { display: block; width: 170px; height: auto; margin-bottom: 28px; }
 
-/* Logo blanco sobre fondo claro: el manual Corfo lo pide sobre fondo oscuro, por eso la placa navy */
-.mg-hero-corfo--placa { box-sizing: content-box; background: var(--navy); padding: 14px 18px; }
+/* Barra superior de /magallanes: marca NODO y, al lado, Corfo. Logo blanco sobre placa navy
+   porque el manual Corfo pide el blanco sobre fondo oscuro. */
+.mg-topbar { display: flex; align-items: center; flex-wrap: wrap; gap: 14px 28px; }
+.mg-top-corfo { display: block; width: 120px; height: auto; box-sizing: content-box; background: var(--navy); padding: 10px 14px; }
 
 .mg-eyebrow {
     display: inline-block;
@@ -585,6 +587,7 @@ a { color: inherit; }
     .mg-wrap { padding: 0 16px; }
     .mg-hero-copy { padding: 48px 0 40px; }
     .mg-hero-corfo { width: 140px; margin-bottom: 22px; }
+    .mg-top-corfo { width: 100px; padding: 8px 12px; }
     .mg-brand-tag { display: none; }
     .mg-facts { grid-template-columns: 1fr 1fr; }
     .mg-facts > div:nth-child(3) { padding-left: 0; border-left: 0; }
