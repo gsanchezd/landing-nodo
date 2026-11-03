@@ -91,7 +91,9 @@ a { color: inherit; }
 
 /* Barra superior de /magallanes: marca NODO y, al lado, Corfo. Logo blanco sobre placa navy
    porque el manual Corfo pide el blanco sobre fondo oscuro. */
-.mg-topbar { display: flex; align-items: center; flex-wrap: wrap; gap: 14px 28px; }
+.mg-topbar { display: flex; align-items: flex-start; flex-wrap: wrap; gap: 14px 28px; }
+/* Pestaña pegada al borde superior: sube lo que mide el padding del hero (28px) y no agranda la barra */
+.mg-topbar .mg-top-corfo { margin: -28px 0 -29px; }
 .mg-top-corfo { display: block; width: 120px; height: auto; box-sizing: content-box; background: var(--navy); padding: 22px; }  /* padding = ancho de la O de CORFO (área de resguardo del manual) */
 
 .mg-eyebrow {
@@ -588,6 +590,7 @@ a { color: inherit; }
     .mg-hero-copy { padding: 48px 0 40px; }
     .mg-hero-corfo { width: 140px; margin-bottom: 22px; }
     .mg-top-corfo { width: 110px; padding: 20px; }
+    .mg-topbar .mg-top-corfo { margin-bottom: -20px; }
     .mg-brand-tag { display: none; }
     .mg-facts { grid-template-columns: 1fr 1fr; }
     .mg-facts > div:nth-child(3) { padding-left: 0; border-left: 0; }
