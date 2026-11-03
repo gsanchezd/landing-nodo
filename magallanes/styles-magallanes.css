@@ -87,6 +87,8 @@ a { color: inherit; }
 
 .mg-hero-copy { padding: 72px 0 56px; max-width: 760px; }
 
+.mg-hero-corfo { display: block; width: 170px; height: auto; margin-bottom: 28px; }
+
 .mg-eyebrow {
     display: inline-block;
     font-size: 13px;
@@ -579,6 +581,7 @@ a { color: inherit; }
     body { font-size: 16px; }
     .mg-wrap { padding: 0 16px; }
     .mg-hero-copy { padding: 48px 0 40px; }
+    .mg-hero-corfo { width: 140px; margin-bottom: 22px; }
     .mg-brand-tag { display: none; }
     .mg-facts { grid-template-columns: 1fr 1fr; }
     .mg-facts > div:nth-child(3) { padding-left: 0; border-left: 0; }
