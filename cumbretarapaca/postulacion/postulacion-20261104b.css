@@ -96,10 +96,12 @@ body {
 /* "Invita Cerro Colorado | BHP", solo en la versión de somosnodo.cl/cumbretarapaca. Placa
    blanca para que el logo naranja se lea sobre el navy sin alterar sus colores. */
 .cumbre-invita {
-    display: inline-flex;
+    /* Bloque propio y centrado: en línea quedaba al lado del logo de NODO en pantalla ancha. */
+    display: flex;
+    width: fit-content;
     align-items: center;
     gap: 12px;
-    margin: 0 auto 18px;
+    margin: 4px auto 20px;
     padding: 10px 16px;
     background: var(--white);
     border-radius: 8px;
