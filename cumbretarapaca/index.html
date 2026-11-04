@@ -760,8 +760,8 @@
 
                 // El acceso a la plataforma va después del CRM y no bloquea: si falla, la
                 // inscripción ya quedó y solo no se muestra el aviso del correo de acceso.
-                var conAcceso = await avisarPlataforma(data);
-                document.getElementById('cumbreAcceso').hidden = !conAcceso;
+                // Correo de acceso en pausa desde el 4-nov (viraliza 7.29.0): sin aviso.
+                await avisarPlataforma(data);
 
                 try {
                     window.dataLayer && window.dataLayer.push({
