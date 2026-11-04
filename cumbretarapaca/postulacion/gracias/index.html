@@ -83,6 +83,10 @@
         try { sessionStorage.removeItem('cumbrePostulacion'); } catch (_) { }
         var dia = datos.dia1 && datos.dia2 ? 'ambos' : (datos.dia2 ? 'dia2' : 'dia1');
         gtag('event', 'generate_lead', { form_name: 'postulacion_cumbre', dia: dia, invita: bhp ? 'bhp' : 'ninguna' });
+        // Para la pauta en GTM-KKDV2B44 (Pixel de Meta, etiqueta "Lead Cumbre" con activador de evento
+        // personalizado registro_cumbre + Page Hostname = cumbreiatarapaca.cl). Mismo momento y misma
+        // regla que generate_lead: una vez por postulación, después de que el CRM aceptó el registro.
+        window.dataLayer.push({ event: 'registro_cumbre', invita: bhp ? 'bhp' : 'ninguna', dia: dia });
         if (datos.id) {
             document.getElementById('cumbreId').textContent = datos.id;
             document.getElementById('cumbreIdBox').hidden = false;
