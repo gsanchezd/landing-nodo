@@ -26,6 +26,24 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
     </script>
+    <!-- Pixel de Meta "Somos Nodo" (832534809271682), conectado a la cuenta publicitaria de la pauta de
+         la Cumbre (4-nov-2026). Solo en cumbreiatarapaca.cl, que es adonde va la pauta: la réplica de
+         somosnodo.cl/cumbretarapaca no lo carga. El Lead va en /postulacion/gracias/ (una vez por
+         postulación). Sin noscript a propósito: no se puede limitar por dominio. -->
+    <script>
+    if (/^(www\.)?cumbreiatarapaca\.cl$/.test(location.hostname)) {
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '832534809271682');
+      fbq('track', 'PageView');
+    }
+    </script>
 </head>
 
 <body>
