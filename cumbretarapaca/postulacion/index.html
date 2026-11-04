@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Cumbre Tarapacá - Viraliza</title>
+    <meta name="description"
+        content="Reserve su cupo en la Cumbre Tarapacá de Viraliza: minería, logística e hidrógeno verde. 24 y 25 de noviembre, Iquique.">
+    <meta property="og:title" content="Registro Cumbre Tarapacá - Viraliza">
+    <meta property="og:description"
+        content="Reserve su cupo en la Cumbre Tarapacá de Viraliza: minería, logística e hidrógeno verde. 24 y 25 de noviembre, Iquique.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="/cumbretarapaca/logos/nodo-simbolo.png">
+    <link rel="canonical" href="https://cumbreiatarapaca.cl/postulacion/">
+    <meta property="og:url" content="https://cumbreiatarapaca.cl/postulacion/">
+    <meta property="og:image" content="https://cumbreiatarapaca.cl/og-cumbre-corfo2024.jpg">
+    <link rel="stylesheet" href="/cumbretarapaca/postulacion/postulacion-20261104.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PV9S5DL6');</script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PV9S5DL6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <main class="cumbre-page">
+        <div class="cumbre-glow cumbre-glow--top"></div>
+        <div class="cumbre-glow cumbre-glow--bottom"></div>
+
+        <div class="cumbre-wrap">
+            <header class="cumbre-header">
+                <a href="/cumbretarapaca/" class="cumbre-logo">
+                    <img src="/cumbretarapaca/postulacion/logo-nodo-am.png" alt="NODO" height="44">
+                </a>
+                <!-- Versión BHP: el mismo formulario servido en somosnodo.cl/cumbretarapaca/postulacion
+                     (copia del sitio hecha con scripts/replicar-somosnodo.sh) muestra la invitación
+                     de Cerro Colorado y marca la postulación con viraliza_invita. Ver MODO_BHP. -->
+                <div class="cumbre-invita" id="cumbreInvita" hidden>
+                    <span>Invita</span>
+                    <img src="/cumbretarapaca/logos/cerro-colorado-bhp.svg" alt="Cerro Colorado | BHP" width="236" height="14">
+                </div>
+                <span class="cumbre-eyebrow">Viraliza · Región de Tarapacá</span>
+                <h1 class="cumbre-title" id="cumbreTitle">Registro Cumbre Tarapacá</h1>
+                <p class="cumbre-when">24 y 25 de noviembre de 2026 · Iquique</p>
+                <!-- El texto del lead cambia en modo invitación (Día 2), ver el script. -->
+                <p class="cumbre-lead" id="cumbreLead">
+                    Complete el formulario para reservar su cupo en la <strong>Cumbre del martes 24 y
+                    miércoles 25 de noviembre</strong>, el encuentro de minería, logística e hidrógeno
+                    verde de la región. Le enviaremos la hora y el lugar exacto a su correo.
+                </p>
+            </header>
+
+            <!-- BEGIN registro Cumbre Tarapacá (CRM form_id 1cec8307-525f-4491-8d59-3409d1557d3a,
+                 proyecto Viraliza). Form propio y no el iframe del CRM: la cláusula Corfo necesita
+                 un checkbox único obligatorio, y el iframe solo renderiza checkboxes vía
+                 multi_enumeration.
+                 Día 1 (Summit) y Día 2 (Workshop) van a forms DISTINTOS del CRM para poder
+                 reportarlos por separado: cada form estampa su propio marcador
+                 (viraliza_registro_cumbre_tarapaca_fecha y ..._dia_2_fecha). Desde el 14-oct el
+                 Día 2 está abierto a todos; ?invitacion=<código> lo deja marcado con el texto de
+                 la invitación (ver DIA2 en el script). -->
+            <!-- Se muestra en vez del formulario al llegar al tope de inscripciones. La cuenta
+                 la lleva Copiloto IA (GET /iatarapaca/preinscripcion/cupos), porque el CRM no
+                 limita. No aplica a la invitación al Día 2. -->
+            <div id="cumbreLleno" class="cumbre-success" hidden>
+                <h2>Se completaron los cupos</h2>
+                <p>
+                    Gracias por su interés. Las inscripciones a la Cumbre Tarapacá llegaron a su
+                    máximo. Si se liberan cupos, lo informaremos en los canales de NODO.
+                </p>
+                <a class="cumbre-back" href="/cumbretarapaca/">Volver a la Cumbre</a>
+            </div>
+
+            <form id="cumbreForm" class="cumbre-form"
+                  data-form-id="1cec8307-525f-4491-8d59-3409d1557d3a"
+                  data-form-id-dia2="5c5c9e1c-40d9-42d6-818f-a8b1a2caea1d" novalidate>
+
+                <h2 class="cumbre-section">Sus datos</h2>
+
+                <div class="cumbre-grid">
+                    <!-- Nombre y apellidos por separado, pero al CRM viaja además `name` con el
+                         nombre completo: firstname/lastname no son campos estándar del CRM y sin
+                         `name` el contacto queda sin nombre (ver collectData). -->
+                    <div class="cumbre-field">
+                        <label for="f-firstname">Nombre <span class="req">*</span></label>
+                        <input id="f-firstname" name="firstname" type="text" required
+                               autocomplete="given-name" placeholder="Ej: María" />
+                    </div>
+
+                    <div class="cumbre-field">
+                        <label for="f-lastname">Apellidos <span class="req">*</span></label>
+                        <input id="f-lastname" name="lastname" type="text" required
+                               autocomplete="family-name" placeholder="Ej: Pérez Soto" />
+                    </div>
+
+                    <!-- RUT: respaldo de la lista de asistencia ante Corfo. Viaja normalizado
+                         (12345678-5) en `rut`, la convención de los forms de ADL. -->
+                    <div class="cumbre-field">
+                        <label for="f-rut">RUT <span class="req">*</span></label>
+                        <input id="f-rut" name="rut" type="text" required autocomplete="off"
+                               inputmode="text" maxlength="12" placeholder="12.345.678-5" />
+                    </div>
+
+                    <div class="cumbre-field">
+                        <label for="f-genero">Género <span class="req">*</span></label>
+                        <select id="f-genero" name="genero" required>
+                            <option value="">— Seleccionar —</option>
+                            <option value="Mujer">Mujer</option>
+                            <option value="Hombre">Hombre</option>
+                            <option value="Otro / No binario">Otro / No binario</option>
+                            <option value="Prefiero no responder">Prefiero no responder</option>
+                        </select>
+                    </div>
+
+                    <div class="cumbre-field">
+                        <label for="f-email">Correo electrónico <span class="req">*</span></label>
+                        <input id="f-email" name="email" type="email" required autocomplete="email"
+                               placeholder="nombre@correo.cl" />
+                    </div>
+
+                    <!-- Solo para validar que coincida: no tiene name, así que no viaja al CRM. -->
+                    <div class="cumbre-field">
+                        <label for="f-email2">Confirme su correo <span class="req">*</span></label>
+                        <input id="f-email2" type="email" required autocomplete="email"
+                               placeholder="nombre@correo.cl" />
+                    </div>
+
+                    <div class="cumbre-field">
+                        <label for="f-phone">Teléfono <span class="req">*</span></label>
+                        <input id="f-phone" name="phone" type="tel" required autocomplete="tel" />
+                    </div>
+
+                    <div class="cumbre-field">
+                        <label for="f-comuna">Comuna de residencia <span class="req">*</span></label>
+                        <select id="f-comuna" name="viraliza_comuna" required>
+                            <option value="">— Seleccionar —</option>
+                            <option value="Iquique">Iquique</option>
+                            <option value="Alto Hospicio">Alto Hospicio</option>
+                            <option value="Pozo Almonte">Pozo Almonte</option>
+                            <option value="Camiña">Camiña</option>
+                            <option value="Colchane">Colchane</option>
+                            <option value="Huara">Huara</option>
+                            <option value="Pica">Pica</option>
+                            <option value="Otra región de Chile">Otra región de Chile</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h2 class="cumbre-section">Su organización</h2>
+
+                <div class="cumbre-grid">
+                    <div class="cumbre-field cumbre-field--wide">
+                        <label for="f-ambito">¿Desde qué ámbito participa? <span class="req">*</span></label>
+                        <select id="f-ambito" name="viraliza_ambito" required>
+                            <option value="">— Seleccionar —</option>
+                            <option value="Empresa privada">Empresa privada</option>
+                            <option value="Sector público">Sector público</option>
+                            <option value="Emprendimiento propio o trabajo independiente">Emprendimiento propio o trabajo independiente</option>
+                            <option value="Estudiante">Estudiante</option>
+                            <option value="Academia, gremio u ONG">Academia, gremio u ONG</option>
+                        </select>
+                    </div>
+
+                    <div class="cumbre-field cumbre-field--wide">
+                        <label for="f-company">Empresa u organización <span class="req">*</span></label>
+                        <input id="f-company" name="company" type="text" required
+                               autocomplete="organization" placeholder="Nombre de su empresa u organización" />
+                    </div>
+
+                    <div class="cumbre-field">
+                        <!-- Los mismos rubros que la empresa elige en Copiloto IA (Company::INDUSTRIES en viraliza). -->
+                        <label for="f-sector">Rubro <span class="req">*</span></label>
+                        <select id="f-sector" name="viraliza_sector" required>
+                            <option value="">— Seleccionar —</option>
+                            <option value="Comercio y retail">Comercio y retail</option>
+                            <option value="Energía, Minería y Recursos Naturales">Energía, Minería y Recursos Naturales</option>
+                            <option value="Gastronomía">Gastronomía</option>
+                            <option value="Turismo y hotelería">Turismo y hotelería</option>
+                            <option value="Construcción y oficios">Construcción y oficios</option>
+                            <option value="Salud y bienestar">Salud y bienestar</option>
+                            <option value="Industria, Manufactura y Producción">Industria, Manufactura y Producción</option>
+                            <option value="Transporte y logística">Transporte y logística</option>
+                            <option value="Educación y capacitación">Educación y capacitación</option>
+                            <option value="Agricultura, Ganadería, Silvicultura y Pesca">Agricultura, Ganadería, Silvicultura y Pesca</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="cumbre-field">
+                        <label for="f-rol">Cargo o posición <span class="req">*</span></label>
+                        <select id="f-rol" name="viraliza_rol" required>
+                            <option value="">— Seleccionar —</option>
+                            <option value="Abogado / Asesor Legal">Abogado / Asesor Legal</option>
+                            <option value="Académico / Investigador">Académico / Investigador</option>
+                            <option value="Analista (diversas especializaciones)">Analista (diversas especializaciones)</option>
+                            <option value="Consultor/a">Consultor/a</option>
+                            <option value="Director Ejecutivo / Gerente General (CEO)">Director Ejecutivo / Gerente General (CEO)</option>
+                            <option value="Ejecutivo de Ventas / Representante Comercial">Ejecutivo de Ventas / Representante Comercial</option>
+                            <option value="Emprendedor / Fundador de startup">Emprendedor / Fundador de startup</option>
+                            <option value="Especialista (área específica)">Especialista (área específica)</option>
+                            <option value="Estudiante">Estudiante</option>
+                            <option value="Fiscal">Fiscal</option>
+                            <option value="Geólogo/a">Geólogo/a</option>
+                            <option value="Gerente de Comunicaciones">Gerente de Comunicaciones</option>
+                            <option value="Gerente de Datos (CDO - Chief Data Officer)">Gerente de Datos (CDO - Chief Data Officer)</option>
+                            <option value="Gerente de Innovación">Gerente de Innovación</option>
+                            <option value="Gerente de Marketing (CMO - Chief Marketing Officer)">Gerente de Marketing (CMO - Chief Marketing Officer)</option>
+                            <option value="Gerente de Operaciones (COO - Chief Operating Officer)">Gerente de Operaciones (COO - Chief Operating Officer)</option>
+                            <option value="Gerente de Sostenibilidad">Gerente de Sostenibilidad</option>
+                            <option value="Gerente de Tecnología (CTO - Chief Technology Officer)">Gerente de Tecnología (CTO - Chief Technology Officer)</option>
+                            <option value="Gerente Financiero (CFO - Chief Financial Officer)">Gerente Financiero (CFO - Chief Financial Officer)</option>
+                            <option value="Ingeniero (diversas especializaciones)">Ingeniero (diversas especializaciones)</option>
+                            <option value="Inversor / Capitalista de Riesgo">Inversor / Capitalista de Riesgo</option>
+                            <option value="Jefa/e de Casa">Jefa/e de Casa</option>
+                            <option value="Jefe/a de Departamento o Área">Jefe/a de Departamento o Área</option>
+                            <option value="Médico / Profesional de la Salud">Médico / Profesional de la Salud</option>
+                            <option value="Operario / Trabajador de Producción">Operario / Trabajador de Producción</option>
+                            <option value="Otras Gerencias">Otras Gerencias</option>
+                            <option value="Periodista / Profesional de los Medios de Comunicación">Periodista / Profesional de los Medios de Comunicación</option>
+                            <option value="Profesional Administrativo (Administrativos, Asistentes Administrativos, Secretarios)">Profesional Administrativo (Administrativos, Asistentes Administrativos, Secretarios)</option>
+                            <option value="Profesional Independiente / Freelancer">Profesional Independiente / Freelancer</option>
+                            <option value="Profesor/a">Profesor/a</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="cumbre-field">
+                        <label for="f-tamano">Tamaño de la organización <span class="req">*</span></label>
+                        <select id="f-tamano" name="viraliza_tamano_organizacion" required>
+                            <option value="">— Seleccionar —</option>
+                            <option value="Trabajo por cuenta propia">Trabajo por cuenta propia</option>
+                            <option value="Micro · 1 a 9 personas">Micro · 1 a 9 personas</option>
+                            <option value="Pequeña · 10 a 49 personas">Pequeña · 10 a 49 personas</option>
+                            <option value="Mediana · 50 a 199 personas">Mediana · 50 a 199 personas</option>
+                            <option value="Grande · 200 o más personas">Grande · 200 o más personas</option>
+                            <option value="Institución pública">Institución pública</option>
+                            <option value="Universidad o centro de formación">Universidad o centro de formación</option>
+                            <option value="ONG o fundación">ONG o fundación</option>
+                        </select>
+                    </div>
+
+                    <div class="cumbre-field">
+                        <label for="f-eje">Eje de interés <span class="req">*</span></label>
+                        <select id="f-eje" name="viraliza_eje_interes" required>
+                            <option value="">— Seleccionar —</option>
+                            <option value="Minería">Minería</option>
+                            <option value="Logística">Logística</option>
+                            <option value="Hidrógeno Verde (H2V)">Hidrógeno Verde (H2V)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h2 class="cumbre-section">Su participación</h2>
+
+                <div class="cumbre-grid">
+                    <div class="cumbre-field">
+                        <label for="f-entero">¿Cómo se enteró de la Cumbre? <span class="req">*</span></label>
+                        <select id="f-entero" name="viraliza_como_se_entero" required>
+                            <option value="">— Seleccionar —</option>
+                            <option value="Invitación de Cerro Colorado (BHP)">Invitación de Cerro Colorado (BHP)</option>
+                            <option value="Facebook">Facebook</option>
+                            <option value="Instagram">Instagram</option>
+                            <option value="TikTok">TikTok</option>
+                            <option value="LinkedIn">LinkedIn</option>
+                            <option value="Correo de invitación">Correo de invitación</option>
+                            <option value="NODO o Corfo">NODO o Corfo</option>
+                            <option value="Mi empresa o gremio">Mi empresa o gremio</option>
+                            <option value="Recomendación de un conocido">Recomendación de un conocido</option>
+                            <option value="Prensa o radio">Prensa o radio</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="cumbre-field">
+                        <label for="f-objetivo">Objetivo de asistir al evento <span class="req">*</span></label>
+                        <select id="f-objetivo" name="viraliza_objetivo_asistencia" required>
+                            <option value="">— Seleccionar —</option>
+                            <option value="Aprender sobre IA y transformación digital">Aprender sobre IA y transformación digital</option>
+                            <option value="Conocer soluciones y proveedores">Conocer soluciones y proveedores</option>
+                            <option value="Hacer contactos de negocio">Hacer contactos de negocio</option>
+                            <option value="Buscar financiamiento o apoyo público">Buscar financiamiento o apoyo público</option>
+                            <option value="Conocer casos de la región">Conocer casos de la región</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="cumbre-field cumbre-field--wide">
+                        <label for="f-desafio">¿Cuál es el principal desafío digital de su organización? <span class="req">*</span></label>
+                        <select id="f-desafio" name="viraliza_desafio_digital" required>
+                            <option value="">— Seleccionar —</option>
+                            <option value="Incorporar IA en los procesos">Incorporar IA en los procesos</option>
+                            <option value="Automatizar tareas">Automatizar tareas</option>
+                            <option value="Vender por canales digitales">Vender por canales digitales</option>
+                            <option value="Ordenar y aprovechar los datos">Ordenar y aprovechar los datos</option>
+                            <option value="Ciberseguridad">Ciberseguridad</option>
+                            <option value="Capacitar al equipo">Capacitar al equipo</option>
+                            <option value="Conectividad e infraestructura">Conectividad e infraestructura</option>
+                            <option value="Financiar la transformación">Financiar la transformación</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h2 class="cumbre-section">Días y actividades</h2>
+
+                <!-- Cada día va a su form del CRM (marcador propio). Desde el 14-oct los dos días
+                     están abiertos a todos: se inscriben a todo y NODO confirma el cupo de los
+                     talleres según el perfil. El link ?invitacion= sigue entrando directo al Día 2.
+                     Las actividades viajan como lista (viraliza_talleres_dia1/_dia2 son
+                     multi_enumeration en el CRM: un valor nuevo hay que agregarlo también allá).
+                     Las charlas y paneles son para todo público; almuerzo, mesa, pitch y
+                     workshops son para emprendedores y empresas del área industrial. -->
+                <div class="cumbre-grid">
+                    <fieldset class="cumbre-field cumbre-field--wide">
+                        <legend>¿Qué días asistirá? <span class="req">*</span></legend>
+                        <div class="cumbre-checks cumbre-checks--fila">
+                            <label class="cumbre-check">
+                                <input id="f-dia1" type="checkbox" checked />
+                                <span>Día 1 · martes 24 de noviembre</span>
+                            </label>
+                            <label class="cumbre-check" id="dia2Box">
+                                <input id="f-dia2" type="checkbox" />
+                                <span>Día 2 · miércoles 25 de noviembre</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="cumbre-field cumbre-field--wide">
+                        <legend>Actividades en las que participará</legend>
+                        <p class="cumbre-aviso">
+                            Las charlas y paneles son abiertos a todo público. El almuerzo de
+                            matchmaking, la mesa técnica, el pitch y los workshops son para
+                            emprendedores y empresas del área industrial: puede inscribirse, y le
+                            confirmaremos su cupo según su perfil.
+                        </p>
+                        <div class="cumbre-dias">
+                            <div class="cumbre-checks" id="talleresDia1">
+                                <p class="cumbre-checks-dia">Día 1 · martes 24</p>
+                                <p class="cumbre-checks-tipo">Charlas y paneles</p>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Charla plenaria internacional N°1: IA aplicada a Producción y Servicios para la Minería" />
+                                    <span>Charla plenaria internacional N°1: IA aplicada a Producción y Servicios para la Minería <span class="cumbre-hora">9:15 – 10:00</span></span>
+                                </label>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Panel: Proveedores locales para la gran minería tarapaqueña" />
+                                    <span>Panel: Proveedores locales para la gran minería tarapaqueña <span class="cumbre-hora">10:15 – 11:00</span></span>
+                                </label>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Charla plenaria internacional N°2: Hidrógeno Verde y Energías Renovables, IA para la transición energética" />
+                                    <span>Charla plenaria internacional N°2: Hidrógeno Verde y Energías Renovables, IA para la transición energética <span class="cumbre-hora">11:00 – 11:45</span></span>
+                                </label>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Ceremonia y firma del Convenio IA Tarapacá" />
+                                    <span>Ceremonia y firma del Convenio IA Tarapacá <span class="cumbre-hora">12:00 – 12:30</span></span>
+                                </label>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Panel: Desarrollo tecnológico desde el sector público" />
+                                    <span>Panel: Desarrollo tecnológico desde el sector público <span class="cumbre-hora">12:30 – 13:15</span></span>
+                                </label>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Panel: Visión del mundo TI respecto a los cambios de la industria" />
+                                    <span>Panel: Visión del mundo TI respecto a los cambios de la industria <span class="cumbre-hora">14:15 – 14:45</span></span>
+                                </label>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Charla plenaria internacional N°3: IA aplicada a Logística y Comercio Internacional" />
+                                    <span>Charla plenaria internacional N°3: IA aplicada a Logística y Comercio Internacional <span class="cumbre-hora">14:45 – 15:30</span></span>
+                                </label>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Cóctel de bienvenida y networking" />
+                                    <span>Cóctel de bienvenida y networking <span class="cumbre-hora">16:45 – 19:00</span></span>
+                                </label>
+                                <p class="cumbre-checks-tipo">Talleres <span class="cumbre-sujeto">sujeto a confirmación</span></p>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Almuerzo y matchmaking dirigido" />
+                                    <span>Almuerzo y matchmaking dirigido <span class="cumbre-hora">13:15 – 14:15</span></span>
+                                </label>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia1" value="Sesión de pitch: Emprendedores tecnológicos del norte" />
+                                    <span>Sesión de pitch: Emprendedores tecnológicos del norte <span class="cumbre-hora">15:45 – 16:45</span></span>
+                                </label>
+                            </div>
+                            <div class="cumbre-checks" id="talleresDia2" hidden>
+                                <p class="cumbre-checks-dia">Día 2 · miércoles 25</p>
+                                <p class="cumbre-checks-tipo">Talleres <span class="cumbre-sujeto">sujeto a confirmación</span></p>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia2" value="Mesa técnica territorial: Tecnología en la Industria" />
+                                    <span>Mesa técnica territorial: Tecnología en la Industria <span class="cumbre-hora">9:40 – 11:00</span></span>
+                                </label>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia2" value="Workshop A: Logística portuaria e IA (Puerto de Iquique)" />
+                                    <span>Workshop A: Logística portuaria e IA (Puerto de Iquique) <span class="cumbre-hora">11:40 – 13:00</span></span>
+                                </label>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia2" value="Almuerzo y matchmaking dirigido" />
+                                    <span>Almuerzo y matchmaking dirigido <span class="cumbre-hora">13:00 – 14:30</span></span>
+                                </label>
+                                <label class="cumbre-check">
+                                    <input type="checkbox" data-grupo="viraliza_talleres_dia2" value="Workshop B: Oportunidades IA y Financiamiento Pyme" />
+                                    <span>Workshop B: Oportunidades IA y Financiamiento Pyme <span class="cumbre-hora">14:40 – 16:00</span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <p class="cumbre-hint" id="talleresVacio" hidden>Marque un día para ver sus actividades.</p>
+                    </fieldset>
+                </div>
+
+                <h2 class="cumbre-section">Autorización</h2>
+
+                <!-- Requisito obligatorio: texto LITERAL de la Resolución de Focalización de
+                     Tarapacá, no editarlo. Sin esta autorización la lista de asistencia no vale
+                     como respaldo formal ante Corfo. -->
+                <label class="cumbre-consent" for="f-corfo">
+                    <input id="f-corfo" name="viraliza_autoriza_corfo" type="checkbox" required />
+                    <span class="cumbre-consent-text">
+                        <strong>Obligatorio</strong>
+                        Autorizo expresamente a Corfo y a otros Órganos de la Administración del Estado
+                        para que, directamente o a través de un tercero, y de acuerdo con la información
+                        proporcionada en este formulario, me contacten para los efectos de la
+                        implementación y del adecuado seguimiento de las actividades del instrumento de
+                        financiamiento, así como para la elaboración de métricas y la evaluación del
+                        impacto del mismo.
+                    </span>
+                </label>
+
+                <!-- Opcional y aparte de la de Corfo. Va al CRM solo si se marca (true): un
+                     false no se escribiría igual (el CRM salta los valores en blanco). -->
+                <label class="cumbre-consent" for="f-auspiciadores">
+                    <input id="f-auspiciadores" type="checkbox" />
+                    <span class="cumbre-consent-text">
+                        <strong>Opcional</strong>
+                        Autorizo a NODO a compartir mis datos de contacto con los auspiciadores y
+                        aliados de la Cumbre, que podrán contactarme para enviarme información,
+                        invitaciones a actividades o comunicaciones sobre innovación, tecnología y
+                        transformación digital. Esta autorización es voluntaria y puedo revocarla
+                        en cualquier momento.
+                    </span>
+                </label>
+
+
+                <!-- Campo trampa para bots: invisible, una persona no lo llena. -->
+                <div class="cumbre-trampa" aria-hidden="true">
+                    <label for="f-website">Sitio web</label>
+                    <input id="f-website" type="text" tabindex="-1" autocomplete="off" />
+                </div>
+
+                <button type="submit" class="cumbre-submit">Reservar mi cupo</button>
+
+                <div id="cumbreStatus" class="cumbre-status" role="status" aria-live="polite"></div>
+
+                <p class="cumbre-legal">
+                    Sus datos se usan para gestionar su participación en la Cumbre y para el reporte del
+                    proyecto a Corfo, conforme a la autorización otorgada. No se comparten con terceros
+                    distintos de los señalados en las autorizaciones que usted marque.
+                </p>
+            </form>
+
+            <div id="cumbreSuccess" class="cumbre-success" hidden>
+                <div class="cumbre-success-icon">✓</div>
+                <h2>¡Registro confirmado!</h2>
+                <p id="cumbreSuccessText">
+                    Gracias por inscribirse en la Cumbre Tarapacá. Le enviaremos la hora y el lugar
+                    exacto al correo que nos indicó.
+                </p>
+                <p class="cumbre-acceso" id="cumbreAcceso" hidden>
+                    También le enviamos a su correo el acceso a <strong>Copiloto IA</strong>, la
+                    plataforma donde puede hacer el diagnóstico de madurez digital de su negocio
+                    antes de la Cumbre.
+                </p>
+                <!-- ID determinístico (sale del correo): la misma persona siempre recibe el mismo,
+                     también si se inscribe a los dos días. Sirve para desagregar el NPS. -->
+                <p class="cumbre-id" id="cumbreIdBox" hidden>
+                    Su ID de inscripción: <strong id="cumbreId"></strong>
+                </p>
+                <a class="cumbre-back" href="/cumbretarapaca/">Volver a la Cumbre</a>
+            </div>
+
+            <!-- Obligatorio por las Bases Administrativas Generales: toda pieza pública de
+                 difusión declara el apoyo de Corfo. -->
+            <footer class="cumbre-footer">
+                Proyecto apoyado por Corfo a través del Comité de Desarrollo Productivo Regional de
+                Tarapacá. Instrumento Viraliza Eventos 2026, código 26VIR-320352.
+            </footer>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+    <script>
+    (function () {
+        var form = document.getElementById('cumbreForm');
+        if (!form) return;
+
+        // La versión BHP es este mismo archivo copiado bajo somosnodo.cl/cumbretarapaca/. Ahí
+        // muestra "Invita Cerro Colorado | BHP", deja marcada esa opción en "¿Cómo se enteró?" y
+        // manda viraliza_invita, que separa a los invitados de BHP en el CRM.
+        var MODO_BHP = location.pathname.indexOf('/cumbretarapaca/') === 0;
+        var BASE = MODO_BHP ? '/cumbretarapaca' : '';
+        if (MODO_BHP) {
+            document.getElementById('cumbreInvita').hidden = false;
+            var entero = document.getElementById('f-entero');
+            if (entero) entero.value = 'Invitación de Cerro Colorado (BHP)';
+        }
+
+        var CRM_BASE  = 'https://crm.agentsmind.ai/api';
+        var urlDia1   = CRM_BASE + '/form-submit/' + form.dataset.formId;
+        var urlDia2   = CRM_BASE + '/form-submit/' + form.dataset.formIdDia2;
+        var statusEl  = document.getElementById('cumbreStatus');
+        var successEl = document.getElementById('cumbreSuccess');
+        var submitBtn = form.querySelector('button[type="submit"]');
+        var phoneEl   = document.getElementById('f-phone');
+        var emailEl   = document.getElementById('f-email');
+        var email2El  = document.getElementById('f-email2');
+
+        // La plataforma Copiloto IA vive en somosnodo.cl/iatarapaca: desde este dominio es una
+        // llamada cruzada, que viraliza acepta solo de cumbreiatarapaca.cl (CORS, 7.28.0). Le pasa
+        // la inscripción y lleva la cuenta de cupos. Ver PreregistrationsController en viraliza.
+        var PLATAFORMA = 'https://somosnodo.cl/iatarapaca/preinscripcion';
+        var rutEl = document.getElementById('f-rut');
+
+        // RUT chileno: módulo 11. Devuelve "12345678-5" o null si no cuadra.
+        function normalizarRut(texto) {
+            var limpio = String(texto || '').replace(/[^0-9kK]/g, '').toUpperCase();
+            if (limpio.length < 2) return null;
+            var cuerpo = limpio.slice(0, -1), dv = limpio.slice(-1), suma = 0, mult = 2;
+            for (var i = cuerpo.length - 1; i >= 0; i--) {
+                suma += parseInt(cuerpo[i], 10) * mult;
+                mult = mult === 7 ? 2 : mult + 1;
+            }
+            var esperado = 11 - (suma % 11);
+            esperado = esperado === 11 ? '0' : esperado === 10 ? 'K' : String(esperado);
+            return esperado === dv ? cuerpo.replace(/^0+/, '') + '-' + dv : null;
+        }
+        rutEl.addEventListener('input', function () { rutEl.setCustomValidity(''); });
+
+        // El tope de inscripciones: con los cupos llenos se esconde el formulario. Si la
+        // consulta falla, el formulario queda abierto (mejor una de más que perder una).
+        async function cuposAbiertos() {
+            try {
+                var r = await fetch(PLATAFORMA + '/cupos?source=cumbretarapaca', { cache: 'no-store' });
+                if (!r.ok) return true;
+                return (await r.json()).abierto !== false;
+            } catch (_) {
+                return true;
+            }
+        }
+        function mostrarLleno() {
+            form.hidden = true;
+            document.getElementById('cumbreLleno').hidden = false;
+        }
+
+        // utilsScript (libphonenumber) es OBLIGATORIO: sin él isValidNumber() devuelve
+        // null y getNumber() "" — eso tuvo el form de empresas de somosnodo 20 días
+        // sin enviar nada al CRM, en silencio.
+        var iti = (window.intlTelInput && phoneEl)
+            ? window.intlTelInput(phoneEl, {
+                initialCountry: 'cl',
+                preferredCountries: ['cl', 'pe', 'bo', 'ar'],
+                separateDialCode: false,
+                utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js'
+            })
+            : null;
+
+        // ---------- Día 2 (Workshop, por invitación curada) ----------
+        // El link privado es ?invitacion=<código>. Acá va solo el SHA-256 del código, así el
+        // código no queda legible en el repo. Cambiar el código = cambiar este hash.
+        // Ojo: es un control de acceso blando (el endpoint del CRM es público); la curaduría
+        // final de los 50 se hace sobre la lista del form del Día 2.
+        var DIA2_HASH = 'da377d61611593f5be4763e4ffb4a9b00be0965dd5c640af26935ab57f53748a';
+        var esDia2 = false;
+        var dia1El = document.getElementById('f-dia1');
+        var dia2El = document.getElementById('f-dia2');
+        // Cada día muestra sus actividades solo si está marcado.
+        function syncDias() {
+            document.getElementById('talleresDia1').hidden = !dia1El.checked;
+            document.getElementById('talleresDia2').hidden = !dia2El.checked;
+            document.getElementById('talleresVacio').hidden = dia1El.checked || dia2El.checked;
+        }
+        dia1El.addEventListener('change', syncDias);
+        dia2El.addEventListener('change', syncDias);
+
+        async function sha256Hex(text) {
+            var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+            return Array.from(new Uint8Array(buf)).map(function (b) {
+                return b.toString(16).padStart(2, '0');
+            }).join('');
+        }
+
+        // ID de inscripción: CT- + 6 caracteres Crockford (sin I, L, O, U) sacados del
+        // SHA-256 del correo normalizado. Determinístico: se puede recalcular desde el correo
+        // (p. ej. para cruzar la encuesta NPS) y no cambia si la persona se inscribe dos veces.
+        var CROCKFORD = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
+        async function idInscripcion(email) {
+            var hex = await sha256Hex(email.trim().toLowerCase());
+            var n = parseInt(hex.slice(0, 8), 16) >>> 2;   // 30 bits
+            var out = '';
+            for (var i = 0; i < 6; i++) { out = CROCKFORD[n & 31] + out; n >>>= 5; }
+            return 'CT-' + out;
+        }
+
+        function activarDia2() {
+            esDia2 = true;
+            document.querySelector('.cumbre-eyebrow').textContent = 'Viraliza · Invitación Alta Dirección';
+            document.getElementById('cumbreTitle').textContent = 'Workshop Día 2 · Cumbre Tarapacá';
+            document.getElementById('cumbreLead').innerHTML =
+                'Usted fue invitado/a al <strong>Workshop de Alta Dirección del miércoles 25 de ' +
+                'noviembre</strong>, la jornada de trabajo del segundo día de la Cumbre. Complete ' +
+                'el formulario para confirmar su cupo; le enviaremos la hora y el lugar exacto a su correo.';
+            document.getElementById('cumbreSuccessText').textContent =
+                'Gracias por confirmar su participación en el Workshop del Día 2. Le enviaremos la ' +
+                'hora y el lugar exacto al correo que nos indicó.';
+            submitBtn.textContent = 'Confirmar mi cupo';
+            // La invitación es al Día 2; el Día 1 queda opcional.
+            dia2El.checked = true;
+            dia1El.checked = false;
+            syncDias();
+        }
+
+        (async function () {
+            try {
+                var codigo = new URLSearchParams(location.search).get('invitacion');
+                if (!codigo) return;
+                if (await sha256Hex(codigo.trim().toUpperCase()) === DIA2_HASH) {
+                    activarDia2();
+                } else {
+                    showError('El código de invitación no es válido. Puede inscribirse igual al Summit del Día 1.');
+                }
+            } catch (_) { }
+        })();
+
+        (async function () {
+            // Se espera un poco a que la detección del Día 2 termine: la invitación no se cierra.
+            await new Promise(function (r) { setTimeout(r, 300); });
+            if (!esDia2 && !(await cuposAbiertos())) mostrarLleno();
+        })();
+
+        function showError(text) {
+            statusEl.textContent = text;
+            statusEl.classList.add('is-error');
+        }
+
+        function clearError() {
+            statusEl.textContent = '';
+            statusEl.classList.remove('is-error');
+        }
+
+        function collectData() {
+            var data = {};
+            new FormData(form).forEach(function (value, key) {
+                if (typeof value === 'string') value = value.trim();
+                if (value) data[key] = value;
+            });
+
+            // Las actividades de cada día, como lista: solo las del día marcado.
+            ['viraliza_talleres_dia1', 'viraliza_talleres_dia2'].forEach(function (grupo) {
+                var marcadas = Array.prototype.filter.call(
+                    form.querySelectorAll('[data-grupo="' + grupo + '"]'),
+                    function (el) { return el.checked && !el.closest('[hidden]'); }
+                ).map(function (el) { return el.value; });
+                if (marcadas.length) data[grupo] = marcadas;
+            });
+            delete data.workshop;
+
+            // Nombre completo en `name`, la columna base del contacto. firstname y lastname
+            // viajan también, como custom fields.
+            data.name = [data.firstname, data.lastname].filter(Boolean).join(' ');
+            if (MODO_BHP) data.viraliza_invita = 'BHP Cerro Colorado';
+
+            // El teléfono viaja en E.164 (+56912345678), convención de los forms de ADL.
+            if (iti) {
+                var num = iti.getNumber();
+                if (num) data.phone = num;
+            }
+
+            // El CRM guarda custom_fields TAL CUAL llegan, sin castear. El campo
+            // viraliza_autoriza_corfo es bool, así que va el booleano y no "Sí":
+            // un string en un campo bool rompe el filtro de listas.
+            data.viraliza_autoriza_corfo = form.querySelector('#f-corfo').checked;
+            if (form.querySelector('#f-auspiciadores').checked) data.viraliza_autoriza_auspiciadores = true;
+
+            return data;
+        }
+
+        // Si el navegador no tiene crypto.subtle (solo pasa fuera de https) el registro sale
+        // igual sin ID: nunca se bloquea un cupo por esto.
+        async function withId(data) {
+            try {
+                if (data.email) data.viraliza_id_inscripcion = await idInscripcion(data.email);
+            } catch (_) { }
+            return data;
+        }
+
+        async function avisarPlataforma(data) {
+            try {
+                var r = await fetch(PLATAFORMA, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({
+                        name: data.name, email: data.email, phone: data.phone,
+                        gender: data.genero, rut: data.rut, company: data.company,
+                        industry: data.viraliza_sector, interest: data.viraliza_eje_interes, ambit: data.viraliza_ambito,
+                        source: 'cumbretarapaca',
+                        website: document.getElementById('f-website').value
+                    })
+                });
+                return r.ok;
+            } catch (_) {
+                return false;
+            }
+        }
+
+        email2El.addEventListener('input', function () { email2El.setCustomValidity(''); });
+        dia1El.addEventListener('change', function () { dia1El.setCustomValidity(''); });
+        dia2El.addEventListener('change', function () { dia1El.setCustomValidity(''); });
+
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            clearError();
+
+            // Los dos correos tienen que coincidir. setCustomValidity antes de checkValidity,
+            // para que el navegador lo marque en el campo como cualquier otro error.
+            // Al menos un día.
+            var algunDia = dia1El.checked || dia2El.checked;
+            dia1El.setCustomValidity(algunDia ? '' : 'Marque el día al que asistirá.');
+
+            var rut = normalizarRut(rutEl.value);
+            rutEl.setCustomValidity(rut ? '' : 'Revise el RUT: el dígito verificador no coincide.');
+            if (rut) rutEl.value = rut;
+
+            var coinciden = emailEl.value.trim().toLowerCase() === email2El.value.trim().toLowerCase();
+            email2El.setCustomValidity(coinciden ? '' : 'Los correos no coinciden.');
+
+            if (!form.checkValidity()) {
+                form.classList.add('was-validated');
+                form.reportValidity();
+                return;
+            }
+
+            // isValidNumber() === false, no !isValidNumber(): si el utils todavía no
+            // cargó devuelve null, y con la negación simple se bloquearían TODOS los
+            // envíos. Ante la duda, mejor un teléfono mal formateado que un cupo perdido.
+            if (iti && iti.isValidNumber() === false) {
+                form.classList.add('was-validated');
+                showError('Revise el número de teléfono.');
+                phoneEl.focus();
+                return;
+            }
+
+            if (!esDia2 && !(await cuposAbiertos())) {
+                mostrarLleno();
+                return;
+            }
+
+            form.classList.remove('was-validated');
+            submitBtn.disabled = true;
+            var originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Enviando…';
+
+            try {
+                var data = await withId(collectData());
+                var destinos = [];
+                if (dia2El.checked) destinos.push(urlDia2);
+                if (dia1El.checked) destinos.push(urlDia1);
+
+                var respuestas = await Promise.all(destinos.map(function (url) {
+                    return fetch(url, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        // JSON PLANO. Envuelto en {data:{…}} el CRM responde 201 igual pero
+                        // no crea ni matchea el contacto: falso positivo peligroso.
+                        body: JSON.stringify(data)
+                    });
+                }));
+                if (respuestas.some(function (r) { return !r.ok; })) {
+                    throw new Error('No se pudo completar el registro.');
+                }
+
+                // La preinscripción en la plataforma va después del CRM y no bloquea. El correo
+                // de acceso está en pausa desde el 4-nov (viraliza 7.29.0), así que el aviso
+                // #cumbreAcceso queda oculto: la confirmación la manda el CRM.
+                await avisarPlataforma(data);
+
+                try {
+                    window.dataLayer && window.dataLayer.push({
+                        event: 'viraliza_registro_cumbre',
+                        dia: dia1El.checked && dia2El.checked ? 'ambos' : (dia2El.checked ? 'dia2' : 'dia1'),
+                        eje: form.querySelector('#f-eje').value,
+                        comuna: form.querySelector('#f-comuna').value,
+                        invita: MODO_BHP ? 'bhp' : 'ninguna'
+                    });
+                } catch (_) { }
+
+                // La página de gracias es la conversión que miden GA4 y el Pixel (una URL
+                // propia). El ID y los días viajan por sessionStorage y no por la URL, para que
+                // no queden en las analíticas. Si sessionStorage falla, la página lo omite.
+                try {
+                    sessionStorage.setItem('cumbrePostulacion', JSON.stringify({
+                        id: data.viraliza_id_inscripcion || '',
+                        dia1: dia1El.checked, dia2: dia2El.checked
+                    }));
+                } catch (_) { }
+                window.location.assign(BASE + '/postulacion/gracias/');
+            } catch (err) {
+                showError((err && err.message) ||
+                    'Hubo un problema al enviar. Revise su conexión e intente nuevamente.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
+        });
+    })();
+    </script>
+</body>
+
+</html>

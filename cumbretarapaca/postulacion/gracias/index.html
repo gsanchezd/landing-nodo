@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postulación recibida - Cumbre IA Tarapacá</title>
+    <meta name="robots" content="noindex">
+    <meta name="description"
+        content="Reserve su cupo en la Cumbre Tarapacá de Viraliza: minería, logística e hidrógeno verde. 24 y 25 de noviembre, Iquique.">
+    <meta property="og:title" content="Registro Cumbre Tarapacá - Viraliza">
+    <meta property="og:description"
+        content="Reserve su cupo en la Cumbre Tarapacá de Viraliza: minería, logística e hidrógeno verde. 24 y 25 de noviembre, Iquique.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="/cumbretarapaca/logos/nodo-simbolo.png">
+    <link rel="canonical" href="https://cumbreiatarapaca.cl/postulacion/gracias/">
+    <meta property="og:url" content="https://cumbreiatarapaca.cl/postulacion/gracias/">
+    <meta property="og:image" content="https://cumbreiatarapaca.cl/og-cumbre-corfo2024.jpg">
+    <link rel="stylesheet" href="/cumbretarapaca/postulacion/postulacion-20261104.css">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PV9S5DL6');</script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PV9S5DL6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <main class="cumbre-page">
+        <div class="cumbre-glow cumbre-glow--top"></div>
+        <div class="cumbre-glow cumbre-glow--bottom"></div>
+
+        <div class="cumbre-wrap">
+            <header class="cumbre-header">
+                <a href="/cumbretarapaca/" class="cumbre-logo">
+                    <img src="/cumbretarapaca/postulacion/logo-nodo-am.png" alt="NODO" height="44">
+                </a>
+                <span class="cumbre-eyebrow">Viraliza · Región de Tarapacá</span>
+                <h1 class="cumbre-title">Cumbre IA Tarapacá</h1>
+                <p class="cumbre-when">24 y 25 de noviembre de 2026 · Iquique</p>
+            </header>
+
+            <!-- Página de gracias tras postular (4-nov-2026): la conversión que se mide en GA4 y
+                 el Pixel. El formulario redirige acá después de que el CRM aceptó el envío. -->
+            <div class="cumbre-success">
+                <div class="cumbre-success-icon">✓</div>
+                <h2>¡Recibimos su postulación!</h2>
+                <p id="graciasDias">
+                    Gracias por postular a la Cumbre IA Tarapacá.
+                </p>
+                <p>
+                    Le enviamos un correo con la confirmación de su postulación. Nuestro equipo
+                    revisará los perfiles y más adelante le enviaremos la confirmación de su cupo,
+                    con su entrada con código QR, al correo que nos indicó.
+                </p>
+                <p class="cumbre-id" id="cumbreIdBox" hidden>
+                    Su ID de inscripción: <strong id="cumbreId"></strong>
+                </p>
+                <a class="cumbre-back" href="/cumbretarapaca/">Volver a la Cumbre</a>
+            </div>
+
+            <!-- Obligatorio por las Bases Administrativas Generales: toda pieza pública de
+                 difusión declara el apoyo de Corfo. -->
+            <footer class="cumbre-footer">
+                Proyecto apoyado por Corfo a través del Comité de Desarrollo Productivo Regional de
+                Tarapacá. Instrumento Viraliza Eventos 2026, código 26VIR-320352.
+            </footer>
+        </div>
+    </main>
+
+    <script>
+    (function () {
+        var datos = null;
+        try { datos = JSON.parse(sessionStorage.getItem('cumbrePostulacion') || 'null'); } catch (_) { }
+        if (!datos) return;
+        if (datos.id) {
+            document.getElementById('cumbreId').textContent = datos.id;
+            document.getElementById('cumbreIdBox').hidden = false;
+        }
+        var dias = datos.dia1 && datos.dia2 ? 'a los dos días de la Cumbre'
+                 : datos.dia2 ? 'al Día 2 de la Cumbre IA Tarapacá (talleres)'
+                 : 'al Día 1 de la Cumbre IA Tarapacá (Summit)';
+        document.getElementById('graciasDias').textContent = 'Gracias por postular ' + dias + '.';
+    })();
+    </script>
+</body>
+
+</html>
